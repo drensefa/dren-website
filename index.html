@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dren Sefa | Global Entrepreneur</title>
+    <!-- Tailwind CSS laden (für das Styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts laden -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Grundlegendes Styling für Dark Mode */
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            cursor: default; /* Standard Mauszeiger */
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        /* Animationen beim Laden */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideUpFade 1s ease-out forwards;
+        }
+        
+        @keyframes slideUpFade {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Verzögerungen für die Animationen, damit nicht alles gleichzeitig kommt */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-700 { animation-delay: 0.7s; }
+
+        /* Wenn man Text markiert, soll es weiß auf schwarz sein */
+        ::selection {
+            background: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header / Name (Oben Links) -->
+    <div class="absolute top-0 left-0 w-full z-50 py-8 px-6">
+        <div class="text-2xl font-serif font-semibold tracking-wider uppercase text-center md:text-left md:ml-12">Dren Sefa.</div>
+    </div>
+
+    <!-- Hero Section (Der Hauptbereich) -->
+    <section class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-20 md:pt-0 overflow-hidden">
+        
+        <!-- Hintergrund Effekte (Lichtkegel) -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none opacity-30"></div>
+
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-12 items-center h-full">
+          
+            <!-- Text Content (Links) -->
+            <div class="md:col-span-7 flex flex-col justify-center order-2 md:order-1 z-10 pl-0 md:pl-12">
+                <div class="flex items-center space-x-4 mb-6 reveal delay-100">
+                    <span class="h-[1px] w-12 bg-gray-500"></span>
+                    <span class="text-xs uppercase tracking-[0.3em] text-gray-400">Global Entrepreneur & Investor</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-8 reveal delay-300">
+                    Bridging Markets. <br />
+                    <span class="text-gray-500 italic">Building Legacies.</span>
+                </h1>
+                
+                <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-10 reveal delay-500">
+                    Raised in Germany. Based in Dubai. Albanian Heart. <br/>
+                    Strategizing 7-figure real estate assets and guiding the next generation of investors.
+                </p>
+            </div>
+
+            <!-- Bild Section (Rechts) -->
+            <div class="md:col-span-5 h-[50vh] md:h-[80vh] relative order-1 md:order-2 reveal delay-500">
+                <!-- Rahmen um das Bild -->
+                <div class="absolute inset-0 border border-white/10 translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 z-0"></div>
+                
+                <!-- Das eigentliche Bild -->
+                <div class="w-full h-full relative z-10 overflow-hidden bg-gray-900 grayscale hover:grayscale-0 transition-all duration-700 ease-in-out">
+                    <!-- 
+                        WICHTIG FÜR DICH: 
+                        Dieses <img> Tag sucht nach einer Datei namens "IMG_1754.jpg" im gleichen Ordner.
+                        Achte darauf, dass deine Bilddatei EXAKT so heißt (Großschreibung beachten!).
+                    -->
+                    <img 
+                        src="IMG_1754.jpg" 
+                        alt="Dren Sefa" 
+                        class="w-full h-full object-cover object-top opacity-90"
+                        onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071&auto=format&fit=crop';"
+                    />
+                    <!-- Verlauf unten, damit es sich gut einfügt -->
+                    <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#050505] to-transparent"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zahlen / Stats Leiste -->
+    <div class="border-y border-white/5 bg-white/[0.02]">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex flex-wrap justify-center md:justify-start gap-12 md:gap-24 pl-0 md:pl-12">
+                
+                <div class="text-center md:text-left reveal delay-700">
+                    <div class="text-3xl md:text-4xl font-serif font-medium mb-2">20M+</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500">Combined Views</div>
+                </div>
+                
+                <div class="text-center md:text-left reveal delay-700">
+                    <div class="text-3xl md:text-4xl font-serif font-medium mb-2">7-Figure</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500">Assets Sold</div>
+                </div>
+
+                <div class="text-center md:text-left reveal delay-700">
+                    <div class="text-3xl md:text-4xl font-serif font-medium mb-2">10+ Yrs</div>
+                    <div class="text-xs uppercase tracking-widest text-gray-500">Experience</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section (Über mich) -->
+    <section class="py-24 md:py-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-start pl-0 md:pl-12">
+                <div class="md:w-1/3 reveal">
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-6">The Background</h2>
+                    <div class="text-3xl font-serif leading-tight">
+                        Academic precision <br />
+                        meets <span class="italic text-gray-400">market instinct.</span>
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12 border-l border-white/10 reveal delay-100">
+                    <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-8">
+                        With a Bachelor in Business Administration and Law and deep roots in the discipline of a German upbringing ("Raised in Germany"), I bring structure to the fast-paced world of Dubai Real Estate.
+                    </p>
+                    <p class="text-gray-400 font-light leading-relaxed mb-8">
+                        I serve as the bridge for European investors seeking high-yield opportunities in the UAE. As the face of Albanian Real Estate in Dubai, my mission is to advise established companies through the <span class="text-white font-medium">Efendi Group</span> and educate through <span class="text-white font-medium">Koka E Milionerit</span>.
+                    </p>
+                    <div class="flex items-center space-x-2 text-gray-500 text-sm tracking-widest uppercase">
+                        <!-- Map Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>UAE • Germany • Kosovo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ecosystem (Deine Firmen) -->
+    <section class="py-24 bg-[#0a0a0a]">
+        <div class="container mx-auto px-6">
+            <div class="flex items-end justify-between mb-20 pl-0 md:pl-12 reveal">
+                <div>
+                   <h2 class="text-4xl md:text-5xl font-serif mb-4">The Ecosystem</h2>
+                   <p class="text-gray-500 max-w-md">A diversified portfolio spanning real estate, education, and corporate advisory.</p>
+                </div>
+                <div class="hidden md:block h-[1px] flex-grow bg-white/10 ml-12 mb-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
+                
+                <!-- Firma 1 -->
+                <div class="bg-[#050505] p-12 relative group reveal hover:bg-[#080808] transition-colors duration-500">
+                    <div class="absolute top-12 right-12 opacity-20">
+                        <!-- Icon Building -->
+                        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg>
+                    </div>
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-widest mb-4">Dubai • Germany • Kosovo</div>
+                            <h3 class="text-2xl font-serif mb-6 text-gray-200">Sefa Real Estate Holding</h3>
+                            <p class="text-gray-400 font-light leading-relaxed text-sm">Strategic property acquisition and management portfolio focused on long-term asset stability across key international markets.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firma 2 -->
+                <div class="bg-[#050505] p-12 relative group reveal delay-100 hover:bg-[#080808] transition-colors duration-500">
+                    <div class="absolute top-12 right-12 opacity-20">
+                        <!-- Icon Globe -->
+                        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-widest mb-4">Dubai Advisory & Relocation</div>
+                            <h3 class="text-2xl font-serif mb-6 text-gray-200">Efendi Group</h3>
+                            <p class="text-gray-400 font-light leading-relaxed text-sm">Exclusive company advisory services providing seamless market entry and relocation solutions for high-net-worth individuals moving to Dubai.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firma 3 -->
+                <div class="bg-[#050505] p-12 relative group reveal hover:bg-[#080808] transition-colors duration-500">
+                    <div class="absolute top-12 right-12 opacity-20">
+                        <!-- Icon Users -->
+                        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-widest mb-4">The Academy</div>
+                            <h3 class="text-2xl font-serif mb-6 text-gray-200">Koka E Milionerit</h3>
+                            <p class="text-gray-400 font-light leading-relaxed text-sm">The first Albanian economy coaching ecosystem. Mentoring the next generation of entrepreneurs to build scalable wealth.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Firma 4 -->
+                <div class="bg-[#050505] p-12 relative group reveal delay-100 hover:bg-[#080808] transition-colors duration-500">
+                    <div class="absolute top-12 right-12 opacity-20">
+                        <!-- Icon Trending -->
+                        <svg class="w-6 h-6 text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                    </div>
+                    <div class="h-full flex flex-col justify-between">
+                        <div>
+                            <div class="text-xs text-gray-500 uppercase tracking-widest mb-4">Senior Investment Advisor</div>
+                            <h3 class="text-2xl font-serif mb-6 text-gray-200">Private Investment</h3>
+                            <p class="text-gray-400 font-light leading-relaxed text-sm">Acting as Senior Investment Advisor at one of the most exclusive real estate brokerages, closing 7-figure real estate transactions and leveraging deep market insights.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- TV & Presse (Unten) -->
+    <section class="py-20 border-t border-white/5 mb-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-12">Featured In</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale">
+              <div class="text-xl font-serif italic">ATV</div>
+              <div class="text-xl font-serif italic">TV DUKAGJINI</div>
+              <div class="text-xl font-serif italic">KLAN KOSOVA</div>
+            </div>
+            
+            <!-- Ganz unten kleine Kontaktmöglichkeit, nicht klickbar, nur damit man erreichbar ist -->
+            <div class="mt-24 text-xs text-gray-800 tracking-widest uppercase">
+                contact@drensefa.com
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
