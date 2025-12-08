@@ -116,7 +116,7 @@
     <!-- ========================================== -->
     <div id="content-en" class="content-section">
         
-        <!-- Header (Aligned with Container) -->
+        <!-- Header -->
         <div class="absolute top-0 left-0 w-full z-50 py-6">
             <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
                 <div class="flex flex-col">
@@ -130,13 +130,12 @@
             </div>
         </div>
 
-        <!-- Hero (Increased Top Padding to prevent overlap) -->
-        <section class="relative min-h-screen flex flex-col md:flex-row pt-40 pb-20 md:pt-48 overflow-hidden">
+        <!-- Hero -->
+        <section class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-40 pb-20 md:pt-48 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
             <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-900/10 rounded-full blur-[120px] pointer-events-none opacity-30"></div>
 
             <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-8 items-center h-full">
-                <!-- Text Column (Order adjusted, Padding removed) -->
                 <div class="md:col-span-7 flex flex-col justify-center order-2 md:order-1 z-10 mt-10 md:mt-0">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-6 reveal delay-300">
                         Bridging Markets. <br />
@@ -178,7 +177,7 @@
         </div>
 
         <!-- About -->
-        <section class="py-16 md:py-24 relative">
+        <section class="py-16 relative">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row gap-10 items-start">
                     <div class="md:w-1/3 reveal">
@@ -202,16 +201,17 @@
         </section>
 
         <!-- Ecosystem -->
-        <section class="py-10 bg-[#0a0a0a]">
+        <section class="py-8 bg-[#0a0a0a]">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col items-center text-center mb-8 reveal">
-                    <div class="w-24 h-[1px] bg-white/20 mb-4"></div>
-                    <h2 class="text-4xl md:text-5xl font-serif mb-2 tracking-wide text-gray-100" style="text-shadow: 0 0 20px rgba(255,255,255,0.1);">The Ecosystem</h2>
-                    <div class="w-24 h-[1px] bg-white/20 mt-4"></div>
+                <!-- Titel zentriert & hervorgehoben (NEU) -->
+                <div class="flex items-center justify-center mb-10 reveal pt-8">
+                    <div class="h-[1px] bg-white/20 w-12 md:w-24 mr-6"></div>
+                    <h2 class="text-3xl md:text-4xl font-serif tracking-[0.2em] text-white uppercase text-center">The Ecosystem</h2>
+                    <div class="h-[1px] bg-white/20 w-12 md:w-24 ml-6"></div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
-                    <!-- 1. HIGHLIGHT -->
+                    <!-- 1. HIGHLIGHT: Real Estate Advisory -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500 md:col-span-2 border-b border-white/10">
                         <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 text-white"></i></div>
                         <div class="h-full flex flex-col justify-between">
@@ -280,10 +280,12 @@
                   <div class="text-xl font-serif italic">KLAN KOSOVA</div>
                 </div>
                 
+                <!-- FINAL FOOTER -->
                 <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
                     <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
                     <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
                     
+                    <!-- Footer Socials -->
                     <div class="flex justify-center space-x-6 pt-4">
                         <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
                         <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
@@ -388,11 +390,11 @@
         <!-- Ecosystem -->
         <section class="py-10 bg-[#0a0a0a]">
             <div class="container mx-auto px-6">
-                <!-- Titel zentriert & hervorgehoben -->
-                <div class="flex flex-col items-center text-center mb-8 reveal">
-                    <div class="w-24 h-[1px] bg-white/20 mb-4"></div>
-                    <h2 class="text-4xl md:text-5xl font-serif mb-2 tracking-wide text-gray-100" style="text-shadow: 0 0 20px rgba(255,255,255,0.1);">Das Ökosystem</h2>
-                    <div class="w-24 h-[1px] bg-white/20 mt-4"></div>
+                <!-- Titel zentriert & hervorgehoben (NEU) -->
+                <div class="flex items-center justify-center mb-10 reveal pt-8">
+                    <div class="h-[1px] bg-white/20 w-12 md:w-24 mr-6"></div>
+                    <h2 class="text-3xl md:text-4xl font-serif tracking-[0.2em] text-white uppercase text-center">Das Ökosystem</h2>
+                    <div class="h-[1px] bg-white/20 w-12 md:w-24 ml-6"></div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
@@ -462,7 +464,7 @@
         <!-- Footer -->
         <section class="py-12 border-t border-white/5 mb-8">
             <div class="container mx-auto px-6 flex flex-col items-center">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Featured on Top TV Channels</p>
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Bekannt aus führenden TV-Sendern</p>
                 <div class="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-40 grayscale mb-16">
                   <div class="text-xl font-serif italic">ATV</div>
                   <div class="text-xl font-serif italic">TV DUKAGJINI</div>
@@ -579,11 +581,11 @@
         <!-- Ecosystem -->
         <section class="py-10 bg-[#0a0a0a]">
             <div class="container mx-auto px-6">
-                <!-- Titel zentriert & hervorgehoben -->
-                <div class="flex flex-col items-center text-center mb-8 reveal">
-                    <div class="w-24 h-[1px] bg-white/20 mb-4"></div>
-                    <h2 class="text-4xl md:text-5xl font-serif mb-2 tracking-wide text-gray-100" style="text-shadow: 0 0 20px rgba(255,255,255,0.1);">Ekosistemi</h2>
-                    <div class="w-24 h-[1px] bg-white/20 mt-4"></div>
+                <!-- Titel zentriert & hervorgehoben (NEU) -->
+                <div class="flex items-center justify-center mb-10 reveal pt-8">
+                    <div class="h-[1px] bg-white/20 w-12 md:w-24 mr-6"></div>
+                    <h2 class="text-3xl md:text-4xl font-serif tracking-[0.2em] text-white uppercase text-center">Ekosistemi</h2>
+                    <div class="h-[1px] bg-white/20 w-12 md:w-24 ml-6"></div>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
