@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node add-project.js:*)",
+      "Bash(npx --cache .npm-cache serve -p 3000)",
+      "Bash(curl:*)",
+      "Bash(open http://localhost:3000/projects.html)",
+      "Bash(npm install:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)",
+      "Bash(git init:*)"
+    ]
+  }
+}

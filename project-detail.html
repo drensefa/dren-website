@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Project Details | Sefa Capital</title>
+    <meta name="description" content="Luxury real estate project details. Investment opportunity curated by Dren Sefa.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text y=%22.9em%22 x=%2250%22 font-size=%2290%22 font-family=%22serif%22 text-anchor=%22middle%22 fill=%22white%22>D</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            cursor: default;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        ::selection { background: white; color: black; }
+
+        /* Custom Social Icons Hover */
+        .social-icon:hover { transform: translateY(-2px); color: white; }
+        .social-icon { transition: all 0.3s ease; color: #9ca3af; }
+
+        /* Gallery Image Hover */
+        .gallery-img {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-img:hover {
+            opacity: 0.8;
+        }
+
+        /* Feature Icon */
+        .feature-icon {
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover .feature-icon {
+            transform: scale(1.1);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+            <div class="flex flex-col">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                    <span id="header-subtitle" class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate Portfolio</span>
+                </div>
+                <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
+            </div>
+            <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                <a id="projects-link" href="projects" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="project-content" class="pt-32 pb-16">
+        <!-- Content will be dynamically loaded -->
+    </div>
+
+    <!-- Footer -->
+    <section class="py-12 border-t border-white/5 mb-8">
+        <div class="container mx-auto px-6 flex flex-col items-center">
+            <p id="footer-text" class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Trusted by International Investors</p>
+            <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                <div class="flex justify-center space-x-6 pt-6">
+                    <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                    <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                    <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGIC -->
+    <script>
+        // Icons initialisieren
+        lucide.createIcons();
+
+        // Load project data from JSON file
+        async function loadProjectById(id) {
+            try {
+                const response = await fetch('projects.json');
+                if (!response.ok) throw new Error('Could not load projects.json');
+                const projects = await response.json();
+                return projects.find(p => p.id === parseInt(id));
+            } catch (error) {
+                console.error('Failed to load project:', error);
+                return null;
+            }
+        }
+
+        // Helper: Extract bedroom number from string
+        function extractBedroomNumber(bedroomsString) {
+            if (typeof bedroomsString === 'number') return bedroomsString;
+            if (!bedroomsString || bedroomsString === 'N/A') return 1;
+            const match = bedroomsString.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 1;
+        }
+
+        // Helper: Extract bathroom number from string
+        function extractBathroomNumber(bathroomsString) {
+            if (typeof bathroomsString === 'number') return bathroomsString;
+            if (!bathroomsString || bathroomsString === 'N/A') return 'N/A';
+            const match = bathroomsString.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 'N/A';
+        }
+
+        // Transform scraped data to detail page format
+        function transformToDetailFormat(scrapedProject, lang = 'en') {
+            const labels = {
+                en: { bedroom: 'Bedrooms', bathroom: 'Bathrooms', size: 'Built Area' },
+                de: { bedroom: 'Schlafzimmer', bathroom: 'Badezimmer', size: 'Wohnfläche' },
+                sq: { bedroom: 'Dhoma Gjumi', bathroom: 'Banjo', size: 'Sipërfaqe' }
+            };
+
+            // Nutze Übersetzungen, falls vorhanden
+            let title = scrapedProject.title || 'Untitled Property';
+            let location = scrapedProject.location || 'Dubai';
+            let description = scrapedProject.description || 'Luxury property in Dubai.';
+
+            if (lang === 'de' && scrapedProject.title_de) {
+                title = scrapedProject.title_de;
+                location = scrapedProject.location_de || location;
+                description = scrapedProject.description_de || description;
+            } else if (lang === 'sq' && scrapedProject.title_sq) {
+                title = scrapedProject.title_sq;
+                location = scrapedProject.location_sq || location;
+                description = scrapedProject.description_sq || description;
+            }
+
+            const bedrooms = extractBedroomNumber(scrapedProject.bedrooms);
+            const bathrooms = extractBathroomNumber(scrapedProject.bathrooms);
+
+            // Generate default features if not provided
+            const defaultFeatures = [
+                "Premium Finishes",
+                "Modern Design",
+                "Smart Home System",
+                "Covered Parking",
+                "24/7 Security",
+                "Fitted Kitchen",
+                "Built-in Wardrobes",
+                "Balcony"
+            ];
+
+            // Generate default amenities
+            const defaultAmenities = [
+                "24/7 Security",
+                "Concierge Service",
+                "Fitness Center",
+                "Swimming Pool",
+                "Covered Parking",
+                "Maintenance Service"
+            ];
+
+            // Use the single image 4 times or add placeholders
+            const images = scrapedProject.image
+                ? [
+                    scrapedProject.image,
+                    scrapedProject.image,
+                    scrapedProject.image,
+                    scrapedProject.image
+                  ]
+                : [
+                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
+                    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80"
+                  ];
+
+            return {
+                id: scrapedProject.id,
+                title: title,
+                location: location,
+                price: scrapedProject.price || 'Price on Request',
+                priceFrom: `Starting from ${scrapedProject.price || 'Price on Request'}`,
+                bedrooms: bedrooms,
+                bathrooms: bathrooms,
+                size: scrapedProject.size || 'N/A',
+                status: scrapedProject.status || 'For Sale',
+                developer: scrapedProject.developer || 'Unknown Developer',
+                completionDate: 'To be announced',
+                description: description,
+                images: images,
+                features: defaultFeatures,
+                amenities: defaultAmenities,
+                paymentPlan: 'Flexible payment plans available. Contact us for details.',
+                whatsappText: `I'm interested in ${title}`,
+                bedroomLabel: labels[lang].bedroom,
+                bathroomLabel: labels[lang].bathroom,
+                sizeLabel: labels[lang].size
+            };
+        }
+
+        // Translations
+        const translations = {
+            en: {
+                backToProjects: "Back to Projects",
+                overview: "Overview",
+                features: "Features",
+                amenities: "Amenities",
+                paymentPlan: "Payment Plan",
+                developer: "Developer",
+                status: "Status",
+                completion: "Completion",
+                whatsappInquiry: "WhatsApp Inquiry",
+                schedule: "Schedule Viewing",
+                propertyDetails: "Property Details",
+                projectNotFound: "Project not found",
+                returnToProjects: "Return to Projects"
+            },
+            de: {
+                backToProjects: "Zurück zu Projekten",
+                overview: "Übersicht",
+                features: "Ausstattung",
+                amenities: "Annehmlichkeiten",
+                paymentPlan: "Zahlungsplan",
+                developer: "Bauträger",
+                status: "Status",
+                completion: "Fertigstellung",
+                whatsappInquiry: "WhatsApp Anfrage",
+                schedule: "Besichtigung Vereinbaren",
+                propertyDetails: "Immobilien Details",
+                projectNotFound: "Projekt nicht gefunden",
+                returnToProjects: "Zurück zu Projekten"
+            },
+            sq: {
+                backToProjects: "Kthehu te Projektet",
+                overview: "Përmbledhje",
+                features: "Karakteristikat",
+                amenities: "Amenitete",
+                paymentPlan: "Plani i Pagesës",
+                developer: "Zhvilluesi",
+                status: "Statusi",
+                completion: "Përfundimi",
+                whatsappInquiry: "Kërkesë WhatsApp",
+                schedule: "Planifiko Vizitë",
+                propertyDetails: "Detajet e Pronës",
+                projectNotFound: "Projekti nuk u gjet",
+                returnToProjects: "Kthehu te Projektet"
+            }
+        };
+
+        // Get URL parameters
+        function getUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const idParam = params.get('id');
+            const parsedId = parseInt(idParam);
+            return {
+                id: parsedId || 1,
+                lang: params.get('lang') || 'en'
+            };
+        }
+
+        // Render project details
+        async function renderProjectDetail() {
+            const { id, lang } = getUrlParams();
+            const t = translations[lang];
+
+            // Load project from JSON
+            const scrapedProject = await loadProjectById(id);
+            if (!scrapedProject) {
+                document.getElementById('project-content').innerHTML = `
+                    <div class="container mx-auto px-6 text-center py-32">
+                        <h1 class="text-4xl font-serif mb-4 text-gray-400">${t.projectNotFound}</h1>
+                        <a href="projects" class="text-sm uppercase tracking-wider text-gray-500 hover:text-white transition-colors">${t.returnToProjects}</a>
+                    </div>
+                `;
+                return;
+            }
+
+            // Transform to detail format
+            const project = transformToDetailFormat(scrapedProject, lang);
+
+            // Update header
+            document.getElementById('header-subtitle').textContent = lang === 'en' ? 'Luxury Real Estate Portfolio' : lang === 'de' ? 'Luxus Immobilien Portfolio' : 'Portofoli Luksoz i Pasurive';
+            document.getElementById('projects-link').textContent = lang === 'en' ? 'Projects' : lang === 'de' ? 'Projekte' : 'Projekte';
+            document.getElementById('footer-text').textContent = lang === 'en' ? 'Trusted by International Investors' : lang === 'de' ? 'Vertraut von internationalen Investoren' : 'I Besueshëm nga Investitorët Ndërkombëtarë';
+
+            const content = `
+                <div class="container mx-auto px-6">
+                    <!-- Back Button -->
+                    <a href="projects" class="inline-flex items-center space-x-2 text-sm uppercase tracking-wider text-gray-500 hover:text-white transition-colors mb-8">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span>${t.backToProjects}</span>
+                    </a>
+
+                    <!-- Title Section -->
+                    <div class="mb-12">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-xs uppercase tracking-wider text-gray-400">${project.status}</span>
+                            <span class="text-xs uppercase tracking-wider text-gray-500">${project.location}</span>
+                        </div>
+                        <h1 class="text-5xl md:text-7xl font-serif mb-4">${project.title}</h1>
+                        <div class="flex items-center space-x-8">
+                            <div class="text-3xl font-serif text-gray-300">${project.priceFrom}</div>
+                        </div>
+                    </div>
+
+                    <!-- Main Image -->
+                    <div class="relative h-[60vh] mb-8 overflow-hidden">
+                        <img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover">
+                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#050505] to-transparent"></div>
+                    </div>
+
+                    <!-- Image Gallery -->
+                    <div class="grid grid-cols-3 gap-4 mb-16">
+                        ${project.images.slice(1).map(img => `
+                            <div class="h-64 overflow-hidden">
+                                <img src="${img}" alt="${project.title}" class="w-full h-full object-cover gallery-img">
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <!-- Content Grid -->
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+                        <!-- Left Column - Main Info -->
+                        <div class="lg:col-span-2 space-y-12">
+                            <!-- Overview -->
+                            <div>
+                                <h2 class="text-2xl font-serif mb-6 flex items-center">
+                                    <div class="w-12 h-[1px] bg-white/20 mr-4"></div>
+                                    ${t.overview}
+                                </h2>
+                                <p class="text-gray-400 leading-relaxed text-lg">${project.description}</p>
+                            </div>
+
+                            <!-- Features -->
+                            <div>
+                                <h2 class="text-2xl font-serif mb-6 flex items-center">
+                                    <div class="w-12 h-[1px] bg-white/20 mr-4"></div>
+                                    ${t.features}
+                                </h2>
+                                <div class="grid grid-cols-2 gap-4">
+                                    ${project.features.map(feature => `
+                                        <div class="feature-item flex items-center space-x-3 p-4 bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
+                                            <i data-lucide="check-circle" class="w-5 h-5 text-gray-500 feature-icon"></i>
+                                            <span class="text-sm text-gray-400">${feature}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+
+                            <!-- Amenities -->
+                            <div>
+                                <h2 class="text-2xl font-serif mb-6 flex items-center">
+                                    <div class="w-12 h-[1px] bg-white/20 mr-4"></div>
+                                    ${t.amenities}
+                                </h2>
+                                <div class="grid grid-cols-2 gap-4">
+                                    ${project.amenities.map(amenity => `
+                                        <div class="flex items-center space-x-3 p-4 bg-white/[0.02] border border-white/5">
+                                            <i data-lucide="sparkles" class="w-5 h-5 text-gray-500"></i>
+                                            <span class="text-sm text-gray-400">${amenity}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column - Specs & CTA -->
+                        <div class="space-y-8">
+                            <!-- Property Details Card -->
+                            <div class="bg-white/[0.02] border border-white/10 p-8 sticky top-32">
+                                <h3 class="text-xl font-serif mb-6">${t.propertyDetails}</h3>
+
+                                <div class="space-y-6 mb-8">
+                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${project.bedroomLabel}</span>
+                                        <span class="text-lg font-serif">${project.bedrooms}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${project.bathroomLabel}</span>
+                                        <span class="text-lg font-serif">${project.bathrooms}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${project.sizeLabel}</span>
+                                        <span class="text-lg font-serif">${project.size}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${t.developer}</span>
+                                        <span class="text-lg font-serif">${project.developer}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
+                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${t.status}</span>
+                                        <span class="text-sm text-gray-300">${project.status}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${t.completion}</span>
+                                        <span class="text-sm text-gray-300">${project.completionDate}</span>
+                                    </div>
+                                </div>
+
+                                <!-- Payment Plan -->
+                                <div class="mb-8 p-4 bg-white/[0.02] border border-white/5">
+                                    <div class="text-xs uppercase tracking-wider text-gray-500 mb-2">${t.paymentPlan}</div>
+                                    <div class="text-sm text-gray-400">${project.paymentPlan}</div>
+                                </div>
+
+                                <!-- CTA Buttons -->
+                                <div class="space-y-3">
+                                    <a href="https://wa.me/971505551234?text=${encodeURIComponent(project.whatsappText)}" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-white/10 hover:bg-white/20 border border-white/20 py-4 transition-all">
+                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                                        <span class="text-sm uppercase tracking-widest">${t.whatsappInquiry}</span>
+                                    </a>
+                                    <a href="https://wa.me/971505551234?text=${encodeURIComponent('I would like to schedule a viewing for ' + project.title)}" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 py-4 transition-all">
+                                        <i data-lucide="calendar" class="w-5 h-5 text-gray-400"></i>
+                                        <span class="text-sm uppercase tracking-widest text-gray-400">${t.schedule}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('project-content').innerHTML = content;
+            lucide.createIcons();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', async function() {
+            await renderProjectDetail();
+        });
+    </script>
+</body>
+</html>

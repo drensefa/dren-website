@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Luxury Projects | Sefa Capital</title>
+    <meta name="description" content="Exclusive luxury real estate projects in Dubai. Investment opportunities curated by Dren Sefa.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text y=%22.9em%22 x=%2250%22 font-size=%2290%22 font-family=%22serif%22 text-anchor=%22middle%22 fill=%22white%22>D</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            background-color: #050505;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            cursor: default;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+
+        /* Splash Screen */
+        #language-selector {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #050505;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease-out, visibility 0.8s;
+        }
+
+        .lang-btn {
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #6b7280;
+            padding: 10px 20px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .lang-btn:hover {
+            color: white;
+            border-color: white;
+        }
+
+        /* Content */
+        .content-section {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+        .content-section.active {
+            display: block;
+            opacity: 1;
+        }
+
+        ::selection { background: white; color: black; }
+
+        /* Custom Social Icons Hover */
+        .social-icon:hover { transform: translateY(-2px); color: white; }
+        .social-icon { transition: all 0.3s ease; color: #9ca3af; }
+
+        /* Project Card Hover */
+        .project-card {
+            transition: all 0.5s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+        .project-card img {
+            transition: all 0.7s ease;
+        }
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Custom Select Dropdown */
+        select {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #9ca3af;
+            transition: all 0.3s ease;
+        }
+        select:hover, select:focus {
+            border-color: rgba(255, 255, 255, 0.3);
+            background-color: rgba(255, 255, 255, 0.08);
+            outline: none;
+        }
+        select option {
+            background-color: #050505;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SPLASH SCREEN -->
+    <div id="language-selector">
+        <div class="text-4xl font-serif font-bold tracking-[0.2em] uppercase mb-12 animate-pulse text-gray-400">SEFA.</div>
+        <div class="flex items-center space-x-4 sm:space-x-8">
+            <button class="lang-btn" onclick="showLanguage('en')">English</button>
+            <div class="h-4 w-[1px] bg-gray-800"></div>
+            <button class="lang-btn" onclick="showLanguage('de')">Deutsch</button>
+            <div class="h-4 w-[1px] bg-gray-800"></div>
+            <button class="lang-btn" onclick="showLanguage('sq')">Shqip</button>
+        </div>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ENGLISH VERSION -->
+    <!-- ========================================== -->
+    <div id="content-en" class="content-section">
+        <!-- Header -->
+        <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
+            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate Portfolio</span>
+                    </div>
+                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
+                </div>
+                <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-white transition-colors">Projects</a>
+                    <div class="h-3 w-[1px] bg-gray-800"></div>
+                    <button onclick="resetSplash()" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Language</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section with Title -->
+        <section class="relative pt-32 pb-12 overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
+            <div class="container mx-auto px-6 text-center">
+                <div class="w-24 h-[1px] bg-white/20 mb-6 mx-auto"></div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-4">
+                    Exclusive <span class="italic text-gray-500">Projects</span>
+                </h1>
+                <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+                    Handpicked luxury real estate opportunities in Dubai's most prestigious locations
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="py-8 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <select id="filter-region-en" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">All Regions</option>
+                        <option value="marina">Dubai Marina</option>
+                        <option value="downtown">Downtown Dubai</option>
+                        <option value="palm">Palm Jumeirah</option>
+                        <option value="business">Business Bay</option>
+                        <option value="creek">Dubai Creek</option>
+                    </select>
+
+                    <select id="filter-price-en" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">All Prices</option>
+                        <option value="0">Any Price</option>
+                        <option value="3">3M+ AED</option>
+                        <option value="5">5M+ AED</option>
+                        <option value="10">10M+ AED</option>
+                        <option value="20">20M+ AED</option>
+                        <option value="30">30M+ AED</option>
+                    </select>
+
+                    <select id="filter-bedrooms-en" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">All Bedrooms</option>
+                        <option value="1">1 Bedroom</option>
+                        <option value="2">2 Bedrooms</option>
+                        <option value="3">3 Bedrooms</option>
+                        <option value="4">4 Bedrooms</option>
+                        <option value="5">5+ Bedrooms</option>
+                    </select>
+
+                    <select id="filter-status-en" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">All Status</option>
+                        <option value="Off-Plan">Off-Plan</option>
+                        <option value="Under Construction">Under Construction</option>
+                        <option value="Ready">Ready</option>
+                    </select>
+
+                    <select id="filter-developer-en" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">All Developers</option>
+                        <option value="Emaar">EMAAR</option>
+                        <option value="Damac">DAMAC</option>
+                        <option value="Meraas">MERAAS</option>
+                        <option value="Nakheel">NAKHEEL</option>
+                    </select>
+                </div>
+                <div id="filter-count-en" class="text-center mt-4 text-xs uppercase tracking-widest text-gray-500"></div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="py-16 relative">
+            <div class="container mx-auto px-6">
+                <div id="projects-grid-en" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 border-t border-white/5 mb-8">
+            <div class="container mx-auto px-6 flex flex-col items-center">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Trusted by International Investors</p>
+                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                    <div class="flex justify-center space-x-6 pt-6">
+                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- GERMAN VERSION (DEUTSCH) -->
+    <!-- ========================================== -->
+    <div id="content-de" class="content-section">
+        <!-- Header -->
+        <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
+            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxus Immobilien Portfolio</span>
+                    </div>
+                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
+                </div>
+                <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-white transition-colors">Projekte</a>
+                    <div class="h-3 w-[1px] bg-gray-800"></div>
+                    <button onclick="resetSplash()" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Sprache</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section with Title -->
+        <section class="relative pt-32 pb-12 overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
+            <div class="container mx-auto px-6 text-center">
+                <div class="w-24 h-[1px] bg-white/20 mb-6 mx-auto"></div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-4">
+                    Exklusive <span class="italic text-gray-500">Projekte</span>
+                </h1>
+                <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+                    Handverlesene Luxus-Immobilien in Dubais prestigeträchtigsten Lagen
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="py-8 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <select id="filter-region-de" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Alle Regionen</option>
+                        <option value="marina">Dubai Marina</option>
+                        <option value="downtown">Downtown Dubai</option>
+                        <option value="palm">Palm Jumeirah</option>
+                        <option value="business">Business Bay</option>
+                        <option value="creek">Dubai Creek</option>
+                    </select>
+
+                    <select id="filter-price-de" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Alle Preise</option>
+                        <option value="0">Beliebiger Preis</option>
+                        <option value="3">3M+ AED</option>
+                        <option value="5">5M+ AED</option>
+                        <option value="10">10M+ AED</option>
+                        <option value="20">20M+ AED</option>
+                        <option value="30">30M+ AED</option>
+                    </select>
+
+                    <select id="filter-bedrooms-de" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Alle Zimmer</option>
+                        <option value="1">1 Schlafzimmer</option>
+                        <option value="2">2 Schlafzimmer</option>
+                        <option value="3">3 Schlafzimmer</option>
+                        <option value="4">4 Schlafzimmer</option>
+                        <option value="5">5+ Schlafzimmer</option>
+                    </select>
+
+                    <select id="filter-status-de" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Alle Status</option>
+                        <option value="Off-Plan">Off-Plan</option>
+                        <option value="Under Construction">Im Bau</option>
+                        <option value="Ready">Fertiggestellt</option>
+                    </select>
+
+                    <select id="filter-developer-de" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Alle Bauträger</option>
+                        <option value="Emaar">EMAAR</option>
+                        <option value="Damac">DAMAC</option>
+                        <option value="Meraas">MERAAS</option>
+                        <option value="Nakheel">NAKHEEL</option>
+                    </select>
+                </div>
+                <div id="filter-count-de" class="text-center mt-4 text-xs uppercase tracking-widest text-gray-500"></div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="py-16 relative">
+            <div class="container mx-auto px-6">
+                <div id="projects-grid-de" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 border-t border-white/5 mb-8">
+            <div class="container mx-auto px-6 flex flex-col items-center">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Vertraut von internationalen Investoren</p>
+                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                    <div class="flex justify-center space-x-6 pt-6">
+                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ALBANIAN VERSION (SHQIP) -->
+    <!-- ========================================== -->
+    <div id="content-sq" class="content-section">
+        <!-- Header -->
+        <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
+            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Portofoli Luksoz i Pasurive</span>
+                    </div>
+                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
+                </div>
+                <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-white transition-colors">Projekte</a>
+                    <div class="h-3 w-[1px] bg-gray-800"></div>
+                    <button onclick="resetSplash()" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Language</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Section with Title -->
+        <section class="relative pt-32 pb-12 overflow-hidden">
+            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
+            <div class="container mx-auto px-6 text-center">
+                <div class="w-24 h-[1px] bg-white/20 mb-6 mx-auto"></div>
+                <h1 class="text-5xl md:text-7xl font-serif mb-4">
+                    Projekte <span class="italic text-gray-500">Ekskluzive</span>
+                </h1>
+                <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+                    Mundësi të përzgjedhura të pasurive luksoze në vendet më prestigjioze të Dubait
+                </p>
+            </div>
+        </section>
+
+        <!-- Filter Section -->
+        <section class="py-8 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <select id="filter-region-sq" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Të gjitha Rajonet</option>
+                        <option value="marina">Dubai Marina</option>
+                        <option value="downtown">Downtown Dubai</option>
+                        <option value="palm">Palm Jumeirah</option>
+                        <option value="business">Business Bay</option>
+                        <option value="creek">Dubai Creek</option>
+                    </select>
+
+                    <select id="filter-price-sq" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Të gjitha Çmimet</option>
+                        <option value="0">Çdo Çmim</option>
+                        <option value="3">3M+ AED</option>
+                        <option value="5">5M+ AED</option>
+                        <option value="10">10M+ AED</option>
+                        <option value="20">20M+ AED</option>
+                        <option value="30">30M+ AED</option>
+                    </select>
+
+                    <select id="filter-bedrooms-sq" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Të gjitha Dhomat</option>
+                        <option value="1">1 Dhomë Gjumi</option>
+                        <option value="2">2 Dhoma Gjumi</option>
+                        <option value="3">3 Dhoma Gjumi</option>
+                        <option value="4">4 Dhoma Gjumi</option>
+                        <option value="5">5+ Dhoma Gjumi</option>
+                    </select>
+
+                    <select id="filter-status-sq" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Të gjitha Statuset</option>
+                        <option value="Off-Plan">Off-Plan</option>
+                        <option value="Under Construction">Në Ndërtim</option>
+                        <option value="Ready">E Gatshme</option>
+                    </select>
+
+                    <select id="filter-developer-sq" class="px-4 py-3 rounded text-xs uppercase tracking-wider">
+                        <option value="">Të gjithë Zhvilluesit</option>
+                        <option value="Emaar">EMAAR</option>
+                        <option value="Damac">DAMAC</option>
+                        <option value="Meraas">MERAAS</option>
+                        <option value="Nakheel">NAKHEEL</option>
+                    </select>
+                </div>
+                <div id="filter-count-sq" class="text-center mt-4 text-xs uppercase tracking-widest text-gray-500"></div>
+            </div>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="py-16 relative">
+            <div class="container mx-auto px-6">
+                <div id="projects-grid-sq" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 border-t border-white/5 mb-8">
+            <div class="container mx-auto px-6 flex flex-col items-center">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">I Besueshëm nga Investitorët Ndërkombëtarë</p>
+                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                    <div class="flex justify-center space-x-6 pt-6">
+                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- LOGIC -->
+    <script>
+        // Icons initialisieren
+        lucide.createIcons();
+
+        // Real data will be loaded from projects.json
+        // (mockProjects removed - now using scraped data)
+
+        // Current language and filters
+        let currentLang = 'en';
+        let currentFilters = {
+            region: '',
+            price: '',
+            bedrooms: '',
+            status: '',
+            developer: ''
+        };
+
+        // Global projects data storage
+        let loadedProjectsData = null;
+
+        // Translations
+        const translations = {
+            en: {
+                showingAll: "Showing all",
+                found: "Found",
+                properties: "properties",
+                property: "property",
+                noPropertiesFound: "No properties found",
+                tryAdjustingFilters: "Try adjusting your filters",
+                whatsappInquiry: "WhatsApp Inquiry",
+                viewDetails: "View Details"
+            },
+            de: {
+                showingAll: "Zeige alle",
+                found: "Gefunden",
+                properties: "Immobilien",
+                property: "Immobilie",
+                noPropertiesFound: "Keine Immobilien gefunden",
+                tryAdjustingFilters: "Passen Sie Ihre Filter an",
+                whatsappInquiry: "WhatsApp Anfrage",
+                viewDetails: "Details Ansehen"
+            },
+            sq: {
+                showingAll: "Duke shfaqur të gjitha",
+                found: "U gjetën",
+                properties: "prona",
+                property: "pronë",
+                noPropertiesFound: "Nuk u gjetën prona",
+                tryAdjustingFilters: "Përshtasni filtrat tuaj",
+                whatsappInquiry: "Kërkesë WhatsApp",
+                viewDetails: "Shiko Detajet"
+            }
+        };
+
+        // Load projects from JSON file
+        async function loadProjectsFromJSON() {
+            try {
+                const response = await fetch('projects.json');
+                if (!response.ok) throw new Error('Could not load projects.json');
+                return await response.json();
+            } catch (error) {
+                console.error('Failed to load projects:', error);
+                return [];
+            }
+        }
+
+        // Helper: Extract bedroom number from string like "1 Bed" → 1
+        function extractBedroomNumber(bedroomsString) {
+            if (typeof bedroomsString === 'number') {
+                return bedroomsString;
+            }
+            if (!bedroomsString || bedroomsString === 'N/A') {
+                return 1; // Default
+            }
+            const match = bedroomsString.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 1;
+        }
+
+        // Helper: Map location to region code
+        function mapLocationToRegion(location) {
+            if (!location) return 'downtown'; // Default
+
+            const locationLower = location.toLowerCase();
+
+            // Priority mapping based on keywords
+            if (locationLower.includes('palm jumeirah') || locationLower.includes('palm')) {
+                return 'palm';
+            }
+            if (locationLower.includes('marina')) {
+                return 'marina';
+            }
+            if (locationLower.includes('downtown')) {
+                return 'downtown';
+            }
+            if (locationLower.includes('business bay') || locationLower.includes('business')) {
+                return 'business';
+            }
+            if (locationLower.includes('creek')) {
+                return 'creek';
+            }
+
+            // Default fallback
+            return 'downtown';
+        }
+
+        // Helper: Map status to expected values
+        function mapStatus(scrapedStatus) {
+            if (!scrapedStatus) return 'Ready';
+
+            const statusLower = scrapedStatus.toLowerCase();
+
+            if (statusLower.includes('off-plan') || statusLower.includes('off plan')) {
+                return 'Off-Plan';
+            }
+            if (statusLower.includes('construction') || statusLower.includes('building')) {
+                return 'Under Construction';
+            }
+            if (statusLower.includes('ready') || statusLower.includes('sale')) {
+                return 'Ready';
+            }
+
+            return 'Ready'; // Default
+        }
+
+        // Helper: Normalize developer name
+        function normalizeDeveloper(scrapedDeveloper) {
+            if (!scrapedDeveloper) return 'Unknown Developer';
+
+            const devLower = scrapedDeveloper.toLowerCase();
+
+            // Map known developers
+            if (devLower.includes('emaar')) return 'Emaar';
+            if (devLower.includes('damac')) return 'Damac';
+            if (devLower.includes('meraas')) return 'Meraas';
+            if (devLower.includes('nakheel')) return 'Nakheel';
+
+            // Keep original for scraped sources
+            return scrapedDeveloper;
+        }
+
+        // Main: Transform scraped project to match mockProjects structure
+        function transformScrapedProject(scrapedProject, lang = 'en') {
+            const bedroomLabels = { en: 'BR', de: 'SZ', sq: 'DH' };
+
+            // Nutze Übersetzungen, falls vorhanden
+            let title = scrapedProject.title || 'Untitled Property';
+            let location = scrapedProject.location || 'Dubai';
+            let description = scrapedProject.description || 'Luxury property in Dubai.';
+
+            if (lang === 'de' && scrapedProject.title_de) {
+                title = scrapedProject.title_de;
+                location = scrapedProject.location_de || location;
+                description = scrapedProject.description_de || description;
+            } else if (lang === 'sq' && scrapedProject.title_sq) {
+                title = scrapedProject.title_sq;
+                location = scrapedProject.location_sq || location;
+                description = scrapedProject.description_sq || description;
+            }
+
+            return {
+                id: scrapedProject.id,
+                title: title,
+                location: location,
+                price: scrapedProject.price || 'Price on Request',
+                bedrooms: extractBedroomNumber(scrapedProject.bedrooms),
+                status: mapStatus(scrapedProject.status),
+                description: description,
+                image: scrapedProject.image || 'https://images.unsplash.com/photo-5125129177774080-9991f1c4c750?w=800&q=80',
+                developer: normalizeDeveloper(scrapedProject.developer),
+                region: mapLocationToRegion(scrapedProject.location),
+                whatsappText: `I'm interested in ${title}`,
+                bedroomLabel: bedroomLabels[lang] || 'BR'
+            };
+        }
+
+        // Main: Create multilingual project data from scraped data
+        function createMultilingualProjects(scrapedProjects) {
+            return {
+                en: scrapedProjects.map(p => transformScrapedProject(p, 'en')),
+                de: scrapedProjects.map(p => transformScrapedProject(p, 'de')),
+                sq: scrapedProjects.map(p => transformScrapedProject(p, 'sq'))
+            };
+        }
+
+        // Function to extract numeric price from string
+        function extractPrice(priceString) {
+            const match = priceString.match(/(\d+\.?\d*)/);
+            return match ? parseFloat(match[1]) : 0;
+        }
+
+        // Function to filter projects
+        function filterProjects(projects, lang) {
+            let filtered = projects;
+
+            if (currentFilters.region) {
+                filtered = filtered.filter(p => p.region === currentFilters.region);
+            }
+
+            if (currentFilters.price) {
+                const minPrice = parseFloat(currentFilters.price);
+                filtered = filtered.filter(p => extractPrice(p.price) >= minPrice);
+            }
+
+            if (currentFilters.bedrooms) {
+                const minBedrooms = parseInt(currentFilters.bedrooms);
+                filtered = filtered.filter(p => p.bedrooms >= minBedrooms);
+            }
+
+            if (currentFilters.status) {
+                filtered = filtered.filter(p => p.status === currentFilters.status);
+            }
+
+            if (currentFilters.developer) {
+                filtered = filtered.filter(p => p.developer === currentFilters.developer);
+            }
+
+            return filtered;
+        }
+
+        // Function to update results count
+        function updateResultsCount(count, lang, totalCount) {
+            const countElement = document.getElementById(`filter-count-${lang}`);
+            const t = translations[lang];
+
+            if (count === totalCount) {
+                countElement.textContent = `${t.showingAll} ${count} ${t.properties}`;
+            } else {
+                countElement.textContent = `${t.found} ${count} ${count === 1 ? t.property : t.properties}`;
+            }
+        }
+
+        // Function to render projects
+        function renderProjects(projects, lang, totalCount) {
+            const grid = document.getElementById(`projects-grid-${lang}`);
+            const t = translations[lang];
+            grid.innerHTML = '';
+
+            if (projects.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16">
+                        <div class="text-gray-500 text-xl font-serif mb-4">${t.noPropertiesFound}</div>
+                        <p class="text-gray-600 text-sm">${t.tryAdjustingFilters}</p>
+                    </div>
+                `;
+                updateResultsCount(0, lang, totalCount || 0);
+                return;
+            }
+
+            projects.forEach(project => {
+                const projectCard = `
+                    <div class="project-card bg-[#0a0a0a] border border-white/10 overflow-hidden group">
+                        <div class="overflow-hidden h-64 relative">
+                            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 bg-black/80 px-3 py-1 text-[10px] uppercase tracking-wider text-gray-300">${project.status}</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-2">${project.location}</div>
+                            <h3 class="text-2xl font-serif mb-3 text-gray-100">${project.title}</h3>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-4">${project.description}</p>
+                            <div class="flex items-center justify-between mb-4">
+                                <div class="text-2xl font-serif text-white">${project.price}</div>
+                                <div class="text-xs text-gray-500">${project.bedrooms} ${project.bedroomLabel}</div>
+                            </div>
+                            <div class="space-y-2">
+                                <a href="project-detail?id=${project.id}&lang=${lang}" class="flex items-center justify-center space-x-2 w-full bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 py-3 transition-all">
+                                    <i data-lucide="arrow-right" class="w-4 h-4 text-white"></i>
+                                    <span class="text-xs uppercase tracking-widest text-white">${t.viewDetails}</span>
+                                </a>
+                                <a href="https://wa.me/971505551234?text=${encodeURIComponent(project.whatsappText)}" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-3 transition-all group">
+                                    <i data-lucide="message-circle" class="w-4 h-4 text-gray-400 group-hover:text-white"></i>
+                                    <span class="text-xs uppercase tracking-widest text-gray-400 group-hover:text-white">${t.whatsappInquiry}</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.innerHTML += projectCard;
+            });
+
+            lucide.createIcons();
+            updateResultsCount(projects.length, lang, totalCount || projects.length);
+        }
+
+        // Function to apply filters
+        function applyFilters(lang) {
+            if (loadedProjectsData && loadedProjectsData[lang]) {
+                const totalCount = loadedProjectsData[lang].length;
+                const filtered = filterProjects(loadedProjectsData[lang], lang);
+                renderProjects(filtered, lang, totalCount);
+            } else {
+                renderProjects([], lang, 0);
+            }
+        }
+
+        // Function to setup filters for a language
+        function setupFilters(lang) {
+            document.getElementById(`filter-region-${lang}`).addEventListener('change', function(e) {
+                currentFilters.region = e.target.value;
+                applyFilters(lang);
+            });
+
+            document.getElementById(`filter-price-${lang}`).addEventListener('change', function(e) {
+                currentFilters.price = e.target.value;
+                applyFilters(lang);
+            });
+
+            document.getElementById(`filter-bedrooms-${lang}`).addEventListener('change', function(e) {
+                currentFilters.bedrooms = e.target.value;
+                applyFilters(lang);
+            });
+
+            document.getElementById(`filter-status-${lang}`).addEventListener('change', function(e) {
+                currentFilters.status = e.target.value;
+                applyFilters(lang);
+            });
+
+            document.getElementById(`filter-developer-${lang}`).addEventListener('change', function(e) {
+                currentFilters.developer = e.target.value;
+                applyFilters(lang);
+            });
+        }
+
+        // Language switching functions
+        async function showLanguage(lang) {
+            const splash = document.getElementById('language-selector');
+
+            splash.style.opacity = '0';
+            setTimeout(() => {
+                splash.style.visibility = 'hidden';
+            }, 800);
+
+            // Hide all content sections
+            document.getElementById('content-en').classList.remove('active');
+            document.getElementById('content-de').classList.remove('active');
+            document.getElementById('content-sq').classList.remove('active');
+
+            // Show selected language
+            document.getElementById(`content-${lang}`).classList.add('active');
+            currentLang = lang;
+
+            // Reset filters
+            currentFilters = {
+                region: '',
+                price: '',
+                bedrooms: '',
+                status: '',
+                developer: ''
+            };
+
+            // Load projects for selected language
+            setTimeout(async () => {
+                try {
+                    const scrapedProjects = await loadProjectsFromJSON();
+                    if (scrapedProjects && scrapedProjects.length > 0) {
+                        loadedProjectsData = createMultilingualProjects(scrapedProjects);
+                        const totalCount = loadedProjectsData[lang].length;
+                        renderProjects(loadedProjectsData[lang], lang, totalCount);
+                    } else {
+                        // Show empty state
+                        renderProjects([], lang, 0);
+                    }
+                    setupFilters(lang);
+                } catch (error) {
+                    console.error('Error loading projects:', error);
+                    renderProjects([], lang, 0);
+                    setupFilters(lang);
+                }
+            }, 100);
+
+            window.scrollTo(0, 0);
+        }
+
+        function resetSplash() {
+            const splash = document.getElementById('language-selector');
+
+            document.getElementById('content-en').classList.remove('active');
+            document.getElementById('content-de').classList.remove('active');
+            document.getElementById('content-sq').classList.remove('active');
+
+            splash.style.visibility = 'visible';
+            splash.style.opacity = '1';
+
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
