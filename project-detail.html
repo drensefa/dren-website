@@ -438,7 +438,42 @@
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = parseInt(urlParams.get('id')) || 1;
-        const lang = urlParams.get('lang') || 'en';
+        const lang = urlParams.get('lang') || localStorage.getItem('language_selected') || 'en';
+
+        // Utility: Convert AED to EUR (1 AED ≈ 0.25 EUR)
+        function convertAEDtoEUR(aedPrice) {
+            const match = aedPrice.match(/([\d,]+)(K|M)?/);
+            if (!match) return '';
+
+            let value = parseFloat(match[1].replace(/,/g, ''));
+            const unit = match[2];
+
+            if (unit === 'K') value *= 1000;
+            else if (unit === 'M') value *= 1000000;
+
+            const eurValue = value * 0.25;
+
+            // Format with commas
+            if (eurValue >= 1000000) {
+                return `€${(eurValue / 1000000).toFixed(1)}M`;
+            } else if (eurValue >= 1000) {
+                return `€${Math.round(eurValue / 1000)}K`;
+            }
+            return `€${Math.round(eurValue).toLocaleString()}`;
+        }
+
+        // Utility: Convert sqft to m² (1 sqft = 0.0929 m²)
+        function convertSqftToSqm(sizeString) {
+            if (!sizeString || sizeString === 'N/A') return '';
+
+            const match = sizeString.match(/([\d,]+)/);
+            if (!match) return '';
+
+            const sqft = parseFloat(match[1].replace(/,/g, ''));
+            const sqm = Math.round(sqft * 0.0929);
+
+            return `${sqft.toLocaleString()} Sq Ft (${sqm} m²)`;
+        }
 
         // Load projects from JSON file
         async function loadProjectsFromJSON() {
@@ -461,10 +496,13 @@
 
         // Helper function to create features array
         function generateFeatures(project, lang) {
+            // Convert size if available
+            const sizeDisplay = convertSqftToSqm(project.size) || (lang === 'de' ? 'Großzügiger Grundriss' : lang === 'sq' ? 'Planimetri e gjerë' : 'Spacious Layout');
+
             const featureTemplates = {
                 en: [
                     `${extractBedroomCount(project.bedrooms)} Bedroom${extractBedroomCount(project.bedrooms) > 1 ? 's' : ''}`,
-                    `${project.size || 'Spacious Layout'}`,
+                    sizeDisplay,
                     'Premium Finishes',
                     'Smart Home Technology',
                     'Flexible Payment Plans',
@@ -472,7 +510,7 @@
                 ],
                 de: [
                     `${extractBedroomCount(project.bedrooms)} Schlafzimmer`,
-                    `${project.size || 'Großzügiger Grundriss'}`,
+                    sizeDisplay,
                     'Premium-Ausstattung',
                     'Smart Home Technologie',
                     'Flexible Zahlungspläne',
@@ -480,7 +518,7 @@
                 ],
                 sq: [
                     `${extractBedroomCount(project.bedrooms)} Dhomë Gjumi`,
-                    `${project.size || 'Planimetri e gjerë'}`,
+                    sizeDisplay,
                     'Përfundime Premium',
                     'Teknologji Smart Home',
                     'Plane Pagese Fleksibël',
@@ -569,7 +607,14 @@
                 // Update project details
                 document.getElementById(`location-${lang}`).textContent = project.location;
                 document.getElementById(`title-${lang}`).textContent = project.title;
-                document.getElementById(`price-${lang}`).textContent = project.price;
+
+                // Price with EUR conversion
+                const eurPrice = convertAEDtoEUR(project.price);
+                const priceHTML = eurPrice ?
+                    `${project.price} <span class="text-2xl text-gray-500">(~ ${eurPrice})</span>` :
+                    project.price;
+                document.getElementById(`price-${lang}`).innerHTML = priceHTML;
+
                 document.getElementById(`bedrooms-${lang}`).textContent = project.bedrooms;
                 document.getElementById(`description-${lang}`).textContent = project.description;
 
@@ -604,6 +649,9 @@
 
         // Function to change language
         function changeLanguage(newLang) {
+            // Save to localStorage
+            localStorage.setItem('language_selected', newLang);
+
             // Hide all content sections
             document.getElementById('content-en').style.display = 'none';
             document.getElementById('content-de').style.display = 'none';

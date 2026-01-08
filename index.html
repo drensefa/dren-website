@@ -647,14 +647,32 @@
         // Icons initialisieren
         lucide.createIcons();
 
-        function showLanguage(lang) {
+        // Check if language was already selected
+        function checkStoredLanguage() {
+            const storedLang = localStorage.getItem('language_selected');
+            if (storedLang) {
+                // User already selected a language, skip splash
+                showLanguage(storedLang, true);
+            }
+        }
+
+        function showLanguage(lang, skipAnimation = false) {
             const splash = document.getElementById('language-selector');
-            
-            // Splash ausblenden
-            splash.style.opacity = '0';
-            setTimeout(() => {
-                splash.style.visibility = 'hidden';
-            }, 800);
+
+            // Save language to localStorage
+            localStorage.setItem('language_selected', lang);
+
+            if (skipAnimation) {
+                // Immediately hide splash without animation
+                splash.style.display = 'none';
+            } else {
+                // Splash ausblenden mit Animation
+                splash.style.opacity = '0';
+                setTimeout(() => {
+                    splash.style.visibility = 'hidden';
+                    splash.style.display = 'none';
+                }, 800);
+            }
 
             // Inhalt zeigen
             if(lang === 'en') {
@@ -664,25 +682,32 @@
             } else {
                 document.getElementById('content-sq').classList.add('active');
             }
-            
+
             // Nach oben scrollen
             window.scrollTo(0,0);
         }
 
         function resetSplash() {
             const splash = document.getElementById('language-selector');
-            
+
+            // Clear stored language
+            localStorage.removeItem('language_selected');
+
             // Inhalte verstecken
             document.getElementById('content-en').classList.remove('active');
             document.getElementById('content-de').classList.remove('active');
             document.getElementById('content-sq').classList.remove('active');
 
             // Splash zeigen
+            splash.style.display = 'flex';
             splash.style.visibility = 'visible';
             splash.style.opacity = '1';
-            
+
             window.scrollTo(0,0);
         }
+
+        // Check stored language on page load
+        checkStoredLanguage();
     </script>
 </body>
 </html>

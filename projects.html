@@ -492,6 +492,41 @@
         // Global projects data storage
         let loadedProjectsData = null;
 
+        // Utility: Convert AED to EUR (1 AED ≈ 0.25 EUR)
+        function convertAEDtoEUR(aedPrice) {
+            const match = aedPrice.match(/([\d,]+)(K|M)?/);
+            if (!match) return '';
+
+            let value = parseFloat(match[1].replace(/,/g, ''));
+            const unit = match[2];
+
+            if (unit === 'K') value *= 1000;
+            else if (unit === 'M') value *= 1000000;
+
+            const eurValue = value * 0.25;
+
+            // Format with commas
+            if (eurValue >= 1000000) {
+                return `${(eurValue / 1000000).toFixed(1)}M`;
+            } else if (eurValue >= 1000) {
+                return `${Math.round(eurValue / 1000)}K`;
+            }
+            return Math.round(eurValue).toLocaleString();
+        }
+
+        // Utility: Convert sqft to m² (1 sqft = 0.0929 m²)
+        function convertSqftToSqm(sizeString) {
+            if (!sizeString || sizeString === 'N/A') return '';
+
+            const match = sizeString.match(/([\d,]+)/);
+            if (!match) return '';
+
+            const sqft = parseFloat(match[1].replace(/,/g, ''));
+            const sqm = Math.round(sqft * 0.0929);
+
+            return `${sqft.toLocaleString()} Sq Ft (${sqm} m²)`;
+        }
+
         // Translations
         const translations = {
             en: {
@@ -721,6 +756,10 @@
             }
 
             projects.forEach(project => {
+                // Convert price to EUR
+                const eurPrice = convertAEDtoEUR(project.price);
+                const priceDisplay = eurPrice ? `${project.price} <span class="text-base text-gray-500">(~ ${eurPrice} €)</span>` : project.price;
+
                 const projectCard = `
                     <div class="project-card bg-[#0a0a0a] border border-white/10 overflow-hidden group">
                         <div class="overflow-hidden h-64 relative">
@@ -732,7 +771,7 @@
                             <h3 class="text-2xl font-serif mb-3 text-gray-100">${project.title}</h3>
                             <p class="text-gray-400 text-sm leading-relaxed mb-4">${project.description}</p>
                             <div class="flex items-center justify-between mb-4">
-                                <div class="text-2xl font-serif text-white">${project.price}</div>
+                                <div class="text-2xl font-serif text-white">${priceDisplay}</div>
                                 <div class="text-xs text-gray-500">${project.bedrooms} ${project.bedroomLabel}</div>
                             </div>
                             <div class="space-y-2">
@@ -794,14 +833,32 @@
             });
         }
 
+        // Check if language was already selected
+        function checkStoredLanguage() {
+            const storedLang = localStorage.getItem('language_selected');
+            if (storedLang) {
+                // User already selected a language, skip splash
+                showLanguage(storedLang, true);
+            }
+        }
+
         // Language switching functions
-        async function showLanguage(lang) {
+        async function showLanguage(lang, skipAnimation = false) {
             const splash = document.getElementById('language-selector');
 
-            splash.style.opacity = '0';
-            setTimeout(() => {
-                splash.style.visibility = 'hidden';
-            }, 800);
+            // Save language to localStorage
+            localStorage.setItem('language_selected', lang);
+
+            if (skipAnimation) {
+                // Immediately hide splash without animation
+                splash.style.display = 'none';
+            } else {
+                splash.style.opacity = '0';
+                setTimeout(() => {
+                    splash.style.visibility = 'hidden';
+                    splash.style.display = 'none';
+                }, 800);
+            }
 
             // Hide all content sections
             document.getElementById('content-en').classList.remove('active');
@@ -839,7 +896,7 @@
                     renderProjects([], lang, 0);
                     setupFilters(lang);
                 }
-            }, 100);
+            }, skipAnimation ? 0 : 100);
 
             window.scrollTo(0, 0);
         }
@@ -847,15 +904,22 @@
         function resetSplash() {
             const splash = document.getElementById('language-selector');
 
+            // Clear stored language
+            localStorage.removeItem('language_selected');
+
             document.getElementById('content-en').classList.remove('active');
             document.getElementById('content-de').classList.remove('active');
             document.getElementById('content-sq').classList.remove('active');
 
+            splash.style.display = 'flex';
             splash.style.visibility = 'visible';
             splash.style.opacity = '1';
 
             window.scrollTo(0, 0);
         }
+
+        // Check stored language on page load
+        checkStoredLanguage();
     </script>
 </body>
 </html>
