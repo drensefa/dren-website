@@ -437,139 +437,169 @@
 
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
-        const projectId = urlParams.get('id');
+        const projectId = parseInt(urlParams.get('id')) || 1;
         const lang = urlParams.get('lang') || 'en';
 
-        // Mock project data (will be replaced with data from projects.json later)
-        const mockProjects = {
-            1: {
-                en: {
-                    title: "Marina Crown Residence",
-                    location: "Dubai Marina",
-                    price: "4.2M AED",
-                    bedrooms: "3 Bedrooms",
-                    status: "Off-Plan",
-                    description: "An exclusive waterfront development offering unparalleled luxury and breathtaking marina views. This prestigious residence combines contemporary architecture with world-class amenities, creating the perfect sanctuary for discerning investors.",
-                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-                    developer: "Emaar Properties",
-                    features: [
-                        "Infinity Pool with Marina Views",
-                        "State-of-the-art Gym & Spa",
-                        "24/7 Concierge Service",
-                        "Private Beach Access",
-                        "Smart Home Technology",
-                        "Underground Parking"
-                    ],
-                    gallery: [
-                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
-                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
-                    ]
-                },
-                de: {
-                    title: "Marina Crown Residence",
-                    location: "Dubai Marina",
-                    price: "4.2M AED",
-                    bedrooms: "3 Schlafzimmer",
-                    status: "Off-Plan",
-                    description: "Eine exklusive Entwicklung am Wasser mit unvergleichlichem Luxus und atemberaubendem Blick auf die Marina. Diese prestigeträchtige Residenz verbindet zeitgenössische Architektur mit erstklassigen Annehmlichkeiten und schafft das perfekte Refugium für anspruchsvolle Investoren.",
-                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-                    developer: "Emaar Properties",
-                    features: [
-                        "Infinity-Pool mit Marina-Blick",
-                        "Hochmodernes Fitnessstudio & Spa",
-                        "24/7 Concierge-Service",
-                        "Privater Strandzugang",
-                        "Smart Home Technologie",
-                        "Tiefgarage"
-                    ],
-                    gallery: [
-                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
-                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
-                    ]
-                },
-                sq: {
-                    title: "Marina Crown Residence",
-                    location: "Dubai Marina",
-                    price: "4.2M AED",
-                    bedrooms: "3 Dhoma Gjumi",
-                    status: "Off-Plan",
-                    description: "Një zhvillim ekskluziv në breg të detit që ofron luks të pakrahasueshëm dhe pamje mahnitëse të marinës. Kjo rezidencë prestigjioze kombinon arkitekturën bashkëkohore me shërbimet me klasë botërore, duke krijuar strehën e përsosur për investitorët më të kërkuar.",
-                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-                    developer: "Emaar Properties",
-                    features: [
-                        "Pishinë Infinity me Pamje Marina",
-                        "Palestër dhe Spa të Fundit",
-                        "Shërbim Concierge 24/7",
-                        "Akses Privat në Plazh",
-                        "Teknologji Smart Home",
-                        "Parking Nëntokësor"
-                    ],
-                    gallery: [
-                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
-                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
-                    ]
-                }
+        // Load projects from JSON file
+        async function loadProjectsFromJSON() {
+            try {
+                const response = await fetch('projects.json');
+                if (!response.ok) throw new Error('Could not load projects.json');
+                return await response.json();
+            } catch (error) {
+                console.error('Failed to load projects:', error);
+                return [];
             }
-            // More projects can be added here
-        };
+        }
+
+        // Helper function to extract bedroom count
+        function extractBedroomCount(bedroomsString) {
+            if (!bedroomsString || bedroomsString === 'N/A') return 1;
+            const match = bedroomsString.match(/(\d+)/);
+            return match ? parseInt(match[1]) : 1;
+        }
+
+        // Helper function to create features array
+        function generateFeatures(project, lang) {
+            const featureTemplates = {
+                en: [
+                    `${extractBedroomCount(project.bedrooms)} Bedroom${extractBedroomCount(project.bedrooms) > 1 ? 's' : ''}`,
+                    `${project.size || 'Spacious Layout'}`,
+                    'Premium Finishes',
+                    'Smart Home Technology',
+                    'Flexible Payment Plans',
+                    '24/7 Concierge Service'
+                ],
+                de: [
+                    `${extractBedroomCount(project.bedrooms)} Schlafzimmer`,
+                    `${project.size || 'Großzügiger Grundriss'}`,
+                    'Premium-Ausstattung',
+                    'Smart Home Technologie',
+                    'Flexible Zahlungspläne',
+                    '24/7 Concierge-Service'
+                ],
+                sq: [
+                    `${extractBedroomCount(project.bedrooms)} Dhomë Gjumi`,
+                    `${project.size || 'Planimetri e gjerë'}`,
+                    'Përfundime Premium',
+                    'Teknologji Smart Home',
+                    'Plane Pagese Fleksibël',
+                    'Shërbim Concierge 24/7'
+                ]
+            };
+            return featureTemplates[lang] || featureTemplates.en;
+        }
+
+        // Transform project from JSON to display format
+        function transformProject(project, lang) {
+            const title = lang === 'de' && project.title_de ? project.title_de :
+                         lang === 'sq' && project.title_sq ? project.title_sq :
+                         project.title;
+
+            const location = lang === 'de' && project.location_de ? project.location_de :
+                            lang === 'sq' && project.location_sq ? project.location_sq :
+                            project.location;
+
+            const description = lang === 'de' && project.description_de ? project.description_de :
+                               lang === 'sq' && project.description_sq ? project.description_sq :
+                               project.description;
+
+            const bedroomLabels = { en: 'Bedroom', de: 'Schlafzimmer', sq: 'Dhomë Gjumi' };
+            const bedroomCount = extractBedroomCount(project.bedrooms);
+            const bedroomText = bedroomCount > 1 ?
+                `${bedroomCount} ${bedroomLabels[lang]}${lang === 'en' ? 's' : ''}` :
+                `${bedroomCount} ${bedroomLabels[lang]}`;
+
+            // Status translations
+            const statusTranslations = {
+                'For Sale': { en: 'For Sale', de: 'Zu Verkaufen', sq: 'Për Shitje' },
+                'Off-Plan': { en: 'Off-Plan', de: 'Off-Plan', sq: 'Off-Plan' },
+                'Ready': { en: 'Ready', de: 'Fertig', sq: 'Gati' }
+            };
+            const statusKey = project.status || 'For Sale';
+            const status = statusTranslations[statusKey]?.[lang] || statusKey;
+
+            // Generate gallery images (use main image + variations)
+            const gallery = [
+                project.image,
+                project.image,
+                project.image,
+                project.image,
+                project.image,
+                project.image
+            ];
+
+            return {
+                id: project.id,
+                title: title,
+                location: location,
+                price: project.price,
+                bedrooms: bedroomText,
+                status: status,
+                description: description,
+                image: project.image,
+                developer: project.developer || 'Premium Developer',
+                features: generateFeatures(project, lang),
+                gallery: gallery
+            };
+        }
 
         // Function to load project data
-        function loadProjectData() {
-            // Get project data for current language
-            const project = mockProjects[projectId]?.[lang] || mockProjects[1]?.[lang];
+        async function loadProjectData() {
+            try {
+                // Load projects from JSON
+                const projectsData = await loadProjectsFromJSON();
 
-            if (!project) {
-                // Redirect to projects page if project not found
+                // Find the project by ID
+                const foundProject = projectsData.find(p => p.id === projectId);
+
+                if (!foundProject) {
+                    console.error(`Project with ID ${projectId} not found`);
+                    window.location.href = 'projects.html';
+                    return;
+                }
+
+                // Transform project to display format
+                const project = transformProject(foundProject, lang);
+
+                // Update hero image
+                document.getElementById(`hero-image-${lang}`).src = project.image;
+                document.getElementById(`status-badge-${lang}`).textContent = project.status;
+
+                // Update project details
+                document.getElementById(`location-${lang}`).textContent = project.location;
+                document.getElementById(`title-${lang}`).textContent = project.title;
+                document.getElementById(`price-${lang}`).textContent = project.price;
+                document.getElementById(`bedrooms-${lang}`).textContent = project.bedrooms;
+                document.getElementById(`description-${lang}`).textContent = project.description;
+
+                // Update features
+                const featuresHtml = project.features.map(feature => `
+                    <div class="flex items-start space-x-3 bg-white/5 p-4 border border-white/10">
+                        <i data-lucide="check" class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5"></i>
+                        <span class="text-gray-300 text-sm">${feature}</span>
+                    </div>
+                `).join('');
+                document.getElementById(`features-${lang}`).innerHTML = featuresHtml;
+
+                // Update gallery
+                const galleryHtml = project.gallery.map(imgUrl => `
+                    <div class="gallery-item overflow-hidden h-48 bg-gray-900">
+                        <img src="${imgUrl}" alt="Gallery Image" class="w-full h-full object-cover">
+                    </div>
+                `).join('');
+                document.getElementById(`gallery-${lang}`).innerHTML = galleryHtml;
+
+                // Update WhatsApp button
+                const whatsappText = `Hi, I'm interested in ${project.title} - ${project.price}`;
+                document.getElementById(`whatsapp-btn-${lang}`).href = `https://wa.me/971505551234?text=${encodeURIComponent(whatsappText)}`;
+
+                // Reinitialize icons
+                lucide.createIcons();
+            } catch (error) {
+                console.error('Error loading project data:', error);
                 window.location.href = 'projects.html';
-                return;
             }
-
-            // Update hero image
-            document.getElementById(`hero-image-${lang}`).src = project.image;
-            document.getElementById(`status-badge-${lang}`).textContent = project.status;
-
-            // Update project details
-            document.getElementById(`location-${lang}`).textContent = project.location;
-            document.getElementById(`title-${lang}`).textContent = project.title;
-            document.getElementById(`price-${lang}`).textContent = project.price;
-            document.getElementById(`bedrooms-${lang}`).textContent = project.bedrooms;
-            document.getElementById(`description-${lang}`).textContent = project.description;
-
-            // Update features
-            const featuresHtml = project.features.map(feature => `
-                <div class="flex items-start space-x-3 bg-white/5 p-4 border border-white/10">
-                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5"></i>
-                    <span class="text-gray-300 text-sm">${feature}</span>
-                </div>
-            `).join('');
-            document.getElementById(`features-${lang}`).innerHTML = featuresHtml;
-
-            // Update gallery
-            const galleryHtml = project.gallery.map(imgUrl => `
-                <div class="gallery-item overflow-hidden h-48 bg-gray-900">
-                    <img src="${imgUrl}" alt="Gallery Image" class="w-full h-full object-cover">
-                </div>
-            `).join('');
-            document.getElementById(`gallery-${lang}`).innerHTML = galleryHtml;
-
-            // Update WhatsApp button
-            const whatsappText = `Hi, I'm interested in ${project.title} - ${project.price}`;
-            document.getElementById(`whatsapp-btn-${lang}`).href = `https://wa.me/971505551234?text=${encodeURIComponent(whatsappText)}`;
-
-            // Reinitialize icons
-            lucide.createIcons();
         }
 
         // Function to change language
