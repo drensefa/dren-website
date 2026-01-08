@@ -6,7 +6,7 @@
 
     <!-- SEO -->
     <title>Project Details | Sefa Capital</title>
-    <meta name="description" content="Luxury real estate project details. Investment opportunity curated by Dren Sefa.">
+    <meta name="description" content="Exclusive luxury real estate project details. Investment opportunities curated by Dren Sefa.">
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text y=%22.9em%22 x=%2250%22 font-size=%2290%22 font-family=%22serif%22 text-anchor=%22middle%22 fill=%22white%22>D</text></svg>">
@@ -37,418 +37,568 @@
         .social-icon { transition: all 0.3s ease; color: #9ca3af; }
 
         /* Gallery Image Hover */
-        .gallery-img {
+        .gallery-item {
             transition: all 0.3s ease;
             cursor: pointer;
         }
-        .gallery-img:hover {
-            opacity: 0.8;
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
 
-        /* Feature Icon */
-        .feature-icon {
-            transition: all 0.3s ease;
+        /* Hero Image */
+        .hero-image {
+            transition: all 0.7s ease;
         }
-        .feature-item:hover .feature-icon {
-            transform: scale(1.1);
-            color: white;
+        .hero-image:hover {
+            transform: scale(1.02);
         }
+
+        /* Fade In Animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-500 { animation-delay: 0.5s; }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
-        <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-            <div class="flex flex-col">
-                <div class="flex items-center mb-2">
-                    <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                    <span id="header-subtitle" class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate Portfolio</span>
+    <!-- ========================================== -->
+    <!-- ENGLISH VERSION -->
+    <!-- ========================================== -->
+    <div id="content-en" class="content-section active">
+        <!-- Header -->
+        <div class="fixed top-0 left-0 w-full z-50 py-6 bg-[#050505]/90 backdrop-blur-sm border-b border-white/5">
+            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate</span>
+                    </div>
+                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
                 </div>
-                <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-            </div>
-            <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                <a id="projects-link" href="projects" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <div id="project-content" class="pt-32 pb-16">
-        <!-- Content will be dynamically loaded -->
-    </div>
-
-    <!-- Footer -->
-    <section class="py-12 border-t border-white/5 mb-8">
-        <div class="container mx-auto px-6 flex flex-col items-center">
-            <p id="footer-text" class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Trusted by International Investors</p>
-            <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
-                <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
-                <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
-                <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                <div class="flex justify-center space-x-6 pt-6">
-                    <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                    <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
-                    <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
-                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
-                    </a>
+                <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
+                    <div class="h-3 w-[1px] bg-gray-800"></div>
+                    <button onclick="changeLanguage('de')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">DE</button>
+                    <button onclick="changeLanguage('sq')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">SQ</button>
                 </div>
             </div>
         </div>
-    </section>
+
+        <!-- Hero Image Section -->
+        <section class="relative pt-32 pb-0 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gray-900 fade-in">
+                    <img id="hero-image-en" src="" alt="Project" class="hero-image w-full h-full object-cover opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div id="status-badge-en" class="absolute top-6 right-6 bg-black/80 px-4 py-2 text-xs uppercase tracking-wider text-gray-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section class="py-16 relative">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left Column - Main Info -->
+                    <div class="lg:col-span-8 fade-in delay-100">
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-3" id="location-en"></div>
+                        <h1 class="text-4xl md:text-6xl font-serif mb-6" id="title-en"></h1>
+                        <div class="flex items-baseline space-x-4 mb-8 pb-8 border-b border-white/10">
+                            <div class="text-4xl md:text-5xl font-serif text-white" id="price-en"></div>
+                            <div class="text-sm text-gray-500" id="bedrooms-en"></div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-4 text-gray-300">About This Project</h2>
+                            <p class="text-gray-400 leading-relaxed text-lg" id="description-en"></p>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Key Features</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="features-en"></div>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Gallery</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-en"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Sticky Contact Card -->
+                    <div class="lg:col-span-4 fade-in delay-300">
+                        <div class="lg:sticky lg:top-32 bg-[#0a0a0a] border border-white/10 p-8">
+                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-4">Investment Advisor</div>
+                            <div class="text-2xl font-serif mb-6">DREN SEFA</div>
+
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center space-x-3 text-gray-400">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    <span class="text-sm">Dubai, UAE</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-400">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                    <a href="mailto:info@sefa.capital" class="text-sm hover:text-white transition-colors">info@sefa.capital</a>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp Button - HIGHLIGHTED -->
+                            <a href="#" id="whatsapp-btn-en" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 py-4 mb-4 transition-all shadow-lg hover:shadow-yellow-900/50">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+                                <span class="text-sm uppercase tracking-widest text-white font-medium">WhatsApp Inquiry</span>
+                            </a>
+
+                            <a href="projects.html" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 transition-all">
+                                <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-xs uppercase tracking-widest text-gray-400">Back to Projects</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 border-t border-white/5 mb-8">
+            <div class="container mx-auto px-6 flex flex-col items-center">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Trusted by International Investors</p>
+                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                    <div class="flex justify-center space-x-6 pt-6">
+                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- GERMAN VERSION (DEUTSCH) -->
+    <!-- ========================================== -->
+    <div id="content-de" class="content-section" style="display: none;">
+        <!-- Header -->
+        <div class="fixed top-0 left-0 w-full z-50 py-6 bg-[#050505]/90 backdrop-blur-sm border-b border-white/5">
+            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxus Immobilien</span>
+                    </div>
+                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
+                </div>
+                <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
+                    <div class="h-3 w-[1px] bg-gray-800"></div>
+                    <button onclick="changeLanguage('en')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">EN</button>
+                    <button onclick="changeLanguage('sq')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">SQ</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Image Section -->
+        <section class="relative pt-32 pb-0 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gray-900 fade-in">
+                    <img id="hero-image-de" src="" alt="Project" class="hero-image w-full h-full object-cover opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div id="status-badge-de" class="absolute top-6 right-6 bg-black/80 px-4 py-2 text-xs uppercase tracking-wider text-gray-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section class="py-16 relative">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left Column - Main Info -->
+                    <div class="lg:col-span-8 fade-in delay-100">
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-3" id="location-de"></div>
+                        <h1 class="text-4xl md:text-6xl font-serif mb-6" id="title-de"></h1>
+                        <div class="flex items-baseline space-x-4 mb-8 pb-8 border-b border-white/10">
+                            <div class="text-4xl md:text-5xl font-serif text-white" id="price-de"></div>
+                            <div class="text-sm text-gray-500" id="bedrooms-de"></div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-4 text-gray-300">Über dieses Projekt</h2>
+                            <p class="text-gray-400 leading-relaxed text-lg" id="description-de"></p>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Hauptmerkmale</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="features-de"></div>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Galerie</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-de"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Sticky Contact Card -->
+                    <div class="lg:col-span-4 fade-in delay-300">
+                        <div class="lg:sticky lg:top-32 bg-[#0a0a0a] border border-white/10 p-8">
+                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-4">Investmentberater</div>
+                            <div class="text-2xl font-serif mb-6">DREN SEFA</div>
+
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center space-x-3 text-gray-400">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    <span class="text-sm">Dubai, VAE</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-400">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                    <a href="mailto:info@sefa.capital" class="text-sm hover:text-white transition-colors">info@sefa.capital</a>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp Button - HIGHLIGHTED -->
+                            <a href="#" id="whatsapp-btn-de" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 py-4 mb-4 transition-all shadow-lg hover:shadow-yellow-900/50">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+                                <span class="text-sm uppercase tracking-widest text-white font-medium">WhatsApp Anfrage</span>
+                            </a>
+
+                            <a href="projects.html" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 transition-all">
+                                <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-xs uppercase tracking-widest text-gray-400">Zurück zu Projekten</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 border-t border-white/5 mb-8">
+            <div class="container mx-auto px-6 flex flex-col items-center">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Vertraut von internationalen Investoren</p>
+                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                    <div class="flex justify-center space-x-6 pt-6">
+                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ALBANIAN VERSION (SHQIP) -->
+    <!-- ========================================== -->
+    <div id="content-sq" class="content-section" style="display: none;">
+        <!-- Header -->
+        <div class="fixed top-0 left-0 w-full z-50 py-6 bg-[#050505]/90 backdrop-blur-sm border-b border-white/5">
+            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-2">
+                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Pasuri Luksoze</span>
+                    </div>
+                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
+                </div>
+                <div class="flex items-center space-x-6 mt-2 md:mt-0">
+                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
+                    <div class="h-3 w-[1px] bg-gray-800"></div>
+                    <button onclick="changeLanguage('en')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">EN</button>
+                    <button onclick="changeLanguage('de')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">DE</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Image Section -->
+        <section class="relative pt-32 pb-0 overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gray-900 fade-in">
+                    <img id="hero-image-sq" src="" alt="Project" class="hero-image w-full h-full object-cover opacity-90">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div id="status-badge-sq" class="absolute top-6 right-6 bg-black/80 px-4 py-2 text-xs uppercase tracking-wider text-gray-300"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Details -->
+        <section class="py-16 relative">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left Column - Main Info -->
+                    <div class="lg:col-span-8 fade-in delay-100">
+                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-3" id="location-sq"></div>
+                        <h1 class="text-4xl md:text-6xl font-serif mb-6" id="title-sq"></h1>
+                        <div class="flex items-baseline space-x-4 mb-8 pb-8 border-b border-white/10">
+                            <div class="text-4xl md:text-5xl font-serif text-white" id="price-sq"></div>
+                            <div class="text-sm text-gray-500" id="bedrooms-sq"></div>
+                        </div>
+
+                        <!-- Description -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-4 text-gray-300">Rreth këtij projekti</h2>
+                            <p class="text-gray-400 leading-relaxed text-lg" id="description-sq"></p>
+                        </div>
+
+                        <!-- Features -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Karakteristikat Kryesore</h2>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="features-sq"></div>
+                        </div>
+
+                        <!-- Gallery -->
+                        <div class="mb-12">
+                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Galeria</h2>
+                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-sq"></div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Sticky Contact Card -->
+                    <div class="lg:col-span-4 fade-in delay-300">
+                        <div class="lg:sticky lg:top-32 bg-[#0a0a0a] border border-white/10 p-8">
+                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-4">Këshilltar Investimesh</div>
+                            <div class="text-2xl font-serif mb-6">DREN SEFA</div>
+
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-center space-x-3 text-gray-400">
+                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                                    <span class="text-sm">Dubai, UAE</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-gray-400">
+                                    <i data-lucide="mail" class="w-4 h-4"></i>
+                                    <a href="mailto:info@sefa.capital" class="text-sm hover:text-white transition-colors">info@sefa.capital</a>
+                                </div>
+                            </div>
+
+                            <!-- WhatsApp Button - HIGHLIGHTED -->
+                            <a href="#" id="whatsapp-btn-sq" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 py-4 mb-4 transition-all shadow-lg hover:shadow-yellow-900/50">
+                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
+                                <span class="text-sm uppercase tracking-widest text-white font-medium">Kërkesë WhatsApp</span>
+                            </a>
+
+                            <a href="projects.html" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 transition-all">
+                                <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400"></i>
+                                <span class="text-xs uppercase tracking-widest text-gray-400">Kthehu te Projektet</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="py-12 border-t border-white/5 mb-8">
+            <div class="container mx-auto px-6 flex flex-col items-center">
+                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">I Besueshëm nga Investitorët Ndërkombëtarë</p>
+                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
+                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
+                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
+                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
+                    <div class="flex justify-center space-x-6 pt-6">
+                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
+                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
     <!-- LOGIC -->
     <script>
         // Icons initialisieren
         lucide.createIcons();
 
-        // Load project data from JSON file
-        async function loadProjectById(id) {
-            try {
-                const response = await fetch('projects.json');
-                if (!response.ok) throw new Error('Could not load projects.json');
-                const projects = await response.json();
-                return projects.find(p => p.id === parseInt(id));
-            } catch (error) {
-                console.error('Failed to load project:', error);
-                return null;
+        // Get URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const projectId = urlParams.get('id');
+        const lang = urlParams.get('lang') || 'en';
+
+        // Mock project data (will be replaced with data from projects.json later)
+        const mockProjects = {
+            1: {
+                en: {
+                    title: "Marina Crown Residence",
+                    location: "Dubai Marina",
+                    price: "4.2M AED",
+                    bedrooms: "3 Bedrooms",
+                    status: "Off-Plan",
+                    description: "An exclusive waterfront development offering unparalleled luxury and breathtaking marina views. This prestigious residence combines contemporary architecture with world-class amenities, creating the perfect sanctuary for discerning investors.",
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+                    developer: "Emaar Properties",
+                    features: [
+                        "Infinity Pool with Marina Views",
+                        "State-of-the-art Gym & Spa",
+                        "24/7 Concierge Service",
+                        "Private Beach Access",
+                        "Smart Home Technology",
+                        "Underground Parking"
+                    ],
+                    gallery: [
+                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+                        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                    ]
+                },
+                de: {
+                    title: "Marina Crown Residence",
+                    location: "Dubai Marina",
+                    price: "4.2M AED",
+                    bedrooms: "3 Schlafzimmer",
+                    status: "Off-Plan",
+                    description: "Eine exklusive Entwicklung am Wasser mit unvergleichlichem Luxus und atemberaubendem Blick auf die Marina. Diese prestigeträchtige Residenz verbindet zeitgenössische Architektur mit erstklassigen Annehmlichkeiten und schafft das perfekte Refugium für anspruchsvolle Investoren.",
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+                    developer: "Emaar Properties",
+                    features: [
+                        "Infinity-Pool mit Marina-Blick",
+                        "Hochmodernes Fitnessstudio & Spa",
+                        "24/7 Concierge-Service",
+                        "Privater Strandzugang",
+                        "Smart Home Technologie",
+                        "Tiefgarage"
+                    ],
+                    gallery: [
+                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+                        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                    ]
+                },
+                sq: {
+                    title: "Marina Crown Residence",
+                    location: "Dubai Marina",
+                    price: "4.2M AED",
+                    bedrooms: "3 Dhoma Gjumi",
+                    status: "Off-Plan",
+                    description: "Një zhvillim ekskluziv në breg të detit që ofron luks të pakrahasueshëm dhe pamje mahnitëse të marinës. Kjo rezidencë prestigjioze kombinon arkitekturën bashkëkohore me shërbimet me klasë botërore, duke krijuar strehën e përsosur për investitorët më të kërkuar.",
+                    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
+                    developer: "Emaar Properties",
+                    features: [
+                        "Pishinë Infinity me Pamje Marina",
+                        "Palestër dhe Spa të Fundit",
+                        "Shërbim Concierge 24/7",
+                        "Akses Privat në Plazh",
+                        "Teknologji Smart Home",
+                        "Parking Nëntokësor"
+                    ],
+                    gallery: [
+                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+                        "https://images.unsplash.com/photo-1512918728675-ed5a9ecdebfd?w=800&q=80",
+                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
+                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                    ]
+                }
             }
-        }
-
-        // Helper: Extract bedroom number from string
-        function extractBedroomNumber(bedroomsString) {
-            if (typeof bedroomsString === 'number') return bedroomsString;
-            if (!bedroomsString || bedroomsString === 'N/A') return 1;
-            const match = bedroomsString.match(/(\d+)/);
-            return match ? parseInt(match[1]) : 1;
-        }
-
-        // Helper: Extract bathroom number from string
-        function extractBathroomNumber(bathroomsString) {
-            if (typeof bathroomsString === 'number') return bathroomsString;
-            if (!bathroomsString || bathroomsString === 'N/A') return 'N/A';
-            const match = bathroomsString.match(/(\d+)/);
-            return match ? parseInt(match[1]) : 'N/A';
-        }
-
-        // Transform scraped data to detail page format
-        function transformToDetailFormat(scrapedProject, lang = 'en') {
-            const labels = {
-                en: { bedroom: 'Bedrooms', bathroom: 'Bathrooms', size: 'Built Area' },
-                de: { bedroom: 'Schlafzimmer', bathroom: 'Badezimmer', size: 'Wohnfläche' },
-                sq: { bedroom: 'Dhoma Gjumi', bathroom: 'Banjo', size: 'Sipërfaqe' }
-            };
-
-            // Nutze Übersetzungen, falls vorhanden
-            let title = scrapedProject.title || 'Untitled Property';
-            let location = scrapedProject.location || 'Dubai';
-            let description = scrapedProject.description || 'Luxury property in Dubai.';
-
-            if (lang === 'de' && scrapedProject.title_de) {
-                title = scrapedProject.title_de;
-                location = scrapedProject.location_de || location;
-                description = scrapedProject.description_de || description;
-            } else if (lang === 'sq' && scrapedProject.title_sq) {
-                title = scrapedProject.title_sq;
-                location = scrapedProject.location_sq || location;
-                description = scrapedProject.description_sq || description;
-            }
-
-            const bedrooms = extractBedroomNumber(scrapedProject.bedrooms);
-            const bathrooms = extractBathroomNumber(scrapedProject.bathrooms);
-
-            // Generate default features if not provided
-            const defaultFeatures = [
-                "Premium Finishes",
-                "Modern Design",
-                "Smart Home System",
-                "Covered Parking",
-                "24/7 Security",
-                "Fitted Kitchen",
-                "Built-in Wardrobes",
-                "Balcony"
-            ];
-
-            // Generate default amenities
-            const defaultAmenities = [
-                "24/7 Security",
-                "Concierge Service",
-                "Fitness Center",
-                "Swimming Pool",
-                "Covered Parking",
-                "Maintenance Service"
-            ];
-
-            // Use the single image 4 times or add placeholders
-            const images = scrapedProject.image
-                ? [
-                    scrapedProject.image,
-                    scrapedProject.image,
-                    scrapedProject.image,
-                    scrapedProject.image
-                  ]
-                : [
-                    "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1200&q=80",
-                    "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&q=80"
-                  ];
-
-            return {
-                id: scrapedProject.id,
-                title: title,
-                location: location,
-                price: scrapedProject.price || 'Price on Request',
-                priceFrom: `Starting from ${scrapedProject.price || 'Price on Request'}`,
-                bedrooms: bedrooms,
-                bathrooms: bathrooms,
-                size: scrapedProject.size || 'N/A',
-                status: scrapedProject.status || 'For Sale',
-                developer: scrapedProject.developer || 'Unknown Developer',
-                completionDate: 'To be announced',
-                description: description,
-                images: images,
-                features: defaultFeatures,
-                amenities: defaultAmenities,
-                paymentPlan: 'Flexible payment plans available. Contact us for details.',
-                whatsappText: `I'm interested in ${title}`,
-                bedroomLabel: labels[lang].bedroom,
-                bathroomLabel: labels[lang].bathroom,
-                sizeLabel: labels[lang].size
-            };
-        }
-
-        // Translations
-        const translations = {
-            en: {
-                backToProjects: "Back to Projects",
-                overview: "Overview",
-                features: "Features",
-                amenities: "Amenities",
-                paymentPlan: "Payment Plan",
-                developer: "Developer",
-                status: "Status",
-                completion: "Completion",
-                whatsappInquiry: "WhatsApp Inquiry",
-                schedule: "Schedule Viewing",
-                propertyDetails: "Property Details",
-                projectNotFound: "Project not found",
-                returnToProjects: "Return to Projects"
-            },
-            de: {
-                backToProjects: "Zurück zu Projekten",
-                overview: "Übersicht",
-                features: "Ausstattung",
-                amenities: "Annehmlichkeiten",
-                paymentPlan: "Zahlungsplan",
-                developer: "Bauträger",
-                status: "Status",
-                completion: "Fertigstellung",
-                whatsappInquiry: "WhatsApp Anfrage",
-                schedule: "Besichtigung Vereinbaren",
-                propertyDetails: "Immobilien Details",
-                projectNotFound: "Projekt nicht gefunden",
-                returnToProjects: "Zurück zu Projekten"
-            },
-            sq: {
-                backToProjects: "Kthehu te Projektet",
-                overview: "Përmbledhje",
-                features: "Karakteristikat",
-                amenities: "Amenitete",
-                paymentPlan: "Plani i Pagesës",
-                developer: "Zhvilluesi",
-                status: "Statusi",
-                completion: "Përfundimi",
-                whatsappInquiry: "Kërkesë WhatsApp",
-                schedule: "Planifiko Vizitë",
-                propertyDetails: "Detajet e Pronës",
-                projectNotFound: "Projekti nuk u gjet",
-                returnToProjects: "Kthehu te Projektet"
-            }
+            // More projects can be added here
         };
 
-        // Get URL parameters
-        function getUrlParams() {
-            const params = new URLSearchParams(window.location.search);
-            const idParam = params.get('id');
-            const parsedId = parseInt(idParam);
-            return {
-                id: parsedId || 1,
-                lang: params.get('lang') || 'en'
-            };
-        }
+        // Function to load project data
+        function loadProjectData() {
+            // Get project data for current language
+            const project = mockProjects[projectId]?.[lang] || mockProjects[1]?.[lang];
 
-        // Render project details
-        async function renderProjectDetail() {
-            const { id, lang } = getUrlParams();
-            const t = translations[lang];
-
-            // Load project from JSON
-            const scrapedProject = await loadProjectById(id);
-            if (!scrapedProject) {
-                document.getElementById('project-content').innerHTML = `
-                    <div class="container mx-auto px-6 text-center py-32">
-                        <h1 class="text-4xl font-serif mb-4 text-gray-400">${t.projectNotFound}</h1>
-                        <a href="projects" class="text-sm uppercase tracking-wider text-gray-500 hover:text-white transition-colors">${t.returnToProjects}</a>
-                    </div>
-                `;
+            if (!project) {
+                // Redirect to projects page if project not found
+                window.location.href = 'projects.html';
                 return;
             }
 
-            // Transform to detail format
-            const project = transformToDetailFormat(scrapedProject, lang);
+            // Update hero image
+            document.getElementById(`hero-image-${lang}`).src = project.image;
+            document.getElementById(`status-badge-${lang}`).textContent = project.status;
 
-            // Update header
-            document.getElementById('header-subtitle').textContent = lang === 'en' ? 'Luxury Real Estate Portfolio' : lang === 'de' ? 'Luxus Immobilien Portfolio' : 'Portofoli Luksoz i Pasurive';
-            document.getElementById('projects-link').textContent = lang === 'en' ? 'Projects' : lang === 'de' ? 'Projekte' : 'Projekte';
-            document.getElementById('footer-text').textContent = lang === 'en' ? 'Trusted by International Investors' : lang === 'de' ? 'Vertraut von internationalen Investoren' : 'I Besueshëm nga Investitorët Ndërkombëtarë';
+            // Update project details
+            document.getElementById(`location-${lang}`).textContent = project.location;
+            document.getElementById(`title-${lang}`).textContent = project.title;
+            document.getElementById(`price-${lang}`).textContent = project.price;
+            document.getElementById(`bedrooms-${lang}`).textContent = project.bedrooms;
+            document.getElementById(`description-${lang}`).textContent = project.description;
 
-            const content = `
-                <div class="container mx-auto px-6">
-                    <!-- Back Button -->
-                    <a href="projects" class="inline-flex items-center space-x-2 text-sm uppercase tracking-wider text-gray-500 hover:text-white transition-colors mb-8">
-                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                        <span>${t.backToProjects}</span>
-                    </a>
-
-                    <!-- Title Section -->
-                    <div class="mb-12">
-                        <div class="flex items-center space-x-4 mb-4">
-                            <span class="px-3 py-1 bg-white/5 border border-white/10 text-xs uppercase tracking-wider text-gray-400">${project.status}</span>
-                            <span class="text-xs uppercase tracking-wider text-gray-500">${project.location}</span>
-                        </div>
-                        <h1 class="text-5xl md:text-7xl font-serif mb-4">${project.title}</h1>
-                        <div class="flex items-center space-x-8">
-                            <div class="text-3xl font-serif text-gray-300">${project.priceFrom}</div>
-                        </div>
-                    </div>
-
-                    <!-- Main Image -->
-                    <div class="relative h-[60vh] mb-8 overflow-hidden">
-                        <img src="${project.images[0]}" alt="${project.title}" class="w-full h-full object-cover">
-                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-[#050505] to-transparent"></div>
-                    </div>
-
-                    <!-- Image Gallery -->
-                    <div class="grid grid-cols-3 gap-4 mb-16">
-                        ${project.images.slice(1).map(img => `
-                            <div class="h-64 overflow-hidden">
-                                <img src="${img}" alt="${project.title}" class="w-full h-full object-cover gallery-img">
-                            </div>
-                        `).join('')}
-                    </div>
-
-                    <!-- Content Grid -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
-                        <!-- Left Column - Main Info -->
-                        <div class="lg:col-span-2 space-y-12">
-                            <!-- Overview -->
-                            <div>
-                                <h2 class="text-2xl font-serif mb-6 flex items-center">
-                                    <div class="w-12 h-[1px] bg-white/20 mr-4"></div>
-                                    ${t.overview}
-                                </h2>
-                                <p class="text-gray-400 leading-relaxed text-lg">${project.description}</p>
-                            </div>
-
-                            <!-- Features -->
-                            <div>
-                                <h2 class="text-2xl font-serif mb-6 flex items-center">
-                                    <div class="w-12 h-[1px] bg-white/20 mr-4"></div>
-                                    ${t.features}
-                                </h2>
-                                <div class="grid grid-cols-2 gap-4">
-                                    ${project.features.map(feature => `
-                                        <div class="feature-item flex items-center space-x-3 p-4 bg-white/[0.02] border border-white/5 hover:border-white/10 transition-colors">
-                                            <i data-lucide="check-circle" class="w-5 h-5 text-gray-500 feature-icon"></i>
-                                            <span class="text-sm text-gray-400">${feature}</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-
-                            <!-- Amenities -->
-                            <div>
-                                <h2 class="text-2xl font-serif mb-6 flex items-center">
-                                    <div class="w-12 h-[1px] bg-white/20 mr-4"></div>
-                                    ${t.amenities}
-                                </h2>
-                                <div class="grid grid-cols-2 gap-4">
-                                    ${project.amenities.map(amenity => `
-                                        <div class="flex items-center space-x-3 p-4 bg-white/[0.02] border border-white/5">
-                                            <i data-lucide="sparkles" class="w-5 h-5 text-gray-500"></i>
-                                            <span class="text-sm text-gray-400">${amenity}</span>
-                                        </div>
-                                    `).join('')}
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Right Column - Specs & CTA -->
-                        <div class="space-y-8">
-                            <!-- Property Details Card -->
-                            <div class="bg-white/[0.02] border border-white/10 p-8 sticky top-32">
-                                <h3 class="text-xl font-serif mb-6">${t.propertyDetails}</h3>
-
-                                <div class="space-y-6 mb-8">
-                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
-                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${project.bedroomLabel}</span>
-                                        <span class="text-lg font-serif">${project.bedrooms}</span>
-                                    </div>
-                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
-                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${project.bathroomLabel}</span>
-                                        <span class="text-lg font-serif">${project.bathrooms}</span>
-                                    </div>
-                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
-                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${project.sizeLabel}</span>
-                                        <span class="text-lg font-serif">${project.size}</span>
-                                    </div>
-                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
-                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${t.developer}</span>
-                                        <span class="text-lg font-serif">${project.developer}</span>
-                                    </div>
-                                    <div class="flex justify-between items-center pb-4 border-b border-white/5">
-                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${t.status}</span>
-                                        <span class="text-sm text-gray-300">${project.status}</span>
-                                    </div>
-                                    <div class="flex justify-between items-center">
-                                        <span class="text-sm text-gray-500 uppercase tracking-wider">${t.completion}</span>
-                                        <span class="text-sm text-gray-300">${project.completionDate}</span>
-                                    </div>
-                                </div>
-
-                                <!-- Payment Plan -->
-                                <div class="mb-8 p-4 bg-white/[0.02] border border-white/5">
-                                    <div class="text-xs uppercase tracking-wider text-gray-500 mb-2">${t.paymentPlan}</div>
-                                    <div class="text-sm text-gray-400">${project.paymentPlan}</div>
-                                </div>
-
-                                <!-- CTA Buttons -->
-                                <div class="space-y-3">
-                                    <a href="https://wa.me/971505551234?text=${encodeURIComponent(project.whatsappText)}" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-white/10 hover:bg-white/20 border border-white/20 py-4 transition-all">
-                                        <i data-lucide="message-circle" class="w-5 h-5"></i>
-                                        <span class="text-sm uppercase tracking-widest">${t.whatsappInquiry}</span>
-                                    </a>
-                                    <a href="https://wa.me/971505551234?text=${encodeURIComponent('I would like to schedule a viewing for ' + project.title)}" target="_blank" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 py-4 transition-all">
-                                        <i data-lucide="calendar" class="w-5 h-5 text-gray-400"></i>
-                                        <span class="text-sm uppercase tracking-widest text-gray-400">${t.schedule}</span>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            // Update features
+            const featuresHtml = project.features.map(feature => `
+                <div class="flex items-start space-x-3 bg-white/5 p-4 border border-white/10">
+                    <i data-lucide="check" class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5"></i>
+                    <span class="text-gray-300 text-sm">${feature}</span>
                 </div>
-            `;
+            `).join('');
+            document.getElementById(`features-${lang}`).innerHTML = featuresHtml;
 
-            document.getElementById('project-content').innerHTML = content;
+            // Update gallery
+            const galleryHtml = project.gallery.map(imgUrl => `
+                <div class="gallery-item overflow-hidden h-48 bg-gray-900">
+                    <img src="${imgUrl}" alt="Gallery Image" class="w-full h-full object-cover">
+                </div>
+            `).join('');
+            document.getElementById(`gallery-${lang}`).innerHTML = galleryHtml;
+
+            // Update WhatsApp button
+            const whatsappText = `Hi, I'm interested in ${project.title} - ${project.price}`;
+            document.getElementById(`whatsapp-btn-${lang}`).href = `https://wa.me/971505551234?text=${encodeURIComponent(whatsappText)}`;
+
+            // Reinitialize icons
             lucide.createIcons();
         }
 
-        // Initialize on page load
-        document.addEventListener('DOMContentLoaded', async function() {
-            await renderProjectDetail();
-        });
+        // Function to change language
+        function changeLanguage(newLang) {
+            // Hide all content sections
+            document.getElementById('content-en').style.display = 'none';
+            document.getElementById('content-de').style.display = 'none';
+            document.getElementById('content-sq').style.display = 'none';
+
+            // Show selected language
+            document.getElementById(`content-${newLang}`).style.display = 'block';
+
+            // Update URL parameter
+            const newUrl = new URL(window.location.href);
+            newUrl.searchParams.set('lang', newLang);
+            window.history.pushState({}, '', newUrl);
+
+            // Reload project data for new language
+            window.location.reload();
+        }
+
+        // Show correct language on load
+        document.getElementById('content-en').style.display = 'none';
+        document.getElementById('content-de').style.display = 'none';
+        document.getElementById('content-sq').style.display = 'none';
+        document.getElementById(`content-${lang}`).style.display = 'block';
+
+        // Load project data on page load
+        loadProjectData();
     </script>
 </body>
 </html>
