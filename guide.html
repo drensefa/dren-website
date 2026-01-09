@@ -157,23 +157,44 @@
         .hero-gradient {
             background: radial-gradient(ellipse at top, rgba(201, 162, 39, 0.1) 0%, transparent 50%);
         }
+
+        /* Language Navigation - hidden by default */
+        .lang-nav { display: none; }
+        .lang-nav.active { display: flex; }
     </style>
 </head>
 <body>
 
+    <!-- UNIFIED HEADER -->
+    <header class="py-6 border-b border-gray-800 sticky top-0 bg-[#050505]/90 backdrop-blur-md z-50">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="index.html" onclick="localStorage.removeItem('language_selected'); localStorage.removeItem('sefaLanguage');" class="text-2xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
+
+            <!-- Albanian Navigation -->
+            <nav id="nav-sq" class="lang-nav items-center space-x-6">
+                <a href="index.html" onclick="localStorage.removeItem('language_selected'); localStorage.removeItem('sefaLanguage');" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ballina</a>
+                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
+                <span class="text-[10px] uppercase tracking-widest text-white gold-border border-b pb-1">Udhëzues</span>
+            </nav>
+
+            <!-- German Navigation -->
+            <nav id="nav-de" class="lang-nav items-center space-x-6">
+                <a href="index.html" onclick="localStorage.removeItem('language_selected'); localStorage.removeItem('sefaLanguage');" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Startseite</a>
+                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
+                <span class="text-[10px] uppercase tracking-widest text-white gold-border border-b pb-1">Ratgeber</span>
+            </nav>
+
+            <!-- English Navigation -->
+            <nav id="nav-en" class="lang-nav items-center space-x-6">
+                <a href="index.html" onclick="localStorage.removeItem('language_selected'); localStorage.removeItem('sefaLanguage');" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
+                <span class="text-[10px] uppercase tracking-widest text-white gold-border border-b pb-1">Guide</span>
+            </nav>
+        </div>
+    </header>
+
     <!-- ALBANISCH -->
     <div id="content-sq" class="content-section">
-        <header class="py-6 border-b border-gray-800 sticky top-0 bg-[#050505]/90 backdrop-blur-md z-50">
-            <div class="container mx-auto px-6 flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
-                <nav class="flex items-center space-x-6">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                    <span class="text-[10px] uppercase tracking-widest text-white gold-border border-b pb-1">Udhëzues</span>
-                </nav>
-            </div>
-        </header>
-
         <div class="hero-gradient">
             <div class="container mx-auto px-6 py-20 max-w-4xl text-center">
                 <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-4">Udhëzues Investimi</p>
@@ -653,19 +674,8 @@
         </main>
     </div>
 
-    <!-- DEUTSCH - Same modern structure -->
+    <!-- DEUTSCH -->
     <div id="content-de" class="content-section">
-        <header class="py-6 border-b border-gray-800 sticky top-0 bg-[#050505]/90 backdrop-blur-md z-50">
-            <div class="container mx-auto px-6 flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
-                <nav class="flex items-center space-x-6">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                    <span class="text-[10px] uppercase tracking-widest text-white gold-border border-b pb-1">Ratgeber</span>
-                </nav>
-            </div>
-        </header>
-
         <div class="hero-gradient">
             <div class="container mx-auto px-6 py-20 max-w-4xl text-center">
                 <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-4">Investment Guide</p>
@@ -1233,19 +1243,8 @@
         </main>
     </div>
 
-    <!-- ENGLISH - Same modern structure -->
+    <!-- ENGLISH -->
     <div id="content-en" class="content-section">
-        <header class="py-6 border-b border-gray-800 sticky top-0 bg-[#050505]/90 backdrop-blur-md z-50">
-            <div class="container mx-auto px-6 flex justify-between items-center">
-                <a href="index.html" class="text-2xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
-                <nav class="flex items-center space-x-6">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                    <span class="text-[10px] uppercase tracking-widest text-white gold-border border-b pb-1">Guide</span>
-                </nav>
-            </div>
-        </header>
-
         <div class="hero-gradient">
             <div class="container mx-auto px-6 py-20 max-w-4xl text-center">
                 <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500 mb-4">Investment Guide</p>
@@ -1814,9 +1813,14 @@
     </div>
 
     <script>
-        // Language from localStorage
-        const lang = localStorage.getItem('sefaLanguage') || 'en';
+        // Language from localStorage (index.html uses 'language_selected')
+        const lang = localStorage.getItem('language_selected') || localStorage.getItem('sefaLanguage') || 'en';
+
+        // Show matching content section
         document.getElementById('content-' + lang).classList.add('active');
+
+        // Show matching navigation
+        document.getElementById('nav-' + lang).classList.add('active');
 
         // FAQ Accordion
         function toggleFaq(element) {
