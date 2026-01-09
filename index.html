@@ -160,6 +160,16 @@
             </div>
         </section>
 
+        <!-- Book a Call CTA -->
+        <div class="py-12 bg-[#050505]">
+            <div class="container mx-auto px-6 text-center">
+                <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded text-sm uppercase tracking-widest font-medium hover:bg-gray-200 transition-all shadow-lg hover:shadow-xl reveal">
+                    <span>Book a Call</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
         <!-- Stats -->
         <div class="border-y border-white/5 bg-white/[0.02]">
             <div class="container mx-auto px-6 py-8">
@@ -345,6 +355,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- Book a Call CTA -->
+        <div class="py-12 bg-[#050505]">
+            <div class="container mx-auto px-6 text-center">
+                <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded text-sm uppercase tracking-widest font-medium hover:bg-gray-200 transition-all shadow-lg hover:shadow-xl reveal">
+                    <span>Termin Vereinbaren</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
 
         <!-- Stats -->
         <div class="border-y border-white/5 bg-white/[0.02]">
@@ -533,6 +553,16 @@
                 </div>
             </div>
         </section>
+
+        <!-- Book a Call CTA -->
+        <div class="py-12 bg-[#050505]">
+            <div class="container mx-auto px-6 text-center">
+                <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-8 py-4 rounded text-sm uppercase tracking-widest font-medium hover:bg-gray-200 transition-all shadow-lg hover:shadow-xl reveal">
+                    <span>Rezervo një Takim</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
 
         <!-- Stats -->
         <div class="border-y border-white/5 bg-white/[0.02]">
@@ -741,6 +771,326 @@
 
         // Check stored language on page load
         checkStoredLanguage();
+
+        // Modal functions for Book a Call
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+            document.getElementById('bookingForm').reset();
+            document.body.style.overflow = 'auto';
+        }
+
+        async function submitBookingForm(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            // Get current language for form labels
+            const currentLang = localStorage.getItem('language_selected') || 'de';
+
+            // Translation objects for success/error messages
+            const messages = {
+                en: {
+                    success: 'Thank you! We will contact you shortly.',
+                    required: 'Please fill out all fields.',
+                    error: 'Error submitting form. Please try again.'
+                },
+                de: {
+                    success: 'Vielen Dank! Wir melden uns schnellstmöglich bei Ihnen.',
+                    required: 'Bitte füllen Sie alle Felder aus.',
+                    error: 'Fehler beim Absenden. Bitte versuchen Sie es erneut.'
+                },
+                sq: {
+                    success: 'Faleminderit! Do t\'ju kontaktojmë sa më shpejt.',
+                    required: 'Ju lutemi plotësoni të gjitha fushat.',
+                    error: 'Gabim në dërgim. Ju lutemi provoni përsëri.'
+                }
+            };
+
+            const msg = messages[currentLang];
+
+            // Check if all fields are filled
+            let allFilled = true;
+            for (let [key, value] of formData.entries()) {
+                if (!value) {
+                    allFilled = false;
+                    break;
+                }
+            }
+
+            if (!allFilled) {
+                alert(msg.required);
+                return;
+            }
+
+            const submitButton = form.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = '...';
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/info@sefa.capital', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        Name: formData.get('Name'),
+                        Email: formData.get('Email'),
+                        Telefon: formData.get('Telefon'),
+                        Immobilientyp: formData.get('Immobilientyp'),
+                        Kaufzeitpunkt: formData.get('Kaufzeitpunkt'),
+                        Budget: formData.get('Budget'),
+                        Suchgrund: formData.get('Suchgrund'),
+                        Type: 'Book a Call Request'
+                    })
+                });
+
+                if (response.ok) {
+                    alert(msg.success);
+                    closeBookingModal();
+                } else {
+                    alert(msg.error);
+                    submitButton.disabled = false;
+                    submitButton.textContent = currentLang === 'en' ? 'Submit' : currentLang === 'de' ? 'Absenden' : 'Dërgo';
+                }
+            } catch (error) {
+                alert(msg.error);
+                submitButton.disabled = false;
+                submitButton.textContent = currentLang === 'en' ? 'Submit' : currentLang === 'de' ? 'Absenden' : 'Dërgo';
+            }
+        }
+
+        // Update modal text based on current language
+        function updateModalLanguage() {
+            const currentLang = localStorage.getItem('language_selected') || 'de';
+
+            const translations = {
+                en: {
+                    modalTitle: 'Book a Call',
+                    modalSubtitle: 'Please fill out all fields to schedule your consultation',
+                    formName: 'Name',
+                    formEmail: 'Email Address',
+                    formPhone: 'Phone Number',
+                    formPropertyType: 'What type of property are you looking for and in which region?',
+                    formPropertyApartment: 'Apartment',
+                    formPropertyHouse: 'House',
+                    formPropertyBoth: 'Both',
+                    formTimeline: 'When do you want to purchase at the latest?',
+                    formTimeline1: '0-1 Month',
+                    formTimeline2: '1-3 Months',
+                    formTimeline3: 'Just looking for now',
+                    formBudget: 'What budget have you planned for the purchase?',
+                    formBudget1: '€180,000 - €300,000',
+                    formBudget2: '€300,000 - €500,000',
+                    formBudget3: '€500,000 - €800,000',
+                    formBudget4: '€800,000 - €2 Million',
+                    formBudget5: 'Over €2 Million',
+                    formReason: 'What is the main reason for your search?',
+                    formReasonOwn: 'Personal Use',
+                    formReasonInvest: 'Investment',
+                    formSubmit: 'Submit Request',
+                    formCancel: 'Cancel'
+                },
+                de: {
+                    modalTitle: 'Termin Vereinbaren',
+                    modalSubtitle: 'Bitte füllen Sie alle Felder aus, um Ihre Beratung zu buchen',
+                    formName: 'Name',
+                    formEmail: 'E-Mail Adresse',
+                    formPhone: 'Telefonnummer',
+                    formPropertyType: 'Welche Art von Immobilie suchen Sie und in welcher Region?',
+                    formPropertyApartment: 'Apartment',
+                    formPropertyHouse: 'Haus',
+                    formPropertyBoth: 'Kann beides',
+                    formTimeline: 'Wann möchten Sie spätestens neue Immobilie erwerben?',
+                    formTimeline1: '0-1 Monat',
+                    formTimeline2: '1-3 Monate',
+                    formTimeline3: 'Ich möchte erstmal nur schauen',
+                    formBudget: 'Welches Budget haben Sie für den Kauf eingeplant?',
+                    formBudget1: '180.000€ - 300.000€',
+                    formBudget2: '300.000€ - 500.000€',
+                    formBudget3: '500.000€ - 800.000€',
+                    formBudget4: '800.000€ - 2 Mio€',
+                    formBudget5: 'Über 2 Mio€',
+                    formReason: 'Was ist der Hauptgrund für Ihre Suche?',
+                    formReasonOwn: 'Eigenbedarf',
+                    formReasonInvest: 'Kapitalanlage',
+                    formSubmit: 'Anfrage Absenden',
+                    formCancel: 'Abbrechen'
+                },
+                sq: {
+                    modalTitle: 'Rezervo një Takim',
+                    modalSubtitle: 'Ju lutemi plotësoni të gjitha fushat për të rezervuar konsultën tuaj',
+                    formName: 'Emri',
+                    formEmail: 'Adresa Email',
+                    formPhone: 'Numri i Telefonit',
+                    formPropertyType: 'Çfarë lloj prone kërkoni dhe në cilën rajon?',
+                    formPropertyApartment: 'Apartament',
+                    formPropertyHouse: 'Shtëpi',
+                    formPropertyBoth: 'Të dyja',
+                    formTimeline: 'Kur dëshironi të blini më së voni?',
+                    formTimeline1: '0-1 Muaj',
+                    formTimeline2: '1-3 Muaj',
+                    formTimeline3: 'Dua vetëm të shoh për tani',
+                    formBudget: 'Çfarë buxheti keni planifikuar për blerjen?',
+                    formBudget1: '180.000€ - 300.000€',
+                    formBudget2: '300.000€ - 500.000€',
+                    formBudget3: '500.000€ - 800.000€',
+                    formBudget4: '800.000€ - 2 Mln€',
+                    formBudget5: 'Mbi 2 Mln€',
+                    formReason: 'Cila është arsyeja kryesore e kërkimit tuaj?',
+                    formReasonOwn: 'Përdorim Personal',
+                    formReasonInvest: 'Investim',
+                    formSubmit: 'Dërgo Kërkesën',
+                    formCancel: 'Anulo'
+                }
+            };
+
+            const t = translations[currentLang];
+
+            // Update all text elements
+            document.getElementById('modal-title').textContent = t.modalTitle;
+            document.getElementById('modal-subtitle').textContent = t.modalSubtitle;
+            document.getElementById('label-name').textContent = t.formName;
+            document.getElementById('label-email').textContent = t.formEmail;
+            document.getElementById('label-phone').textContent = t.formPhone;
+            document.getElementById('label-propertytype').textContent = t.formPropertyType;
+            document.getElementById('label-timeline').textContent = t.formTimeline;
+            document.getElementById('label-budget').textContent = t.formBudget;
+            document.getElementById('label-reason').textContent = t.formReason;
+            document.getElementById('btn-cancel').textContent = t.formCancel;
+            document.getElementById('btn-submit').textContent = t.formSubmit;
+
+            document.getElementById('opt-apartment').textContent = t.formPropertyApartment;
+            document.getElementById('opt-house').textContent = t.formPropertyHouse;
+            document.getElementById('opt-both').textContent = t.formPropertyBoth;
+            document.getElementById('opt-timeline1').textContent = t.formTimeline1;
+            document.getElementById('opt-timeline2').textContent = t.formTimeline2;
+            document.getElementById('opt-timeline3').textContent = t.formTimeline3;
+            document.getElementById('opt-budget1').textContent = t.formBudget1;
+            document.getElementById('opt-budget2').textContent = t.formBudget2;
+            document.getElementById('opt-budget3').textContent = t.formBudget3;
+            document.getElementById('opt-budget4').textContent = t.formBudget4;
+            document.getElementById('opt-budget5').textContent = t.formBudget5;
+            document.getElementById('opt-own').textContent = t.formReasonOwn;
+            document.getElementById('opt-invest').textContent = t.formReasonInvest;
+        }
+    </script>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <!-- Backdrop -->
+        <div class="fixed inset-0 bg-black/80 backdrop-blur-sm" onclick="closeBookingModal()"></div>
+
+        <!-- Modal Content -->
+        <div class="flex min-h-screen items-center justify-center p-4">
+            <div class="relative bg-[#0a0a0a] border border-white/10 rounded-lg max-w-2xl w-full p-8 shadow-2xl">
+                <!-- Close Button -->
+                <button onclick="closeBookingModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+
+                <!-- Header -->
+                <div class="mb-6">
+                    <h2 class="text-3xl font-bold mb-2 text-white font-serif" id="modal-title"></h2>
+                    <p class="text-gray-400 text-sm" id="modal-subtitle"></p>
+                </div>
+
+                <!-- Form -->
+                <form id="bookingForm" onsubmit="submitBookingForm(event)" class="space-y-5">
+                    <!-- Name -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-name"></label>
+                        <input type="text" name="Name" required
+                               class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-email"></label>
+                        <input type="email" name="Email" required
+                               class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                    </div>
+
+                    <!-- Phone -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-phone"></label>
+                        <input type="tel" name="Telefon" required
+                               class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                    </div>
+
+                    <!-- Property Type -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-propertytype"></label>
+                        <select name="Immobilientyp" required
+                                class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                            <option value="" disabled selected class="bg-[#0a0a0a]">---</option>
+                            <option value="Apartment" class="bg-[#0a0a0a]" id="opt-apartment"></option>
+                            <option value="Haus" class="bg-[#0a0a0a]" id="opt-house"></option>
+                            <option value="Beides" class="bg-[#0a0a0a]" id="opt-both"></option>
+                        </select>
+                    </div>
+
+                    <!-- Timeline -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-timeline"></label>
+                        <select name="Kaufzeitpunkt" required
+                                class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                            <option value="" disabled selected class="bg-[#0a0a0a]">---</option>
+                            <option value="0-1 Monat" class="bg-[#0a0a0a]" id="opt-timeline1"></option>
+                            <option value="1-3 Monate" class="bg-[#0a0a0a]" id="opt-timeline2"></option>
+                            <option value="Nur schauen" class="bg-[#0a0a0a]" id="opt-timeline3"></option>
+                        </select>
+                    </div>
+
+                    <!-- Budget -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-budget"></label>
+                        <select name="Budget" required
+                                class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                            <option value="" disabled selected class="bg-[#0a0a0a]">---</option>
+                            <option value="180k-300k" class="bg-[#0a0a0a]" id="opt-budget1"></option>
+                            <option value="300k-500k" class="bg-[#0a0a0a]" id="opt-budget2"></option>
+                            <option value="500k-800k" class="bg-[#0a0a0a]" id="opt-budget3"></option>
+                            <option value="800k-2M" class="bg-[#0a0a0a]" id="opt-budget4"></option>
+                            <option value="Über 2M" class="bg-[#0a0a0a]" id="opt-budget5"></option>
+                        </select>
+                    </div>
+
+                    <!-- Reason -->
+                    <div>
+                        <label class="block text-sm font-medium mb-2 text-white" id="label-reason"></label>
+                        <select name="Suchgrund" required
+                                class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                            <option value="" disabled selected class="bg-[#0a0a0a]">---</option>
+                            <option value="Eigenbedarf" class="bg-[#0a0a0a]" id="opt-own"></option>
+                            <option value="Kapitalanlage" class="bg-[#0a0a0a]" id="opt-invest"></option>
+                        </select>
+                    </div>
+
+                    <!-- Buttons -->
+                    <div class="flex gap-3 pt-4">
+                        <button type="button" onclick="closeBookingModal()"
+                                class="flex-1 bg-white/5 hover:bg-white/10 text-white py-3 rounded font-medium transition-all border border-white/10" id="btn-cancel">
+                        </button>
+                        <button type="submit"
+                                class="flex-1 bg-white hover:bg-gray-200 text-black py-3 rounded font-bold transition-all" id="btn-submit">
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize modal language when opening
+        document.querySelector('button[onclick="openBookingModal()"]')?.addEventListener('click', updateModalLanguage);
+
+        // Update modal language on page load
+        updateModalLanguage();
     </script>
 </body>
 </html>
