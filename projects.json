@@ -4,19 +4,27 @@
     "title": "Passo by Beyond",
     "location": "Palm Jumeirah, Dubai",
     "price": "5500000",
-    "image": "https://images.unsplash.com/photo-1512453979798-5ea904ac66de?q=80&w=1600&auto=format&fit=crop",
-    "description_de": "<ul><li><strong>Zahlungsplan:</strong> 60/40 (Attraktiv für Investoren)</li><li><strong>Übergabe:</strong> Q4 2026</li><li><strong>Highlight:</strong> Private Pools auf dem Balkon</li><li><strong>Lage:</strong> Direkt auf der Palm Jumeirah</li></ul>",
-    "description_en": "<ul><li><strong>Payment Plan:</strong> 60/40 (Attractive for investors)</li><li><strong>Handover:</strong> Q4 2026</li><li><strong>Highlight:</strong> Private pools on the balcony</li><li><strong>Location:</strong> Directly on Palm Jumeirah</li></ul>",
-    "description_sq": "<ul><li><strong>Plani i pagesës:</strong> 60/40 (Tërheqës për investitorët)</li><li><strong>Dorëzimi:</strong> Q4 2026</li><li><strong>Pika kryesore:</strong> Pishina private në ballkon</li><li><strong>Vendndodhja:</strong> Direkt në Palm Jumeirah</li></ul>"
+    "image": "https://images.unsplash.com/photo-1512453979798-5ea904ac66de?auto=format&fit=crop&w=800&q=80",
+    "description_en": "<ul><li><strong>Payment Plan:</strong> 60% during construction, 40% on handover</li><li><strong>Handover:</strong> Q4 2026</li><li><strong>Highlight:</strong> Private pools on the balcony & direct beach access</li><li><strong>Location:</strong> Premium Palm Jumeirah waterfront living</li></ul>",
+    "description_de": "<ul><li><strong>Zahlungsplan:</strong> 60% während Bauzeit, 40% bei Übergabe</li><li><strong>Übergabe:</strong> Q4 2026</li><li><strong>Highlight:</strong> Private Pools auf dem Balkon & direkter Strandzugang</li><li><strong>Lage:</strong> Premium Wasserfront auf Palm Jumeirah</li></ul>",
+    "description_sq": "<ul><li><strong>Plani i Pagesës:</strong> 60% gjatë ndërtimit, 40% në dorëzim</li><li><strong>Dorëzimi:</strong> Q4 2026</li><li><strong>Veçori:</strong> Pishina private në ballkon dhe akses direkt në plazh</li><li><strong>Vendndodhja:</strong> Premium Palm Jumeirah pranë detit</li></ul>",
+    "title_de": "Passo by Beyond",
+    "title_sq": "Passo by Beyond",
+    "location_de": "Palm Jumeirah, Dubai",
+    "location_sq": "Palm Jumeirah, Dubai"
   },
   {
     "id": 2,
-    "title": "Samana Hills South 3",
+    "title": "Samana Hills South Phase 3",
     "location": "Arjan, Dubai",
     "price": "988000",
-    "image": "https://images.unsplash.com/photo-1574359611959-b55c6c8e1462?q=80&w=1600&auto=format&fit=crop",
-    "description_de": "<ul><li><strong>Zahlungsplan:</strong> 1% monatlich (5 Jahre)</li><li><strong>Übergabe:</strong> Q4 2026</li><li><strong>Highlight:</strong> Apartments mit privatem Pool</li><li><strong>Investment:</strong> Hohe Rendite durch Kurzzeitvermietung</li></ul>",
-    "description_en": "<ul><li><strong>Payment Plan:</strong> 1% monthly (5 years)</li><li><strong>Handover:</strong> Q4 2026</li><li><strong>Highlight:</strong> Apartments with private pool</li><li><strong>Investment:</strong> High ROI via short-term rental</li></ul>",
-    "description_sq": "<ul><li><strong>Plani i pagesës:</strong> 1% në muaj (5 vjet)</li><li><strong>Dorëzimi:</strong> Q4 2026</li><li><strong>Pika kryesore:</strong> Apartamente me pishinë private</li><li><strong>Investimi:</strong> ROI i lartë përmes qirasë afatshkurtër</li></ul>"
+    "image": "https://images.unsplash.com/photo-1574359611959-b55c6c8e1462?auto=format&fit=crop&w=800&q=80",
+    "description_en": "<ul><li><strong>Payment Plan:</strong> 1% monthly installments (5 years)</li><li><strong>Handover:</strong> Q4 2026</li><li><strong>Highlight:</strong> Apartments with private pools</li><li><strong>Investment:</strong> High ROI potential through short-term rental</li></ul>",
+    "description_de": "<ul><li><strong>Zahlungsplan:</strong> 1% monatliche Raten (5 Jahre)</li><li><strong>Übergabe:</strong> Q4 2026</li><li><strong>Highlight:</strong> Apartments mit privaten Pools</li><li><strong>Investment:</strong> Hohes ROI-Potenzial durch Kurzzeitvermietung</li></ul>",
+    "description_sq": "<ul><li><strong>Plani i Pagesës:</strong> 1% këste mujore (5 vjet)</li><li><strong>Dorëzimi:</strong> Q4 2026</li><li><strong>Veçori:</strong> Apartamente me pishina private</li><li><strong>Investim:</strong> Potencial i lartë ROI përmes qirasë afatshkurtër</li></ul>",
+    "title_de": "Samana Hills Süd Phase 3",
+    "title_sq": "Faza 3 e Samana Hills Jugore",
+    "location_de": "Arjan, Dubai",
+    "location_sq": "Arjan, Dubai"
   }
 ]
