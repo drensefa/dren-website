@@ -677,7 +677,7 @@
                 bedrooms: extractBedroomNumber(scrapedProject.bedrooms),
                 status: mapStatus(scrapedProject.status),
                 description: description,
-                image: scrapedProject.image || 'https://images.unsplash.com/photo-5125129177774080-9991f1c4c750?w=800&q=80',
+                images: scrapedProject.images || [scrapedProject.image] || ['https://images.unsplash.com/photo-5125129177774080-9991f1c4c750?w=800&q=80'],
                 developer: normalizeDeveloper(scrapedProject.developer),
                 region: mapLocationToRegion(scrapedProject.location),
                 whatsappText: `I'm interested in ${title}`,
@@ -771,7 +771,7 @@
                 const projectCard = `
                     <div class="project-card bg-[#0a0a0a] border border-white/10 overflow-hidden group">
                         <div class="overflow-hidden h-64 relative">
-                            <img src="${project.image}" alt="${project.title}" class="w-full h-full object-cover">
+                            <img src="${(project.images && project.images[0]) || project.image || 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80'}" alt="${project.title}" class="w-full h-full object-cover">
                         </div>
                         <div class="p-6">
                             <div class="text-xs uppercase tracking-widest text-gray-500 mb-2">${project.location}</div>
