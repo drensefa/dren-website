@@ -91,7 +91,12 @@
         .delay-700 { animation-delay: 0.7s; }
 
         ::selection { background: white; color: black; }
-        
+
+        /* Language Navigation - hidden by default */
+        .lang-nav { display: none; }
+        .lang-nav.active { display: flex; }
+        span.lang-nav.active { display: inline; }
+
         /* Custom Social Icons Hover */
         .social-icon:hover { transform: translateY(-2px); color: white; }
         .social-icon { transition: all 0.3s ease; color: #9ca3af; }
@@ -111,29 +116,46 @@
         </div>
     </div>
 
+    <!-- UNIFIED HEADER -->
+    <div class="absolute top-0 left-0 w-full z-50 py-6">
+        <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+            <div class="flex flex-col">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                    <span id="header-subtitle-en" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Global Entrepreneur & Investor</span>
+                    <span id="header-subtitle-de" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Globaler Unternehmer & Investor</span>
+                    <span id="header-subtitle-sq" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Sipërmarrës Global & Investitor</span>
+                </div>
+                <a href="index.html" class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
+            </div>
+
+            <!-- English Navigation -->
+            <nav id="nav-en" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
+                <span class="text-[10px] uppercase tracking-widest text-white">Home</span>
+                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
+                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Guide</a>
+            </nav>
+
+            <!-- German Navigation -->
+            <nav id="nav-de" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
+                <span class="text-[10px] uppercase tracking-widest text-white">Startseite</span>
+                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
+                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ratgeber</a>
+            </nav>
+
+            <!-- Albanian Navigation -->
+            <nav id="nav-sq" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
+                <span class="text-[10px] uppercase tracking-widest text-white">Ballina</span>
+                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
+                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Udhëzues</a>
+            </nav>
+        </div>
+    </div>
+
     <!-- ========================================== -->
     <!-- ENGLISH VERSION -->
     <!-- ========================================== -->
     <div id="content-en" class="content-section">
-        
-        <!-- Header -->
-        <div class="absolute top-0 left-0 w-full z-50 py-6">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Global Entrepreneur & Investor</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                    <a href="guide.html" onclick="localStorage.setItem('sefaLanguage','en')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Guide</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero -->
         <section class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-40 pb-20 md:pt-48 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
@@ -149,7 +171,7 @@
                         Raised with German discipline and an Albanian heart. With a transaction volume exceeding 9 figures, Dren Sefa offers sustainable investment strategies and long-term partnership within the Dubai real estate market.
                     </p>
                     <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-6 py-3 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all reveal delay-700">
-                        <span>Book a Call</span>
+                        <span>Contact Now</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -219,6 +241,34 @@
                     </div>
                     <div class="reveal delay-300">
                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Dubai Architecture" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects CTA Section -->
+        <section class="py-20 bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505] overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="relative max-w-4xl mx-auto text-center">
+                    <!-- Animated background elements -->
+                    <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse"></div>
+                    <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
+
+                    <div class="relative z-10 reveal">
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-4">Exclusive Opportunities</p>
+                        <h2 class="text-4xl md:text-5xl font-serif mb-6">
+                            Discover Our <span class="italic text-gray-400">Premium Projects</span>
+                        </h2>
+                        <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+                            Explore handpicked luxury real estate investments in Dubai's most prestigious locations. From off-plan gems to ready-to-move properties.
+                        </p>
+                        <p class="text-gray-500 text-sm mb-10">
+                            This is just a selection – we have access to <span class="text-white font-medium">ALL projects in Dubai</span>.
+                        </p>
+                        <a href="projects.html" class="group inline-flex items-center space-x-4 bg-white text-black px-8 py-4 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]">
+                            <span>View Projects</span>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -317,26 +367,6 @@
     <!-- GERMAN VERSION (DEUTSCH) -->
     <!-- ========================================== -->
     <div id="content-de" class="content-section">
-        
-        <!-- Header -->
-        <div class="absolute top-0 left-0 w-full z-50 py-6">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <!-- KORRIGIERT: Deutsch -->
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Globaler Unternehmer & Investor</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                    <a href="guide.html" onclick="localStorage.setItem('sefaLanguage','de')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ratgeber</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero -->
         <section class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-40 pb-20 md:pt-48 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
@@ -352,7 +382,7 @@
                         Aufgewachsen mit deutscher Disziplin, im Herzen Albaner. Mit einem Transaktionsvolumen im 9-stelligen Bereich bietet Dren Sefa nicht nur Immobilienzugang, sondern nachhaltige Investment-Strategien und langfristige Partnerschaft im Markt von Dubai.
                     </p>
                     <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-6 py-3 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all reveal delay-700">
-                        <span>Termin Vereinbaren</span>
+                        <span>Jetzt Kontakt aufnehmen</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -422,6 +452,34 @@
                     </div>
                     <div class="reveal delay-300">
                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Dubai Architektur" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects CTA Section -->
+        <section class="py-20 bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505] overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="relative max-w-4xl mx-auto text-center">
+                    <!-- Animated background elements -->
+                    <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse"></div>
+                    <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
+
+                    <div class="relative z-10 reveal">
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-4">Exklusive Möglichkeiten</p>
+                        <h2 class="text-4xl md:text-5xl font-serif mb-6">
+                            Entdecken Sie unsere <span class="italic text-gray-400">Premium Projekte</span>
+                        </h2>
+                        <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+                            Erkunden Sie handverlesene Luxusimmobilien-Investitionen in Dubais prestigeträchtigsten Lagen. Von Off-Plan Perlen bis zu bezugsfertigen Objekten.
+                        </p>
+                        <p class="text-gray-500 text-sm mb-10">
+                            Dies ist nur eine Auswahl – wir haben Zugriff auf <span class="text-white font-medium">ALLE Projekte in Dubai</span>.
+                        </p>
+                        <a href="projects.html" class="group inline-flex items-center space-x-4 bg-white text-black px-8 py-4 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]">
+                            <span>Projekte Ansehen</span>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -522,26 +580,6 @@
     <!-- ALBANIAN VERSION (SHQIP) -->
     <!-- ========================================== -->
     <div id="content-sq" class="content-section">
-        
-        <!-- Header -->
-        <div class="absolute top-0 left-0 w-full z-50 py-6">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <!-- KORRIGIERT: Albanisch -->
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Sipërmarrës Global & Investitor</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                    <a href="guide.html" onclick="localStorage.setItem('sefaLanguage','sq')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Udhëzues</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero -->
         <section class="relative min-h-screen flex flex-col md:flex-row items-center justify-center pt-24 md:pt-0 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
@@ -557,7 +595,7 @@
                         I rritur me disiplinën gjermane dhe zemrën shqiptare. Me një volum transaksionesh që tejkalon 9 shifra, Dren Sefa ofron strategji investimi të qëndrueshme dhe partneritet afatgjatë për investitorët në tregun e Dubait.
                     </p>
                     <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-6 py-3 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all reveal delay-700">
-                        <span>Rezervo një Takim</span>
+                        <span>Na kontakto tani</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -627,6 +665,34 @@
                     </div>
                     <div class="reveal delay-300">
                         <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Arkitektura e Dubait" class="w-full h-full object-cover rounded-lg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects CTA Section -->
+        <section class="py-20 bg-gradient-to-b from-[#050505] via-[#0a0a0a] to-[#050505] overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="relative max-w-4xl mx-auto text-center">
+                    <!-- Animated background elements -->
+                    <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse"></div>
+                    <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
+
+                    <div class="relative z-10 reveal">
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-4">Mundësi Ekskluzive</p>
+                        <h2 class="text-4xl md:text-5xl font-serif mb-6">
+                            Zbuloni Projektet tona <span class="italic text-gray-400">Premium</span>
+                        </h2>
+                        <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+                            Eksploroni investime të zgjedhura në pasuri të paluajtshme luksoze në lokacionet më prestigjioze të Dubait. Nga projekte off-plan deri te prona të gatshme.
+                        </p>
+                        <p class="text-gray-500 text-sm mb-10">
+                            Kjo është vetëm një përzgjedhje – ne kemi qasje në <span class="text-white font-medium">TË GJITHA projektet në Dubai</span>.
+                        </p>
+                        <a href="projects.html" class="group inline-flex items-center space-x-4 bg-white text-black px-8 py-4 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]">
+                            <span>Shiko Projektet</span>
+                            <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -758,14 +824,23 @@
                 }, 800);
             }
 
-            // Inhalt zeigen
-            if(lang === 'en') {
-                document.getElementById('content-en').classList.add('active');
-            } else if(lang === 'de') {
-                document.getElementById('content-de').classList.add('active');
-            } else {
-                document.getElementById('content-sq').classList.add('active');
-            }
+            // Hide all content sections
+            document.getElementById('content-en').classList.remove('active');
+            document.getElementById('content-de').classList.remove('active');
+            document.getElementById('content-sq').classList.remove('active');
+
+            // Hide all navigations
+            document.getElementById('nav-en').classList.remove('active');
+            document.getElementById('nav-de').classList.remove('active');
+            document.getElementById('nav-sq').classList.remove('active');
+            document.getElementById('header-subtitle-en').classList.remove('active');
+            document.getElementById('header-subtitle-de').classList.remove('active');
+            document.getElementById('header-subtitle-sq').classList.remove('active');
+
+            // Show selected language content and navigation
+            document.getElementById(`content-${lang}`).classList.add('active');
+            document.getElementById(`nav-${lang}`).classList.add('active');
+            document.getElementById(`header-subtitle-${lang}`).classList.add('active');
 
             // Nach oben scrollen
             window.scrollTo(0,0);
@@ -893,7 +968,7 @@
 
             const translations = {
                 en: {
-                    modalTitle: 'Book a Call',
+                    modalTitle: 'Contact Now',
                     modalSubtitle: 'Please fill out all fields to schedule your consultation',
                     formName: 'Name',
                     formEmail: 'Email Address',
@@ -919,7 +994,7 @@
                     formCancel: 'Cancel'
                 },
                 de: {
-                    modalTitle: 'Termin Vereinbaren',
+                    modalTitle: 'Jetzt Kontakt aufnehmen',
                     modalSubtitle: 'Bitte füllen Sie alle Felder aus, um Ihre Beratung zu buchen',
                     formName: 'Name',
                     formEmail: 'E-Mail Adresse',
@@ -945,7 +1020,7 @@
                     formCancel: 'Abbrechen'
                 },
                 sq: {
-                    modalTitle: 'Rezervo një Takim',
+                    modalTitle: 'Na kontakto tani',
                     modalSubtitle: 'Ju lutemi plotësoni të gjitha fushat për të rezervuar konsultën tuaj',
                     formName: 'Emri',
                     formEmail: 'Adresa Email',

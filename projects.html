@@ -76,6 +76,11 @@
 
         ::selection { background: white; color: black; }
 
+        /* Language Navigation - hidden by default */
+        .lang-nav { display: none; }
+        .lang-nav.active { display: flex; }
+        span.lang-nav.active { display: inline; }
+
         /* Custom Social Icons Hover */
         .social-icon:hover { transform: translateY(-2px); color: white; }
         .social-icon { transition: all 0.3s ease; color: #9ca3af; }
@@ -126,28 +131,46 @@
         </div>
     </div>
 
+    <!-- UNIFIED HEADER -->
+    <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
+        <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
+            <div class="flex flex-col">
+                <div class="flex items-center mb-2">
+                    <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
+                    <span id="header-subtitle-en" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate Portfolio</span>
+                    <span id="header-subtitle-de" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxus Immobilien Portfolio</span>
+                    <span id="header-subtitle-sq" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Portofoli Luksoz i Pasurive</span>
+                </div>
+                <a href="index.html" class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
+            </div>
+
+            <!-- English Navigation -->
+            <nav id="nav-en" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
+                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
+                <span class="text-[10px] uppercase tracking-widest text-white">Projects</span>
+                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Guide</a>
+            </nav>
+
+            <!-- German Navigation -->
+            <nav id="nav-de" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
+                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Startseite</a>
+                <span class="text-[10px] uppercase tracking-widest text-white">Projekte</span>
+                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ratgeber</a>
+            </nav>
+
+            <!-- Albanian Navigation -->
+            <nav id="nav-sq" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
+                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ballina</a>
+                <span class="text-[10px] uppercase tracking-widest text-white">Projekte</span>
+                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Udhëzues</a>
+            </nav>
+        </div>
+    </div>
+
     <!-- ========================================== -->
     <!-- ENGLISH VERSION -->
     <!-- ========================================== -->
     <div id="content-en" class="content-section">
-        <!-- Header -->
-        <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate Portfolio</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <span class="text-[10px] uppercase tracking-widest text-white">Projects</span>
-                    <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Guide</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero Section with Title -->
         <section class="relative pt-32 pb-12 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
@@ -244,24 +267,6 @@
     <!-- GERMAN VERSION (DEUTSCH) -->
     <!-- ========================================== -->
     <div id="content-de" class="content-section">
-        <!-- Header -->
-        <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxus Immobilien Portfolio</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Startseite</a>
-                    <span class="text-[10px] uppercase tracking-widest text-white">Projekte</span>
-                    <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ratgeber</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero Section with Title -->
         <section class="relative pt-32 pb-12 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
@@ -358,24 +363,6 @@
     <!-- ALBANIAN VERSION (SHQIP) -->
     <!-- ========================================== -->
     <div id="content-sq" class="content-section">
-        <!-- Header -->
-        <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Portofoli Luksoz i Pasurive</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ballina</a>
-                    <span class="text-[10px] uppercase tracking-widest text-white">Projekte</span>
-                    <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Udhëzues</a>
-                </div>
-            </div>
-        </div>
-
         <!-- Hero Section with Title -->
         <section class="relative pt-32 pb-12 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
@@ -870,8 +857,18 @@
             document.getElementById('content-de').classList.remove('active');
             document.getElementById('content-sq').classList.remove('active');
 
-            // Show selected language
+            // Hide all navigations
+            document.getElementById('nav-en').classList.remove('active');
+            document.getElementById('nav-de').classList.remove('active');
+            document.getElementById('nav-sq').classList.remove('active');
+            document.getElementById('header-subtitle-en').classList.remove('active');
+            document.getElementById('header-subtitle-de').classList.remove('active');
+            document.getElementById('header-subtitle-sq').classList.remove('active');
+
+            // Show selected language content and navigation
             document.getElementById(`content-${lang}`).classList.add('active');
+            document.getElementById(`nav-${lang}`).classList.add('active');
+            document.getElementById(`header-subtitle-${lang}`).classList.add('active');
             currentLang = lang;
 
             // Reset filters
