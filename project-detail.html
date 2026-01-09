@@ -1,682 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- SEO -->
-    <title>Project Details | Sefa Capital</title>
-    <meta name="description" content="Exclusive luxury real estate project details. Investment opportunities curated by Dren Sefa.">
-
-    <!-- Favicon -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23050505%22/><text y=%22.9em%22 x=%2250%22 font-size=%2290%22 font-family=%22serif%22 text-anchor=%22middle%22 fill=%22white%22>D</text></svg>">
-
-    <!-- Tailwind CSS -->
+    <title>Projekt Details - Dren Sefa</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
-        body {
-            background-color: #050505;
-            color: white;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-            cursor: default;
-        }
-        .font-serif { font-family: 'Playfair Display', serif; }
-
-        ::selection { background: white; color: black; }
-
-        /* Custom Social Icons Hover */
-        .social-icon:hover { transform: translateY(-2px); color: white; }
-        .social-icon { transition: all 0.3s ease; color: #9ca3af; }
-
-        /* Gallery Image Hover */
-        .gallery-item {
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-
-        /* Hero Image */
-        .hero-image {
-            transition: all 0.7s ease;
-        }
-        .hero-image:hover {
-            transform: scale(1.02);
-        }
-
-        /* Fade In Animation */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-500 { animation-delay: 0.5s; }
+        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .gold-text { color: #D4AF37; }
+        /* Lade-Animation */
+        .loader { border-top-color: #D4AF37; -webkit-animation: spinner 1.5s linear infinite; animation: spinner 1.5s linear infinite; }
+        @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
 
-    <!-- ========================================== -->
-    <!-- ENGLISH VERSION -->
-    <!-- ========================================== -->
-    <div id="content-en" class="content-section active">
-        <!-- Header -->
-        <div class="fixed top-0 left-0 w-full z-50 py-6 bg-[#050505]/90 backdrop-blur-sm border-b border-white/5">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                    <div class="h-3 w-[1px] bg-gray-800"></div>
-                    <button onclick="changeLanguage('de')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">DE</button>
-                    <button onclick="changeLanguage('sq')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">SQ</button>
-                </div>
-            </div>
+    <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold tracking-tighter">DREN SEFA</a>
+            <a href="index.html" class="text-sm tracking-widest hover:text-[#D4AF37] transition-colors">ZURÜCK</a>
         </div>
+    </nav>
 
-        <!-- Hero Image Section -->
-        <section class="relative pt-32 pb-0 overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gray-900 fade-in">
-                    <img id="hero-image-en" src="" alt="Project" class="hero-image w-full h-full object-cover opacity-90">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
-                    <div id="status-badge-en" class="absolute top-6 right-6 bg-black/80 px-4 py-2 text-xs uppercase tracking-wider text-gray-300"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Details -->
-        <section class="py-16 relative">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <!-- Left Column - Main Info -->
-                    <div class="lg:col-span-8 fade-in delay-100">
-                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-3" id="location-en"></div>
-                        <h1 class="text-4xl md:text-6xl font-serif mb-6" id="title-en"></h1>
-                        <div class="flex items-baseline space-x-4 mb-8 pb-8 border-b border-white/10">
-                            <div class="text-4xl md:text-5xl font-serif text-white" id="price-en"></div>
-                            <div class="text-sm text-gray-500" id="bedrooms-en"></div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-4 text-gray-300">About This Project</h2>
-                            <p class="text-gray-400 leading-relaxed text-lg" id="description-en"></p>
-                        </div>
-
-                        <!-- Features -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Key Features</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="features-en"></div>
-                        </div>
-
-                        <!-- Gallery -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Gallery</h2>
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-en"></div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Sticky Contact Card -->
-                    <div class="lg:col-span-4 fade-in delay-300">
-                        <div class="lg:sticky lg:top-32 bg-[#0a0a0a] border border-white/10 p-8">
-                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-4">Investment Advisor</div>
-                            <div class="text-2xl font-serif mb-6">DREN SEFA</div>
-
-                            <div class="space-y-4 mb-8">
-                                <div class="flex items-center space-x-3 text-gray-400">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    <span class="text-sm">Dubai, UAE</span>
-                                </div>
-                                <div class="flex items-center space-x-3 text-gray-400">
-                                    <i data-lucide="mail" class="w-4 h-4"></i>
-                                    <a href="mailto:info@sefa.capital" class="text-sm hover:text-white transition-colors">info@sefa.capital</a>
-                                </div>
-                            </div>
-
-                            <!-- WhatsApp Button - HIGHLIGHTED -->
-                            <a href="#" id="whatsapp-btn-en" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 py-4 mb-4 transition-all shadow-lg hover:shadow-yellow-900/50">
-                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
-                                <span class="text-sm uppercase tracking-widest text-white font-medium">WhatsApp Inquiry</span>
-                            </a>
-
-                            <a href="projects.html" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 transition-all">
-                                <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400"></i>
-                                <span class="text-xs uppercase tracking-widest text-gray-400">Back to Projects</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <section class="py-12 border-t border-white/5 mb-8">
-            <div class="container mx-auto px-6 flex flex-col items-center">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Trusted by International Investors</p>
-                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
-                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
-                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
-                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                    <div class="flex justify-center space-x-6 pt-6">
-                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
-                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <div id="project-container" class="flex-grow pt-20 min-h-screen relative">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12 mb-4"></div>
+        </div>
     </div>
 
-    <!-- ========================================== -->
-    <!-- GERMAN VERSION (DEUTSCH) -->
-    <!-- ========================================== -->
-    <div id="content-de" class="content-section" style="display: none;">
-        <!-- Header -->
-        <div class="fixed top-0 left-0 w-full z-50 py-6 bg-[#050505]/90 backdrop-blur-sm border-b border-white/5">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxus Immobilien</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                    <div class="h-3 w-[1px] bg-gray-800"></div>
-                    <button onclick="changeLanguage('en')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">EN</button>
-                    <button onclick="changeLanguage('sq')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">SQ</button>
-                </div>
-            </div>
+    <footer class="border-t border-white/10 py-12 bg-black">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <p class="text-gray-500 text-sm">Luxury Real Estate Dubai</p>
         </div>
+    </footer>
 
-        <!-- Hero Image Section -->
-        <section class="relative pt-32 pb-0 overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gray-900 fade-in">
-                    <img id="hero-image-de" src="" alt="Project" class="hero-image w-full h-full object-cover opacity-90">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
-                    <div id="status-badge-de" class="absolute top-6 right-6 bg-black/80 px-4 py-2 text-xs uppercase tracking-wider text-gray-300"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Details -->
-        <section class="py-16 relative">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <!-- Left Column - Main Info -->
-                    <div class="lg:col-span-8 fade-in delay-100">
-                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-3" id="location-de"></div>
-                        <h1 class="text-4xl md:text-6xl font-serif mb-6" id="title-de"></h1>
-                        <div class="flex items-baseline space-x-4 mb-8 pb-8 border-b border-white/10">
-                            <div class="text-4xl md:text-5xl font-serif text-white" id="price-de"></div>
-                            <div class="text-sm text-gray-500" id="bedrooms-de"></div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-4 text-gray-300">Über dieses Projekt</h2>
-                            <p class="text-gray-400 leading-relaxed text-lg" id="description-de"></p>
-                        </div>
-
-                        <!-- Features -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Hauptmerkmale</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="features-de"></div>
-                        </div>
-
-                        <!-- Gallery -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Galerie</h2>
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-de"></div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Sticky Contact Card -->
-                    <div class="lg:col-span-4 fade-in delay-300">
-                        <div class="lg:sticky lg:top-32 bg-[#0a0a0a] border border-white/10 p-8">
-                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-4">Investmentberater</div>
-                            <div class="text-2xl font-serif mb-6">DREN SEFA</div>
-
-                            <div class="space-y-4 mb-8">
-                                <div class="flex items-center space-x-3 text-gray-400">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    <span class="text-sm">Dubai, VAE</span>
-                                </div>
-                                <div class="flex items-center space-x-3 text-gray-400">
-                                    <i data-lucide="mail" class="w-4 h-4"></i>
-                                    <a href="mailto:info@sefa.capital" class="text-sm hover:text-white transition-colors">info@sefa.capital</a>
-                                </div>
-                            </div>
-
-                            <!-- WhatsApp Button - HIGHLIGHTED -->
-                            <a href="#" id="whatsapp-btn-de" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 py-4 mb-4 transition-all shadow-lg hover:shadow-yellow-900/50">
-                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
-                                <span class="text-sm uppercase tracking-widest text-white font-medium">WhatsApp Anfrage</span>
-                            </a>
-
-                            <a href="projects.html" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 transition-all">
-                                <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400"></i>
-                                <span class="text-xs uppercase tracking-widest text-gray-400">Zurück zu Projekten</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <section class="py-12 border-t border-white/5 mb-8">
-            <div class="container mx-auto px-6 flex flex-col items-center">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">Vertraut von internationalen Investoren</p>
-                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
-                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
-                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
-                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                    <div class="flex justify-center space-x-6 pt-6">
-                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
-                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- ========================================== -->
-    <!-- ALBANIAN VERSION (SHQIP) -->
-    <!-- ========================================== -->
-    <div id="content-sq" class="content-section" style="display: none;">
-        <!-- Header -->
-        <div class="fixed top-0 left-0 w-full z-50 py-6 bg-[#050505]/90 backdrop-blur-sm border-b border-white/5">
-            <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-                <div class="flex flex-col">
-                    <div class="flex items-center mb-2">
-                        <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                        <span class="text-[9px] uppercase tracking-[0.3em] text-gray-500">Pasuri Luksoze</span>
-                    </div>
-                    <div class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500">SEFA.</div>
-                </div>
-                <div class="flex items-center space-x-6 mt-2 md:mt-0">
-                    <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                    <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                    <div class="h-3 w-[1px] bg-gray-800"></div>
-                    <button onclick="changeLanguage('en')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">EN</button>
-                    <button onclick="changeLanguage('de')" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">DE</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Hero Image Section -->
-        <section class="relative pt-32 pb-0 overflow-hidden">
-            <div class="container mx-auto px-6">
-                <div class="relative h-[60vh] md:h-[70vh] overflow-hidden bg-gray-900 fade-in">
-                    <img id="hero-image-sq" src="" alt="Project" class="hero-image w-full h-full object-cover opacity-90">
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
-                    <div id="status-badge-sq" class="absolute top-6 right-6 bg-black/80 px-4 py-2 text-xs uppercase tracking-wider text-gray-300"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Project Details -->
-        <section class="py-16 relative">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-                    <!-- Left Column - Main Info -->
-                    <div class="lg:col-span-8 fade-in delay-100">
-                        <div class="text-xs uppercase tracking-widest text-gray-500 mb-3" id="location-sq"></div>
-                        <h1 class="text-4xl md:text-6xl font-serif mb-6" id="title-sq"></h1>
-                        <div class="flex items-baseline space-x-4 mb-8 pb-8 border-b border-white/10">
-                            <div class="text-4xl md:text-5xl font-serif text-white" id="price-sq"></div>
-                            <div class="text-sm text-gray-500" id="bedrooms-sq"></div>
-                        </div>
-
-                        <!-- Description -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-4 text-gray-300">Rreth këtij projekti</h2>
-                            <p class="text-gray-400 leading-relaxed text-lg" id="description-sq"></p>
-                        </div>
-
-                        <!-- Features -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Karakteristikat Kryesore</h2>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="features-sq"></div>
-                        </div>
-
-                        <!-- Gallery -->
-                        <div class="mb-12">
-                            <h2 class="text-2xl font-serif mb-6 text-gray-300">Galeria</h2>
-                            <div class="grid grid-cols-2 md:grid-cols-3 gap-4" id="gallery-sq"></div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Sticky Contact Card -->
-                    <div class="lg:col-span-4 fade-in delay-300">
-                        <div class="lg:sticky lg:top-32 bg-[#0a0a0a] border border-white/10 p-8">
-                            <div class="text-xs uppercase tracking-widest text-gray-500 mb-4">Këshilltar Investimesh</div>
-                            <div class="text-2xl font-serif mb-6">DREN SEFA</div>
-
-                            <div class="space-y-4 mb-8">
-                                <div class="flex items-center space-x-3 text-gray-400">
-                                    <i data-lucide="map-pin" class="w-4 h-4"></i>
-                                    <span class="text-sm">Dubai, UAE</span>
-                                </div>
-                                <div class="flex items-center space-x-3 text-gray-400">
-                                    <i data-lucide="mail" class="w-4 h-4"></i>
-                                    <a href="mailto:info@sefa.capital" class="text-sm hover:text-white transition-colors">info@sefa.capital</a>
-                                </div>
-                            </div>
-
-                            <!-- WhatsApp Button - HIGHLIGHTED -->
-                            <a href="#" id="whatsapp-btn-sq" target="_blank" class="flex items-center justify-center space-x-3 w-full bg-gradient-to-r from-yellow-600 to-yellow-700 hover:from-yellow-500 hover:to-yellow-600 py-4 mb-4 transition-all shadow-lg hover:shadow-yellow-900/50">
-                                <i data-lucide="message-circle" class="w-5 h-5 text-white"></i>
-                                <span class="text-sm uppercase tracking-widest text-white font-medium">Kërkesë WhatsApp</span>
-                            </a>
-
-                            <a href="projects.html" class="flex items-center justify-center space-x-2 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/30 py-4 transition-all">
-                                <i data-lucide="arrow-left" class="w-4 h-4 text-gray-400"></i>
-                                <span class="text-xs uppercase tracking-widest text-gray-400">Kthehu te Projektet</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <section class="py-12 border-t border-white/5 mb-8">
-            <div class="container mx-auto px-6 flex flex-col items-center">
-                <p class="text-xs uppercase tracking-[0.3em] text-gray-600 mb-8">I Besueshëm nga Investitorët Ndërkombëtarë</p>
-                <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
-                    <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
-                    <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
-                    <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                    <div class="flex justify-center space-x-6 pt-6">
-                        <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
-                        <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
-                        <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- LOGIC -->
     <script>
-        // Icons initialisieren
-        lucide.createIcons();
+        async function loadProjectDetails() {
+            const params = new URLSearchParams(window.location.search);
+            const id = params.get('id');
 
-        // Get URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const projectId = parseInt(urlParams.get('id')) || 1;
-        const lang = urlParams.get('lang') || localStorage.getItem('language_selected') || 'en';
-
-        // Utility: Convert AED to EUR (1 AED ≈ 0.25 EUR)
-        function convertAEDtoEUR(aedPrice) {
-            const match = aedPrice.match(/([\d,]+)(K|M)?/);
-            if (!match) return '';
-
-            let value = parseFloat(match[1].replace(/,/g, ''));
-            const unit = match[2];
-
-            if (unit === 'K') value *= 1000;
-            else if (unit === 'M') value *= 1000000;
-
-            const eurValue = value * 0.25;
-
-            // Format with commas
-            if (eurValue >= 1000000) {
-                return `€${(eurValue / 1000000).toFixed(1)}M`;
-            } else if (eurValue >= 1000) {
-                return `€${Math.round(eurValue / 1000)}K`;
+            if (!id) {
+                window.location.href = 'index.html';
+                return;
             }
-            return `€${Math.round(eurValue).toLocaleString()}`;
-        }
 
-        // Utility: Convert sqft to m² (1 sqft = 0.0929 m²)
-        function convertSqftToSqm(sizeString) {
-            if (!sizeString || sizeString === 'N/A') return '';
-
-            const match = sizeString.match(/([\d,]+)/);
-            if (!match) return '';
-
-            const sqft = parseFloat(match[1].replace(/,/g, ''));
-            const sqm = Math.round(sqft * 0.0929);
-
-            return `${sqft.toLocaleString()} Sq Ft (${sqm} m²)`;
-        }
-
-        // Load projects from JSON file
-        async function loadProjectsFromJSON() {
             try {
-                const response = await fetch('projects.json');
-                if (!response.ok) throw new Error('Could not load projects.json');
-                return await response.json();
-            } catch (error) {
-                console.error('Failed to load projects:', error);
-                return [];
-            }
-        }
+                // Holt die Daten frisch (kein alter Cache)
+                const response = await fetch('projects.json?' + new Date().getTime());
+                const projects = await response.json();
+                // Sucht das Projekt mit der passenden ID (egal ob Zahl oder Text)
+                const project = projects.find(p => p.id == id);
 
-        // Helper function to extract bedroom count
-        function extractBedroomCount(bedroomsString) {
-            if (!bedroomsString || bedroomsString === 'N/A') return 1;
-            const match = bedroomsString.match(/(\d+)/);
-            return match ? parseInt(match[1]) : 1;
-        }
-
-        // Helper function to create features array
-        function generateFeatures(project, lang) {
-            // Convert size if available
-            const sizeDisplay = convertSqftToSqm(project.size) || (lang === 'de' ? 'Großzügiger Grundriss' : lang === 'sq' ? 'Planimetri e gjerë' : 'Spacious Layout');
-
-            const featureTemplates = {
-                en: [
-                    `${extractBedroomCount(project.bedrooms)} Bedroom${extractBedroomCount(project.bedrooms) > 1 ? 's' : ''}`,
-                    sizeDisplay,
-                    'Premium Finishes',
-                    'Smart Home Technology',
-                    'Flexible Payment Plans',
-                    '24/7 Concierge Service'
-                ],
-                de: [
-                    `${extractBedroomCount(project.bedrooms)} Schlafzimmer`,
-                    sizeDisplay,
-                    'Premium-Ausstattung',
-                    'Smart Home Technologie',
-                    'Flexible Zahlungspläne',
-                    '24/7 Concierge-Service'
-                ],
-                sq: [
-                    `${extractBedroomCount(project.bedrooms)} Dhomë Gjumi`,
-                    sizeDisplay,
-                    'Përfundime Premium',
-                    'Teknologji Smart Home',
-                    'Plane Pagese Fleksibël',
-                    'Shërbim Concierge 24/7'
-                ]
-            };
-            return featureTemplates[lang] || featureTemplates.en;
-        }
-
-        // Transform project from JSON to display format
-        function transformProject(project, lang) {
-            const title = lang === 'de' && project.title_de ? project.title_de :
-                         lang === 'sq' && project.title_sq ? project.title_sq :
-                         project.title;
-
-            const location = lang === 'de' && project.location_de ? project.location_de :
-                            lang === 'sq' && project.location_sq ? project.location_sq :
-                            project.location;
-
-            const description = lang === 'de' && project.description_de ? project.description_de :
-                               lang === 'sq' && project.description_sq ? project.description_sq :
-                               project.description;
-
-            const bedroomLabels = { en: 'Bedroom', de: 'Schlafzimmer', sq: 'Dhomë Gjumi' };
-            const bedroomCount = extractBedroomCount(project.bedrooms);
-            const bedroomText = bedroomCount > 1 ?
-                `${bedroomCount} ${bedroomLabels[lang]}${lang === 'en' ? 's' : ''}` :
-                `${bedroomCount} ${bedroomLabels[lang]}`;
-
-            // Status translations
-            const statusTranslations = {
-                'For Sale': { en: 'For Sale', de: 'Zu Verkaufen', sq: 'Për Shitje' },
-                'Off-Plan': { en: 'Off-Plan', de: 'Off-Plan', sq: 'Off-Plan' },
-                'Ready': { en: 'Ready', de: 'Fertig', sq: 'Gati' }
-            };
-            const statusKey = project.status || 'For Sale';
-            const status = statusTranslations[statusKey]?.[lang] || statusKey;
-
-            // Generate gallery images (use main image + variations)
-            const gallery = [
-                project.image,
-                project.image,
-                project.image,
-                project.image,
-                project.image,
-                project.image
-            ];
-
-            return {
-                id: project.id,
-                title: title,
-                location: location,
-                price: project.price,
-                bedrooms: bedroomText,
-                status: status,
-                description: description,
-                image: project.image,
-                developer: project.developer || 'Premium Developer',
-                features: generateFeatures(project, lang),
-                gallery: gallery
-            };
-        }
-
-        // Function to load project data
-        async function loadProjectData() {
-            try {
-                // Load projects from JSON
-                const projectsData = await loadProjectsFromJSON();
-
-                // Find the project by ID
-                const foundProject = projectsData.find(p => p.id === projectId);
-
-                if (!foundProject) {
-                    console.error(`Project with ID ${projectId} not found`);
-                    window.location.href = 'projects.html';
-                    return;
+                if (project) {
+                    renderProject(project);
+                } else {
+                    document.getElementById('project-container').innerHTML = '<div class="text-center pt-40 text-xl">Projekt nicht gefunden.</div>';
                 }
-
-                // Transform project to display format
-                const project = transformProject(foundProject, lang);
-
-                // Update hero image
-                document.getElementById(`hero-image-${lang}`).src = project.image;
-                document.getElementById(`status-badge-${lang}`).textContent = project.status;
-
-                // Update project details
-                document.getElementById(`location-${lang}`).textContent = project.location;
-                document.getElementById(`title-${lang}`).textContent = project.title;
-
-                // Price with EUR conversion
-                const eurPrice = convertAEDtoEUR(project.price);
-                const priceHTML = eurPrice ?
-                    `${project.price} <span class="text-2xl text-gray-500">(~ ${eurPrice})</span>` :
-                    project.price;
-                document.getElementById(`price-${lang}`).innerHTML = priceHTML;
-
-                document.getElementById(`bedrooms-${lang}`).textContent = project.bedrooms;
-                document.getElementById(`description-${lang}`).textContent = project.description;
-
-                // Update features
-                const featuresHtml = project.features.map(feature => `
-                    <div class="flex items-start space-x-3 bg-white/5 p-4 border border-white/10">
-                        <i data-lucide="check" class="w-5 h-5 text-yellow-600 flex-shrink-0 mt-0.5"></i>
-                        <span class="text-gray-300 text-sm">${feature}</span>
-                    </div>
-                `).join('');
-                document.getElementById(`features-${lang}`).innerHTML = featuresHtml;
-
-                // Update gallery
-                const galleryHtml = project.gallery.map(imgUrl => `
-                    <div class="gallery-item overflow-hidden h-48 bg-gray-900">
-                        <img src="${imgUrl}" alt="Gallery Image" class="w-full h-full object-cover">
-                    </div>
-                `).join('');
-                document.getElementById(`gallery-${lang}`).innerHTML = galleryHtml;
-
-                // Update WhatsApp button
-                const whatsappText = `Hi, I'm interested in ${project.title} - ${project.price}`;
-                document.getElementById(`whatsapp-btn-${lang}`).href = `https://wa.me/971585261697?text=${encodeURIComponent(whatsappText)}`;
-
-                // Reinitialize icons
-                lucide.createIcons();
             } catch (error) {
-                console.error('Error loading project data:', error);
-                window.location.href = 'projects.html';
+                console.error('Fehler:', error);
+                document.getElementById('project-container').innerHTML = '<div class="text-center pt-40 text-red-500">Fehler beim Laden.</div>';
             }
         }
 
-        // Function to change language
-        function changeLanguage(newLang) {
-            // Save to localStorage
-            localStorage.setItem('language_selected', newLang);
+        function renderProject(project) {
+            const container = document.getElementById('project-container');
+            // Preise sicher formatieren
+            const priceVal = typeof project.price === 'number' ? project.price : parseInt(project.price.toString().replace(/[^0-9]/g, '')) || 0;
+            const priceEUR = Math.round(priceVal * 0.25).toLocaleString('de-DE');
+            const priceAED = priceVal.toLocaleString('de-DE');
 
-            // Hide all content sections
-            document.getElementById('content-en').style.display = 'none';
-            document.getElementById('content-de').style.display = 'none';
-            document.getElementById('content-sq').style.display = 'none';
+            // HTML Rendern
+            container.innerHTML = `
+                <div class="relative h-[60vh] w-full">
+                    <img src="${project.image}" class="w-full h-full object-cover" alt="${project.title}">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8 md:p-12 max-w-7xl mx-auto w-full">
+                        <span class="text-[#D4AF37] tracking-widest text-sm uppercase mb-2 block">${project.location}</span>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">${project.title}</h1>
+                        <p class="text-2xl text-white/90">${priceAED} AED <span class="text-gray-400 text-lg">(~ ${priceEUR} €)</span></p>
+                    </div>
+                </div>
 
-            // Show selected language
-            document.getElementById(`content-${newLang}`).style.display = 'block';
+                <div class="max-w-4xl mx-auto px-6 py-16">
+                    <div class="grid md:grid-cols-3 gap-12">
+                        <div class="md:col-span-2 space-y-8">
+                            <div>
+                                <h3 class="text-xl font-bold mb-4 gold-text">Details & Highlights</h3>
+                                <div class="prose prose-invert text-gray-300 leading-relaxed text-lg">
+                                    ${project.description}
+                                </div>
+                            </div>
+                        </div>
 
-            // Update URL parameter
-            const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set('lang', newLang);
-            window.history.pushState({}, '', newUrl);
-
-            // Reload project data for new language
-            window.location.reload();
+                        <div class="bg-white/5 p-8 rounded-lg border border-white/10 h-fit sticky top-24">
+                            <h3 class="text-lg font-bold mb-6">Interesse geweckt?</h3>
+                            <a href="https://wa.me/971585261697?text=Hi Dren, ich interessiere mich für ${project.title}"
+                               target="_blank"
+                               class="block w-full bg-[#25D366] hover:bg-[#128C7E] text-white text-center py-4 rounded font-bold transition-all mb-4 flex items-center justify-center gap-2 shadow-lg hover:shadow-green-900/20">
+                                <span>WhatsApp Anfrage</span>
+                            </a>
+                            <p class="text-center text-xs text-gray-500 mt-4">Direktkontakt: +971 58 526 1697</p>
+                        </div>
+                    </div>
+                </div>
+            `;
         }
 
-        // Show correct language on load
-        document.getElementById('content-en').style.display = 'none';
-        document.getElementById('content-de').style.display = 'none';
-        document.getElementById('content-sq').style.display = 'none';
-        document.getElementById(`content-${lang}`).style.display = 'block';
-
-        // Load project data on page load
-        loadProjectData();
+        loadProjectDetails();
     </script>
 </body>
 </html>
