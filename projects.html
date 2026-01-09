@@ -134,12 +134,7 @@
     <!-- UNIFIED HEADER -->
     <header class="fixed top-0 left-0 w-full z-50 bg-[#050505]/95 backdrop-blur-md border-b border-white/10">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <a href="index.html" class="text-2xl md:text-3xl font-serif font-bold tracking-[0.15em] uppercase text-white hover:text-gray-300 transition-colors">SEFA.</a>
-                <span id="header-subtitle-en" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Real Estate Portfolio</span>
-                <span id="header-subtitle-de" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Immobilien Portfolio</span>
-                <span id="header-subtitle-sq" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Portofoli i Pasurive</span>
-            </div>
+            <a href="index.html" class="text-2xl md:text-3xl font-serif font-bold tracking-[0.15em] uppercase text-white hover:text-gray-300 transition-colors">SEFA.</a>
 
             <!-- English Navigation -->
             <nav id="nav-en" class="lang-nav items-center space-x-2 md:space-x-3">
@@ -858,14 +853,10 @@
             document.getElementById('nav-en').classList.remove('active');
             document.getElementById('nav-de').classList.remove('active');
             document.getElementById('nav-sq').classList.remove('active');
-            document.getElementById('header-subtitle-en').classList.remove('active');
-            document.getElementById('header-subtitle-de').classList.remove('active');
-            document.getElementById('header-subtitle-sq').classList.remove('active');
 
             // Show selected language content and navigation
             document.getElementById(`content-${lang}`).classList.add('active');
             document.getElementById(`nav-${lang}`).classList.add('active');
-            document.getElementById(`header-subtitle-${lang}`).classList.add('active');
             currentLang = lang;
 
             // Reset filters
