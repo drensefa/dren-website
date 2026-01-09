@@ -8,7 +8,15 @@
       "Bash(npm install:*)",
       "Bash(cat:*)",
       "Bash(git add:*)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(python3:*)",
+      "Bash(open:*)",
+      "WebFetch(domain:www.propertyfinder.ae)",
+      "Bash(ls:*)",
+      "Bash(lsof:*)",
+      "Bash(grep:*)"
     ]
   }
 }
