@@ -129,8 +129,7 @@
                 <div class="flex items-center space-x-6 mt-2 md:mt-0">
                     <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
                     <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                    <div class="h-3 w-[1px] bg-gray-800"></div>
-                    <button onclick="resetSplash()" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Language</button>
+                    <a href="insights.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Insights</a>
                 </div>
             </div>
         </div>
@@ -149,7 +148,7 @@
                     <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-8 reveal delay-500">
                         Raised with German discipline and an Albanian heart. With a transaction volume exceeding 9 figures, Dren Sefa offers sustainable investment strategies and long-term partnership within the Dubai real estate market.
                     </p>
-                    <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white/10 text-white border border-white/20 px-8 py-4 rounded text-sm uppercase tracking-widest font-medium hover:bg-white/20 hover:border-white/40 transition-all shadow-lg hover:shadow-xl reveal delay-700">
+                    <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-6 py-3 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all reveal delay-700">
                         <span>Book a Call</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -195,12 +194,12 @@
         <!-- About -->
         <section class="py-16 relative">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row gap-10 items-start">
-                    <div class="md:w-1/3 reveal">
-                        <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">The Journey</h2>
-                        <div class="text-3xl font-serif leading-tight">Driven by <br /> <span class="italic text-gray-400">global ambition.</span></div>
-                    </div>
-                    <div class="md:w-2/3 md:pl-0 border-l border-white/10 pl-6 reveal delay-100">
+                <div class="mb-12 reveal">
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">The Journey</h2>
+                    <div class="text-3xl font-serif leading-tight">Driven by <br /> <span class="italic text-gray-400">global ambition.</span></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="reveal delay-100">
                         <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-5">
                             Dren Sefa is not just a real estate consultant; he is the bridge between European standards and the dynamics of the Dubai market. Moving to Dubai in late 2022 with zero network, he built a reputation in record time as the prime address for Albanian and international investors.
                         </p>
@@ -217,6 +216,9 @@
                             <i data-lucide="map-pin" class="w-4 h-4"></i>
                             <span>UAE • Germany • Kosovo</span>
                         </div>
+                    </div>
+                    <div class="reveal delay-300">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Dubai Architecture" class="w-full h-full object-cover rounded-lg" />
                     </div>
                 </div>
             </div>
@@ -281,19 +283,30 @@
                   <div class="text-xl font-serif italic">TV DUKAGJINI</div>
                   <div class="text-xl font-serif italic">KLAN KOSOVA</div>
                 </div>
-                
+
                 <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
                     <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
                     <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
                     <!-- Email Added -->
                     <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                    
+
                     <div class="flex justify-center space-x-6 pt-6">
                         <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
                         <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
                         <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="w-full flex justify-end pt-12">
+                    <div class="flex items-center space-x-3 text-[10px] uppercase tracking-widest">
+                        <button onclick="showLanguage('sq')" class="text-gray-600 hover:text-white transition-colors">SQ</button>
+                        <span class="text-gray-800">|</span>
+                        <button onclick="showLanguage('de')" class="text-gray-600 hover:text-white transition-colors">DE</button>
+                        <span class="text-gray-800">|</span>
+                        <button onclick="showLanguage('en')" class="text-gray-600 hover:text-white transition-colors">EN</button>
                     </div>
                 </div>
             </div>
@@ -319,8 +332,7 @@
                 <div class="flex items-center space-x-6 mt-2 md:mt-0">
                     <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
                     <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                    <div class="h-3 w-[1px] bg-gray-800"></div>
-                    <button onclick="resetSplash()" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Sprache</button>
+                    <a href="insights.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Insights</a>
                 </div>
             </div>
         </div>
@@ -339,7 +351,7 @@
                     <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-8 reveal delay-500">
                         Aufgewachsen mit deutscher Disziplin, im Herzen Albaner. Mit einem Transaktionsvolumen im 9-stelligen Bereich bietet Dren Sefa nicht nur Immobilienzugang, sondern nachhaltige Investment-Strategien und langfristige Partnerschaft im Markt von Dubai.
                     </p>
-                    <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white/10 text-white border border-white/20 px-8 py-4 rounded text-sm uppercase tracking-widest font-medium hover:bg-white/20 hover:border-white/40 transition-all shadow-lg hover:shadow-xl reveal delay-700">
+                    <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-6 py-3 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all reveal delay-700">
                         <span>Termin Vereinbaren</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -385,12 +397,12 @@
         <!-- About -->
         <section class="py-16 relative">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row gap-10 items-start">
-                    <div class="md:w-1/3 reveal">
-                        <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Der Weg</h2>
-                        <div class="text-3xl font-serif leading-tight">Angetrieben von <br /><span class="italic text-gray-400">globalem Ehrgeiz.</span></div>
-                    </div>
-                    <div class="md:w-2/3 md:pl-0 border-l border-white/10 pl-6 reveal delay-100">
+                <div class="mb-12 reveal">
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Der Weg</h2>
+                    <div class="text-3xl font-serif leading-tight">Angetrieben von <br /><span class="italic text-gray-400">globalem Ehrgeiz.</span></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="reveal delay-100">
                         <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-5">
                             Dren Sefa ist nicht einfach nur Immobilienberater, sondern die Brücke zwischen europäischen Standards und der Dynamik des Marktes in Dubai. Ende 2022 ohne Netzwerk gestartet, baute er in Rekordzeit einen Ruf als erste Adresse für albanische und internationale Investoren auf.
                         </p>
@@ -407,6 +419,9 @@
                             <i data-lucide="map-pin" class="w-4 h-4"></i>
                             <span>UAE • Deutschland • Kosovo</span>
                         </div>
+                    </div>
+                    <div class="reveal delay-300">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Dubai Architektur" class="w-full h-full object-cover rounded-lg" />
                     </div>
                 </div>
             </div>
@@ -473,19 +488,30 @@
                   <div class="text-xl font-serif italic">TV DUKAGJINI</div>
                   <div class="text-xl font-serif italic">KLAN KOSOVA</div>
                 </div>
-                
+
                 <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
                     <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
                     <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
                     <!-- Email Added -->
                     <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                    
+
                     <div class="flex justify-center space-x-6 pt-6">
                         <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
                         <a href="https://youtube.com/@drendubai" target="_blank" class="social-icon"><i data-lucide="youtube" class="w-4 h-4"></i></a>
                         <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="w-full flex justify-end pt-12">
+                    <div class="flex items-center space-x-3 text-[10px] uppercase tracking-widest">
+                        <button onclick="showLanguage('sq')" class="text-gray-600 hover:text-white transition-colors">SQ</button>
+                        <span class="text-gray-800">|</span>
+                        <button onclick="showLanguage('de')" class="text-gray-600 hover:text-white transition-colors">DE</button>
+                        <span class="text-gray-800">|</span>
+                        <button onclick="showLanguage('en')" class="text-gray-600 hover:text-white transition-colors">EN</button>
                     </div>
                 </div>
             </div>
@@ -511,8 +537,7 @@
                 <div class="flex items-center space-x-6 mt-2 md:mt-0">
                     <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
                     <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                    <div class="h-3 w-[1px] bg-gray-800"></div>
-                    <button onclick="resetSplash()" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Language</button>
+                    <a href="insights.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Insights</a>
                 </div>
             </div>
         </div>
@@ -531,7 +556,7 @@
                     <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-8 reveal delay-500">
                         I rritur me disiplinën gjermane dhe zemrën shqiptare. Me një volum transaksionesh që tejkalon 9 shifra, Dren Sefa ofron strategji investimi të qëndrueshme dhe partneritet afatgjatë për investitorët në tregun e Dubait.
                     </p>
-                    <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white/10 text-white border border-white/20 px-8 py-4 rounded text-sm uppercase tracking-widest font-medium hover:bg-white/20 hover:border-white/40 transition-all shadow-lg hover:shadow-xl reveal delay-700">
+                    <button onclick="openBookingModal()" class="inline-flex items-center space-x-3 bg-white text-black px-6 py-3 rounded text-xs uppercase tracking-widest font-bold hover:bg-gray-100 transition-all reveal delay-700">
                         <span>Rezervo një Takim</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
@@ -577,12 +602,12 @@
         <!-- About / Bio (UPDATED) -->
         <section class="py-16 relative">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row gap-10 items-start">
-                    <div class="md:w-1/3 reveal">
-                        <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-2">Rrugëtimi</h2>
-                        <div class="text-3xl font-serif leading-tight">I udhëhequr nga <br /><span class="italic text-gray-400">ambicia globale.</span></div>
-                    </div>
-                    <div class="md:w-2/3 md:pl-0 border-l border-white/10 pl-6 reveal delay-100">
+                <div class="mb-12 reveal">
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Rrugëtimi</h2>
+                    <div class="text-3xl font-serif leading-tight">I udhëhequr nga <br /><span class="italic text-gray-400">ambicia globale.</span></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="reveal delay-100">
                         <p class="text-lg md:text-xl text-gray-300 font-light leading-relaxed mb-5">
                             Dren Sefa nuk është thjesht një konsulent imobiliar; ai është ura lidhëse mes standardeve evropiane dhe dinamikës së tregut të Dubait. I zhvendosur në Dubai në fund të vitit 2022, pa asnjë rrjet njohjesh dhe duke nisur nga zeroja, ai arriti të ndërtojë brenda një kohe rekord reputacionin si adresa kryesore për investitorët shqiptarë dhe ndërkombëtarë.
                         </p>
@@ -599,6 +624,9 @@
                             <i data-lucide="map-pin" class="w-4 h-4"></i>
                             <span>UAE • Gjermani • Kosovë</span>
                         </div>
+                    </div>
+                    <div class="reveal delay-300">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop" alt="Arkitektura e Dubait" class="w-full h-full object-cover rounded-lg" />
                     </div>
                 </div>
             </div>
@@ -666,14 +694,14 @@
                   <div class="text-xl font-serif italic">TV DUKAGJINI</div>
                   <div class="text-xl font-serif italic">KLAN KOSOVA</div>
                 </div>
-                
+
                 <!-- FINAL FOOTER -->
                 <div class="text-center space-y-3 border-t border-white/10 pt-8 w-full max-w-md">
                     <div class="text-xl font-serif font-medium tracking-wide">DREN SEFA</div>
                     <div class="text-[10px] tracking-[0.4em] text-gray-600 uppercase">DUBAI</div>
                     <!-- Email Added -->
                     <a href="mailto:info@sefa.capital" class="block text-xs tracking-[0.2em] text-gray-500 hover:text-white transition-colors mt-2">info@sefa.capital</a>
-                    
+
                     <!-- Footer Socials -->
                     <div class="flex justify-center space-x-6 pt-6">
                         <a href="https://instagram.com/drendubai" target="_blank" class="social-icon"><i data-lucide="instagram" class="w-4 h-4"></i></a>
@@ -681,6 +709,17 @@
                         <a href="https://tiktok.com/@drendubai" target="_blank" class="social-icon">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.589 6.686a4.793 4.793 0 0 1-3.77-4.245V2h-3.445v13.672a2.896 2.896 0 0 1-5.201 1.743l-.002-.001.002.001a2.895 2.895 0 0 1 3.183-4.51v-3.5a6.329 6.329 0 0 0-5.394 10.692 6.33 6.33 0 0 0 10.857-4.424V8.687a8.182 8.182 0 0 0 4.773 1.526V6.79a4.831 4.831 0 0 1-1.003-.104z"/></svg>
                         </a>
+                    </div>
+                </div>
+
+                <!-- Language Switcher -->
+                <div class="w-full flex justify-end pt-12">
+                    <div class="flex items-center space-x-3 text-[10px] uppercase tracking-widest">
+                        <button onclick="showLanguage('sq')" class="text-gray-600 hover:text-white transition-colors">SQ</button>
+                        <span class="text-gray-800">|</span>
+                        <button onclick="showLanguage('de')" class="text-gray-600 hover:text-white transition-colors">DE</button>
+                        <span class="text-gray-800">|</span>
+                        <button onclick="showLanguage('en')" class="text-gray-600 hover:text-white transition-colors">EN</button>
                     </div>
                 </div>
             </div>
