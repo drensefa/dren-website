@@ -759,9 +759,11 @@
             }
 
             projects.forEach(project => {
-                // Convert price to EUR and add "Ab/From/Nga" prefix
-                const eurPrice = convertAEDtoEUR(project.price);
-                const priceDisplay = eurPrice ? `${t.pricePrefix} ${project.price} <span class="text-base text-gray-500">(~ ${eurPrice} €)</span>` : `${t.pricePrefix} ${project.price}`;
+                // Convert price to EUR and show as main price
+                const priceVal = typeof project.price === 'string' ? parseInt(project.price) : project.price;
+                const priceAED = priceVal.toLocaleString('de-DE');
+                const priceEUR = Math.round(priceVal * 0.25).toLocaleString('de-DE');
+                const priceDisplay = `${t.pricePrefix} ${priceEUR} € <span class="text-base text-gray-500">(~ ${priceAED} AED)</span>`;
 
                 // Get correct description based on language
                 const description = lang === 'de' && project.description_de ? project.description_de :

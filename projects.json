@@ -6,15 +6,15 @@
     "price": "5500000",
     "developer": "Beyond",
     "status": "Off Plan",
-    "handover": "Q4 2026",
+    "handover": "Q4 2029",
     "paymentPlan": "60/40",
     "propertyTypes": "1-6 Bedroom Apartments",
     "images": [
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80"
+      "images/passo1.png",
+      "images/passo2.png",
+      "images/passo3.png",
+      "images/passo4.png",
+      "images/passo5.png"
     ],
     "description_en": "Premium waterfront living on Palm Jumeirah. Modern residences with private pools on every balcony. Direct beach access and marina facilities. Experience ultimate luxury with stunning sea views and world-class amenities.",
     "description_de": "Premium Wasserfront-Leben auf Palm Jumeirah. Moderne Residenzen mit privaten Pools auf jedem Balkon. Direkter Strandzugang und Marina-Einrichtungen. Erleben Sie ultimativen Luxus mit atemberaubendem Meerblick und erstklassigen Annehmlichkeiten.",
