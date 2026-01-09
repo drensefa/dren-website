@@ -48,11 +48,11 @@
   {
     "id": 3,
     "title": "Palm Central Private Residences",
-    "location": "Palm Jebel Ali, Frond M",
+    "location": "Palm Jebel Ali, Dubai",
     "price": "2500000",
     "developer": "Nakheel",
     "status": "Off Plan",
-    "handover": "Q3 2029",
+    "handover": "August 2029",
     "images": [
       "images/palm1.jpg",
       "images/palm2.jpg",
@@ -60,12 +60,12 @@
       "images/palm4.jpg",
       "images/palm1.jpg"
     ],
-    "description_en": "Resort-style coastal living between Frond M and N. Stepped architecture maximizing sea views. Direct beach access and infinity pools.",
-    "description_de": "Resort-Stil Küstenleben zwischen Frond M und N. Abgestufte Architektur für maximale Meeresaussicht. Direkter Strandzugang und Infinity-Pools.",
-    "description_sq": "Jetë bregdetare në stil resort midis Frond M dhe N. Arkitekturë me shkallë që maksimizon pamjet e detit. Akses direkt në plazh dhe pishina infinity.",
+    "description_en": "<ul><li><strong>Payment Plan:</strong> 20% down payment, 50% during construction (7 installments), 30% on handover</li><li><strong>Handover:</strong> August 2029</li><li><strong>Property Types:</strong> 1-5 bedroom apartments, 5-bed penthouses, 4-bed townhouses</li><li><strong>Amenities:</strong> Private beachfront, multiple swimming pools, fitness centers, 24/7 security & concierge</li><li><strong>Highlight:</strong> Beachfront location with unobstructed sea views, direct beach access & island exclusivity</li><li><strong>Starting from:</strong> AED 2.5M for 1-bedroom apartments (731-829 sqft)</li></ul>",
+    "description_de": "<ul><li><strong>Zahlungsplan:</strong> 20% Anzahlung, 50% während Bauzeit (7 Raten), 30% bei Übergabe</li><li><strong>Übergabe:</strong> August 2029</li><li><strong>Immobilientypen:</strong> 1-5 Schlafzimmer Apartments, 5-SZ Penthäuser, 4-SZ Townhouses</li><li><strong>Ausstattung:</strong> Privater Strandbereich, mehrere Pools, Fitnesscenter, 24/7 Security & Concierge</li><li><strong>Highlight:</strong> Strandlage mit unverbaubarem Meerblick, direkter Strandzugang & Insel-Exklusivität</li><li><strong>Ab:</strong> AED 2.5M für 1-Schlafzimmer Apartments (68-77 m²)</li></ul>",
+    "description_sq": "<ul><li><strong>Plani i Pagesës:</strong> 20% avans, 50% gjatë ndërtimit (7 këste), 30% në dorëzim</li><li><strong>Dorëzimi:</strong> Gusht 2029</li><li><strong>Llojet e Pronave:</strong> Apartamente 1-5 dhoma gjumi, Penthouse 5-dhoma, Townhouse 4-dhoma</li><li><strong>Lehtësira:</strong> Plazh privat, pishina të shumta, qendra fitnesi, siguri & concierge 24/7</li><li><strong>Veçori:</strong> Vendndodhje në bregdet me pamje të pakufizuara të detit, akses direkt në plazh & ekskluzivitet ishull</li><li><strong>Duke filluar nga:</strong> AED 2.5M për apartamente 1-dhomëshe (68-77 m²)</li></ul>",
     "title_de": "Palm Central Private Residences",
     "title_sq": "Palm Central Private Residences",
-    "location_de": "Palm Jebel Ali, Frond M",
-    "location_sq": "Palm Jebel Ali, Frond M"
+    "location_de": "Palm Jebel Ali, Dubai",
+    "location_sq": "Palm Jebel Ali, Dubai"
   }
 ]
