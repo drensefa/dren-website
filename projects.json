@@ -38,11 +38,11 @@
     "paymentPlan": "1% Monthly",
     "propertyTypes": "Studio - 2 Bedroom Apartments",
     "images": [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80"
+      "images/samana1.png",
+      "images/samana2.png",
+      "images/samana3.png",
+      "images/samana4.png",
+      "images/samana1.png"
     ],
     "description_en": "Affordable luxury in Arjan with private pool apartments. Flexible payment plan: 1% monthly installments over 5 years. Perfect for investors seeking high ROI through short-term rentals. Modern design with premium finishes.",
     "description_de": "Bezahlbarer Luxus in Arjan mit privaten Pool-Apartments. Flexibler Zahlungsplan: 1% monatliche Raten über 5 Jahre. Perfekt für Investoren mit hohem ROI-Potenzial durch Kurzzeitvermietung. Modernes Design mit Premium-Ausstattung.",
@@ -94,11 +94,11 @@
     "paymentPlan": "20/50/30",
     "propertyTypes": "Studio - 3 Bedroom Apartments",
     "images": [
-      "INSERT_RUBY_MAIN",
-      "INSERT_RUBY_1",
-      "INSERT_RUBY_2",
-      "INSERT_RUBY_3",
-      "INSERT_RUBY_4"
+      "images/ruby1.png",
+      "images/ruby2.png",
+      "images/ruby3.png",
+      "images/ruby4.png",
+      "images/ruby5.png"
     ],
     "description_en": "Modern architectural design in family-friendly Jumeirah Village Circle. Accessible to Business Bay, Downtown Dubai, and Dubai Marina. Green spaces and community amenities. Starting from AED 678K for studios.",
     "description_de": "Modernes architektonisches Design im familienfreundlichen Jumeirah Village Circle. Zugang zu Business Bay, Downtown Dubai und Dubai Marina. Grünflächen und Gemeinschaftseinrichtungen. Ab AED 678K für Studios.",
@@ -122,11 +122,11 @@
     "paymentPlan": "10/60/30",
     "propertyTypes": "Studio - 4 Bedroom Apartments",
     "images": [
-      "INSERT_FLARE_MAIN",
-      "INSERT_FLARE_1",
-      "INSERT_FLARE_2",
-      "INSERT_FLARE_3",
-      "INSERT_FLARE_4"
+      "images/flare1.png",
+      "images/flare2.png",
+      "images/flare3.png",
+      "images/flare4.png",
+      "images/flare5.png"
     ],
     "description_en": "Twin towers exceeding 30 floors with smart-home features and panoramic views. Calm residential atmosphere with proximity to Dubai Marina, Downtown Dubai, and Mall of Emirates. Modern luxury living in prime location.",
     "description_de": "Zwillingstürme mit über 30 Etagen mit Smart-Home-Features und Panoramablick. Ruhige Wohnatmosphäre mit Nähe zu Dubai Marina, Downtown Dubai und Mall of Emirates. Modernes Luxusleben in erstklassiger Lage.",
@@ -150,11 +150,11 @@
     "paymentPlan": "70/30",
     "propertyTypes": "2-8 Bed Apartments | Penthouses | Villas",
     "images": [
-      "INSERT_BURJ_MAIN",
-      "INSERT_BURJ_1",
-      "INSERT_BURJ_2",
-      "INSERT_BURJ_3",
-      "INSERT_BURJ_4"
+      "images/burj1.png",
+      "images/burj2.png",
+      "images/burj3.png",
+      "images/burj4.png",
+      "images/burj5.png"
     ],
     "description_en": "Ultra-luxury icon in Business Bay, less than 10 minutes from Burj Khalifa and Dubai Mall. Exclusive concierge, butler, and private chef services. Penthouses up to AED 750M. The epitome of Dubai luxury living.",
     "description_de": "Ultra-Luxus-Ikone in Business Bay, weniger als 10 Minuten vom Burj Khalifa und Dubai Mall entfernt. Exklusive Concierge-, Butler- und Privatkoch-Services. Penthäuser bis AED 750M. Der Inbegriff von Luxusleben in Dubai.",
@@ -178,11 +178,11 @@
     "paymentPlan": "20/50/30",
     "propertyTypes": "1-4 Bedroom Apartments | Duplexes | Penthouses",
     "images": [
-      "INSERT_SANDS_MAIN",
-      "INSERT_SANDS_1",
-      "INSERT_SANDS_2",
-      "INSERT_SANDS_3",
-      "INSERT_SANDS_4"
+      "images/sands1.png",
+      "images/sands2.png",
+      "images/sands3.png",
+      "images/sands4.png",
+      "images/sands5.png"
     ],
     "description_en": "Waterfront luxury on Dubai Islands with direct beach access and Arabian Gulf views. Contemporary architecture with floor-to-ceiling windows. Strong investment potential with anticipated capital growth. Starting from AED 1.7M.",
     "description_de": "Wasserfront-Luxus auf Dubai Islands mit direktem Strandzugang und Blick auf den Arabischen Golf. Zeitgenössische Architektur mit bodentiefen Fenstern. Starkes Investitionspotenzial mit erwarteter Kapitalwertsteigerung. Ab AED 1.7M.",
@@ -206,11 +206,11 @@
     "paymentPlan": "20/40/40",
     "propertyTypes": "1-3 Bedroom Apartments | Duplexes",
     "images": [
-      "INSERT_SUNSET_MAIN",
-      "INSERT_SUNSET_1",
-      "INSERT_SUNSET_2",
-      "INSERT_SUNSET_3",
-      "INSERT_SUNSET_4"
+      "images/sunset1.png",
+      "images/sunset2.png",
+      "images/sunset3.png",
+      "images/sunset4.png",
+      "images/sunset5.png"
     ],
     "description_en": "Modern luxury meets scenic beauty on Dubai Islands waterfront. Rooftop infinity pool with panoramic views. Smart home integration and premium finishes. Golf club access and beach living. Starting from AED 1.8M.",
     "description_de": "Moderner Luxus trifft landschaftliche Schönheit an der Wasserfront von Dubai Islands. Rooftop-Infinity-Pool mit Panoramablick. Smart-Home-Integration und Premium-Ausstattung. Golfclub-Zugang und Strandleben. Ab AED 1.8M.",
