@@ -54,11 +54,11 @@
     "status": "Off Plan",
     "handover": "Q3 2029",
     "images": [
-      "INSERT_MAIN_IMAGE",
-      "INSERT_SMALL_1",
-      "INSERT_SMALL_2",
-      "INSERT_SMALL_3",
-      "INSERT_SMALL_4"
+      "images/palm1.jpg",
+      "images/palm2.jpg",
+      "images/palm3.jpg",
+      "images/palm4.jpg",
+      "images/palm1.jpg"
     ],
     "description_en": "Resort-style coastal living between Frond M and N. Stepped architecture maximizing sea views. Direct beach access and infinity pools.",
     "description_de": "Resort-Stil Küstenleben zwischen Frond M und N. Abgestufte Architektur für maximale Meeresaussicht. Direkter Strandzugang und Infinity-Pools.",
