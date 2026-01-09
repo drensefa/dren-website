@@ -222,5 +222,33 @@
     "title_sq": "Sunset Bay Faza 2",
     "location_de": "Dubai Islands, Deira, Dubai",
     "location_sq": "Dubai Islands, Deira, Dubai"
+  },
+  {
+    "id": 9,
+    "title": "The Caden",
+    "location": "Meydan, Mohammed Bin Rashid City, Dubai",
+    "price": "1800000",
+    "developer": "Prescott Real Estate Development",
+    "status": "Off Plan",
+    "handover": "May 2028",
+    "paymentPlan": "20/40/40",
+    "propertyTypes": "1-4 Bedroom Apartments | Duplexes | Penthouses",
+    "images": [
+      "images/caden1.webp",
+      "images/caden2.webp",
+      "images/caden3.webp",
+      "images/caden4.webp",
+      "images/caden5.webp"
+    ],
+    "description_en": "Waterfront residential community with cutting-edge smart-home technology and stunning lagoon views. Sophisticated design near the canal district. Access to Dubai's business hubs while maintaining tranquility. Starting from AED 1.8M.",
+    "description_de": "Wasserfront-Wohngemeinschaft mit modernster Smart-Home-Technologie und atemberaubendem Lagunenblick. Anspruchsvolles Design nahe des Kanalviertels. Zugang zu Dubais Geschäftszentren bei gleichzeitiger Ruhe. Ab AED 1.8M.",
+    "description_sq": "Komunitet rezidencial në bregdet me teknologji smart-home të avancuar dhe pamje mahnitëse të lagunës. Dizajn i sofistikuar pranë zonës së kanalit. Akses në qendrat e biznesit të Dubait duke ruajtur qetësinë. Duke filluar nga AED 1.8M.",
+    "amenities_en": "Indoor Pool | Landscaped Gardens | Gym | 24/7 Concierge | Kids Play Area | Restaurants | CCTV Security | Covered Parking | Smart Home Technology",
+    "amenities_de": "Indoor-Pool | Gartenanlagen | Gym | 24/7 Concierge | Kinderspielplatz | Restaurants | CCTV-Sicherheit | Überdachter Parkplatz | Smart-Home-Technologie",
+    "amenities_sq": "Pishinë e Mbyllur | Kopshte | Palestër | Concierge 24/7 | Zonë Lojërash për Fëmijë | Restorante | Siguri CCTV | Parking i Mbuluar | Teknologji Smart Home",
+    "title_de": "The Caden",
+    "title_sq": "The Caden",
+    "location_de": "Meydan, Mohammed Bin Rashid City, Dubai",
+    "location_sq": "Meydan, Mohammed Bin Rashid City, Dubai"
   }
 ]
