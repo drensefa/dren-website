@@ -10,7 +10,6 @@
         body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .gold-text { color: #D4AF37; }
-        /* Lade-Animation */
         .loader { border-top-color: #D4AF37; -webkit-animation: spinner 1.5s linear infinite; animation: spinner 1.5s linear infinite; }
         @keyframes spinner { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
     </style>
@@ -20,7 +19,7 @@
     <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="index.html" class="text-2xl font-bold tracking-tighter">DREN SEFA</a>
-            <a href="index.html" class="text-sm tracking-widest hover:text-[#D4AF37] transition-colors">ZURÜCK</a>
+            <a href="index.html" class="text-sm tracking-widest hover:text-[#D4AF37] transition-colors" id="back-link">ZURÜCK</a>
         </div>
     </nav>
 
@@ -32,14 +31,61 @@
 
     <footer class="border-t border-white/10 py-12 bg-black">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-500 text-sm">Luxury Real Estate Dubai</p>
+            <p class="text-gray-500 text-sm" id="footer-text">Luxury Real Estate Dubai</p>
         </div>
     </footer>
 
     <script>
+        // Detect language from URL or localStorage
+        const urlParams = new URLSearchParams(window.location.search);
+        let lang = urlParams.get('lang') || localStorage.getItem('language_selected') || 'de';
+
+        // Language-specific texts
+        const translations = {
+            en: {
+                backButton: 'BACK',
+                detailsHeading: 'Details & Highlights',
+                interestHeading: 'Interested?',
+                whatsappButton: 'WhatsApp Inquiry',
+                contactText: 'Direct Contact: +971 58 526 1697',
+                footerText: 'Luxury Real Estate Dubai',
+                pricePrefix: 'From',
+                notFound: 'Project not found.',
+                error: 'Error loading data.'
+            },
+            de: {
+                backButton: 'ZURÜCK',
+                detailsHeading: 'Details & Highlights',
+                interestHeading: 'Interesse geweckt?',
+                whatsappButton: 'WhatsApp Anfrage',
+                contactText: 'Direktkontakt: +971 58 526 1697',
+                footerText: 'Luxury Real Estate Dubai',
+                pricePrefix: 'Ab',
+                notFound: 'Projekt nicht gefunden.',
+                error: 'Fehler beim Laden.'
+            },
+            sq: {
+                backButton: 'KTHEHU',
+                detailsHeading: 'Detaje & Veçori',
+                interestHeading: 'Të interesuar?',
+                whatsappButton: 'Kërkesë WhatsApp',
+                contactText: 'Kontakt Direkt: +971 58 526 1697',
+                footerText: 'Pasuri Luksoze Dubai',
+                pricePrefix: 'Nga',
+                notFound: 'Projekti nuk u gjet.',
+                error: 'Gabim në ngarkimin e të dhënave.'
+            }
+        };
+
+        const t = translations[lang];
+
+        // Update UI text
+        document.getElementById('back-link').textContent = t.backButton;
+        document.getElementById('footer-text').textContent = t.footerText;
+        document.documentElement.lang = lang;
+
         async function loadProjectDetails() {
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get('id');
+            const id = urlParams.get('id');
 
             if (!id) {
                 window.location.href = 'index.html';
@@ -47,39 +93,53 @@
             }
 
             try {
-                // Holt die Daten frisch (kein alter Cache)
                 const response = await fetch('projects.json?' + new Date().getTime());
                 const projects = await response.json();
-                // Sucht das Projekt mit der passenden ID (egal ob Zahl oder Text)
                 const project = projects.find(p => p.id == id);
 
                 if (project) {
                     renderProject(project);
                 } else {
-                    document.getElementById('project-container').innerHTML = '<div class="text-center pt-40 text-xl">Projekt nicht gefunden.</div>';
+                    document.getElementById('project-container').innerHTML =
+                        `<div class="text-center pt-40 text-xl">${t.notFound}</div>`;
                 }
             } catch (error) {
-                console.error('Fehler:', error);
-                document.getElementById('project-container').innerHTML = '<div class="text-center pt-40 text-red-500">Fehler beim Laden.</div>';
+                console.error('Error:', error);
+                document.getElementById('project-container').innerHTML =
+                    `<div class="text-center pt-40 text-red-500">${t.error}</div>`;
             }
         }
 
         function renderProject(project) {
             const container = document.getElementById('project-container');
-            // Preise sicher formatieren
-            const priceVal = typeof project.price === 'number' ? project.price : parseInt(project.price.toString().replace(/[^0-9]/g, '')) || 0;
+
+            // Get multilingual data
+            const title = lang === 'de' && project.title_de ? project.title_de :
+                         lang === 'sq' && project.title_sq ? project.title_sq :
+                         project.title;
+
+            const location = lang === 'de' && project.location_de ? project.location_de :
+                            lang === 'sq' && project.location_sq ? project.location_sq :
+                            project.location;
+
+            const description = lang === 'de' && project.description_de ? project.description_de :
+                               lang === 'sq' && project.description_sq ? project.description_sq :
+                               project.description_en || '';
+
+            // Format price with "Ab/From/Nga" prefix
+            const priceVal = typeof project.price === 'number' ? project.price :
+                            parseInt(project.price.toString().replace(/[^0-9]/g, '')) || 0;
             const priceEUR = Math.round(priceVal * 0.25).toLocaleString('de-DE');
             const priceAED = priceVal.toLocaleString('de-DE');
 
-            // HTML Rendern
             container.innerHTML = `
                 <div class="relative h-[60vh] w-full">
-                    <img src="${project.image}" class="w-full h-full object-cover" alt="${project.title}">
+                    <img src="${project.image}" class="w-full h-full object-cover" alt="${title}">
                     <div class="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent"></div>
                     <div class="absolute bottom-0 left-0 p-8 md:p-12 max-w-7xl mx-auto w-full">
-                        <span class="text-[#D4AF37] tracking-widest text-sm uppercase mb-2 block">${project.location}</span>
-                        <h1 class="text-4xl md:text-6xl font-bold mb-4">${project.title}</h1>
-                        <p class="text-2xl text-white/90">${priceAED} AED <span class="text-gray-400 text-lg">(~ ${priceEUR} €)</span></p>
+                        <span class="text-[#D4AF37] tracking-widest text-sm uppercase mb-2 block">${location}</span>
+                        <h1 class="text-4xl md:text-6xl font-bold mb-4">${title}</h1>
+                        <p class="text-2xl text-white/90">${t.pricePrefix} ${priceAED} AED <span class="text-gray-400 text-lg">(~ ${priceEUR} €)</span></p>
                     </div>
                 </div>
 
@@ -87,21 +147,21 @@
                     <div class="grid md:grid-cols-3 gap-12">
                         <div class="md:col-span-2 space-y-8">
                             <div>
-                                <h3 class="text-xl font-bold mb-4 gold-text">Details & Highlights</h3>
+                                <h3 class="text-xl font-bold mb-4 gold-text">${t.detailsHeading}</h3>
                                 <div class="prose prose-invert text-gray-300 leading-relaxed text-lg">
-                                    ${project.description}
+                                    ${description}
                                 </div>
                             </div>
                         </div>
 
                         <div class="bg-white/5 p-8 rounded-lg border border-white/10 h-fit sticky top-24">
-                            <h3 class="text-lg font-bold mb-6">Interesse geweckt?</h3>
-                            <a href="https://wa.me/971585261697?text=Hi Dren, ich interessiere mich für ${project.title}"
+                            <h3 class="text-lg font-bold mb-6">${t.interestHeading}</h3>
+                            <a href="https://wa.me/971585261697?text=Hi Dren, ${lang === 'de' ? 'ich interessiere mich für' : lang === 'sq' ? 'jam i interesuar për' : 'I am interested in'} ${title}"
                                target="_blank"
                                class="block w-full bg-[#25D366] hover:bg-[#128C7E] text-white text-center py-4 rounded font-bold transition-all mb-4 flex items-center justify-center gap-2 shadow-lg hover:shadow-green-900/20">
-                                <span>WhatsApp Anfrage</span>
+                                <span>${t.whatsappButton}</span>
                             </a>
-                            <p class="text-center text-xs text-gray-500 mt-4">Direktkontakt: +971 58 526 1697</p>
+                            <p class="text-center text-xs text-gray-500 mt-4">${t.contactText}</p>
                         </div>
                     </div>
                 </div>
