@@ -132,47 +132,44 @@
     </div>
 
     <!-- UNIFIED HEADER -->
-    <div class="absolute top-0 left-0 w-full z-50 py-6 bg-gradient-to-b from-[#050505] to-transparent">
-        <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-            <div class="flex flex-col">
-                <div class="flex items-center mb-2">
-                    <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                    <span id="header-subtitle-en" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxury Real Estate Portfolio</span>
-                    <span id="header-subtitle-de" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Luxus Immobilien Portfolio</span>
-                    <span id="header-subtitle-sq" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Portofoli Luksoz i Pasurive</span>
-                </div>
-                <a href="index.html" class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#050505]/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-2xl md:text-3xl font-serif font-bold tracking-[0.15em] uppercase text-white hover:text-gray-300 transition-colors">SEFA.</a>
+                <span id="header-subtitle-en" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Real Estate Portfolio</span>
+                <span id="header-subtitle-de" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Immobilien Portfolio</span>
+                <span id="header-subtitle-sq" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Portofoli i Pasurive</span>
             </div>
 
             <!-- English Navigation -->
-            <nav id="nav-en" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
-                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Home</a>
-                <span class="text-[10px] uppercase tracking-widest text-white">Projects</span>
-                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Guide</a>
+            <nav id="nav-en" class="lang-nav items-center space-x-2 md:space-x-3">
+                <a href="index.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Home</a>
+                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Projects</span>
+                <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Guide</a>
             </nav>
 
             <!-- German Navigation -->
-            <nav id="nav-de" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
-                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Startseite</a>
-                <span class="text-[10px] uppercase tracking-widest text-white">Projekte</span>
-                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ratgeber</a>
+            <nav id="nav-de" class="lang-nav items-center space-x-2 md:space-x-3">
+                <a href="index.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Startseite</a>
+                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Projekte</span>
+                <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Ratgeber</a>
             </nav>
 
             <!-- Albanian Navigation -->
-            <nav id="nav-sq" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
-                <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ballina</a>
-                <span class="text-[10px] uppercase tracking-widest text-white">Projekte</span>
-                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Udhëzues</a>
+            <nav id="nav-sq" class="lang-nav items-center space-x-2 md:space-x-3">
+                <a href="index.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Ballina</a>
+                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Projekte</span>
+                <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Udhëzues</a>
             </nav>
         </div>
-    </div>
+    </header>
 
     <!-- ========================================== -->
     <!-- ENGLISH VERSION -->
     <!-- ========================================== -->
     <div id="content-en" class="content-section">
         <!-- Hero Section with Title -->
-        <section class="relative pt-32 pb-12 overflow-hidden">
+        <section class="relative pt-28 pb-12 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
             <div class="container mx-auto px-6 text-center">
                 <div class="w-24 h-[1px] bg-white/20 mb-6 mx-auto"></div>
@@ -268,7 +265,7 @@
     <!-- ========================================== -->
     <div id="content-de" class="content-section">
         <!-- Hero Section with Title -->
-        <section class="relative pt-32 pb-12 overflow-hidden">
+        <section class="relative pt-28 pb-12 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
             <div class="container mx-auto px-6 text-center">
                 <div class="w-24 h-[1px] bg-white/20 mb-6 mx-auto"></div>
@@ -364,7 +361,7 @@
     <!-- ========================================== -->
     <div id="content-sq" class="content-section">
         <!-- Hero Section with Title -->
-        <section class="relative pt-32 pb-12 overflow-hidden">
+        <section class="relative pt-28 pb-12 overflow-hidden">
             <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/5 rounded-full blur-[120px] pointer-events-none opacity-50 mix-blend-overlay"></div>
             <div class="container mx-auto px-6 text-center">
                 <div class="w-24 h-[1px] bg-white/20 mb-6 mx-auto"></div>

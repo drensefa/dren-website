@@ -117,40 +117,37 @@
     </div>
 
     <!-- UNIFIED HEADER -->
-    <div class="absolute top-0 left-0 w-full z-50 py-6">
-        <div class="container mx-auto px-6 flex justify-between items-start md:items-center">
-            <div class="flex flex-col">
-                <div class="flex items-center mb-2">
-                    <div class="w-8 h-[1px] bg-gray-600 mr-4"></div>
-                    <span id="header-subtitle-en" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Global Entrepreneur & Investor</span>
-                    <span id="header-subtitle-de" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Globaler Unternehmer & Investor</span>
-                    <span id="header-subtitle-sq" class="lang-nav text-[9px] uppercase tracking-[0.3em] text-gray-500">Sipërmarrës Global & Investitor</span>
-                </div>
-                <a href="index.html" class="text-3xl font-serif font-bold tracking-[0.15em] uppercase text-gray-500 hover:text-white transition-colors">SEFA.</a>
+    <header class="fixed top-0 left-0 w-full z-50 bg-[#050505]/95 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="index.html" class="text-2xl md:text-3xl font-serif font-bold tracking-[0.15em] uppercase text-white hover:text-gray-300 transition-colors">SEFA.</a>
+                <span id="header-subtitle-en" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Entrepreneur & Investor</span>
+                <span id="header-subtitle-de" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Unternehmer & Investor</span>
+                <span id="header-subtitle-sq" class="lang-nav hidden md:inline text-[10px] uppercase tracking-[0.2em] text-gray-500 border-l border-gray-700 pl-4">Sipërmarrës & Investitor</span>
             </div>
 
             <!-- English Navigation -->
-            <nav id="nav-en" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
-                <span class="text-[10px] uppercase tracking-widest text-white">Home</span>
-                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projects</a>
-                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Guide</a>
+            <nav id="nav-en" class="lang-nav items-center space-x-2 md:space-x-3">
+                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Home</span>
+                <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projects</a>
+                <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Guide</a>
             </nav>
 
             <!-- German Navigation -->
-            <nav id="nav-de" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
-                <span class="text-[10px] uppercase tracking-widest text-white">Startseite</span>
-                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Ratgeber</a>
+            <nav id="nav-de" class="lang-nav items-center space-x-2 md:space-x-3">
+                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Startseite</span>
+                <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projekte</a>
+                <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Ratgeber</a>
             </nav>
 
             <!-- Albanian Navigation -->
-            <nav id="nav-sq" class="lang-nav items-center space-x-6 mt-2 md:mt-0">
-                <span class="text-[10px] uppercase tracking-widest text-white">Ballina</span>
-                <a href="projects.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Projekte</a>
-                <a href="guide.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-white transition-colors">Udhëzues</a>
+            <nav id="nav-sq" class="lang-nav items-center space-x-2 md:space-x-3">
+                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Ballina</span>
+                <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projekte</a>
+                <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Udhëzues</a>
             </nav>
         </div>
-    </div>
+    </header>
 
     <!-- ========================================== -->
     <!-- ENGLISH VERSION -->
@@ -269,6 +266,27 @@
                             <span>View Projects</span>
                             <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Partners Section -->
+        <section class="py-16 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-10">Official Partner of Leading Developers</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Emaar_Properties_logo.svg/200px-Emaar_Properties_logo.svg.png" alt="EMAAR" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nakheel_logo.svg/200px-Nakheel_logo.svg.png" alt="Nakheel" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Meraas_logo.svg/200px-Meraas_logo.svg.png" alt="Meraas" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://www.binghatti.com/images/logo.svg" alt="Binghatti" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
                     </div>
                 </div>
             </div>
@@ -485,6 +503,27 @@
             </div>
         </section>
 
+        <!-- Developer Partners Section -->
+        <section class="py-16 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-10">Offizieller Partner führender Bauträger</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Emaar_Properties_logo.svg/200px-Emaar_Properties_logo.svg.png" alt="EMAAR" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nakheel_logo.svg/200px-Nakheel_logo.svg.png" alt="Nakheel" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Meraas_logo.svg/200px-Meraas_logo.svg.png" alt="Meraas" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://www.binghatti.com/images/logo.svg" alt="Binghatti" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Ecosystem -->
         <section class="py-10 bg-[#0a0a0a]">
             <div class="container mx-auto px-6">
@@ -693,6 +732,27 @@
                             <span>Shiko Projektet</span>
                             <svg class="w-5 h-5 transform group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Developer Partners Section -->
+        <section class="py-16 border-y border-white/5 bg-white/[0.02]">
+            <div class="container mx-auto px-6">
+                <p class="text-center text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-10">Partner Zyrtar i Zhvilluesve Kryesorë</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Emaar_Properties_logo.svg/200px-Emaar_Properties_logo.svg.png" alt="EMAAR" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nakheel_logo.svg/200px-Nakheel_logo.svg.png" alt="Nakheel" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Meraas_logo.svg/200px-Meraas_logo.svg.png" alt="Meraas" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <img src="https://www.binghatti.com/images/logo.svg" alt="Binghatti" class="h-10 md:h-12 object-contain opacity-60 group-hover:opacity-100 transition-opacity filter brightness-0 invert" />
                     </div>
                 </div>
             </div>
