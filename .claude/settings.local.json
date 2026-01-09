@@ -16,7 +16,9 @@
       "WebFetch(domain:www.propertyfinder.ae)",
       "Bash(ls:*)",
       "Bash(lsof:*)",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "WebFetch(domain:dren-website.vercel.app)",
+      "WebFetch(domain:unsplash.com)"
     ]
   }
 }
