@@ -4,6 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projekt Details - Dren Sefa</title>
+    <meta name="description" content="Exclusive luxury real estate projects in Dubai. Investment opportunities curated by Dren Sefa.">
+
+    <!-- Open Graph / Social Preview -->
+    <meta property="og:title" content="Luxury Projects | Sefa Capital">
+    <meta property="og:description" content="Exclusive luxury real estate projects in Dubai. Investment opportunities curated by Dren Sefa.">
+    <meta property="og:image" content="https://www.sefa.capital/images/og-image.jpg">
+    <meta property="og:url" content="https://www.sefa.capital/project-detail.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luxury Projects | Sefa Capital">
+    <meta name="twitter:description" content="Exclusive luxury real estate projects in Dubai. Investment opportunities curated by Dren Sefa.">
+    <meta name="twitter:image" content="https://www.sefa.capital/images/og-image.jpg">
+
+    <link rel="icon" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -28,9 +43,27 @@
             text-align: center;
             padding: 1rem;
         }
+
+        /* Sticky header shrink on scroll */
+        nav.fixed { transition: box-shadow 0.3s ease; }
+        nav.fixed > div { transition: height 0.3s ease; }
+        nav.fixed.scrolled { box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        nav.fixed.scrolled > div { height: 4rem; }
+
+        /* Grain / noise overlay */
+        .grain-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.035;
+            mix-blend-mode: overlay;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
+    <div class="grain-overlay"></div>
 
     <nav class="fixed w-full z-50 bg-black/90 backdrop-blur-md border-b border-white/10">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
@@ -52,6 +85,15 @@
     </footer>
 
     <script>
+        // Sticky header shrink on scroll
+        (function () {
+            const nav = document.querySelector('nav.fixed');
+            if (!nav) return;
+            window.addEventListener('scroll', function () {
+                nav.classList.toggle('scrolled', window.scrollY > 40);
+            });
+        })();
+
         const urlParams = new URLSearchParams(window.location.search);
         let lang = urlParams.get('lang') || localStorage.getItem('language_selected') || 'de';
 
