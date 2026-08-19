@@ -110,8 +110,13 @@
         span.lang-nav.active { display: inline; }
 
         /* Custom Social Icons Hover */
-        .social-icon:hover { transform: translateY(-2px); color: white; }
+        .social-icon:hover { transform: translateY(-2px); color: #D4AF37; }
         .social-icon { transition: all 0.3s ease; color: #9ca3af; }
+
+        /* Gold accent */
+        .stat-num { color: #D4AF37; }
+        .ecosystem-icon { color: #D4AF37 !important; }
+        .nav-active { background-color: rgba(212,175,55,0.12) !important; color: #D4AF37 !important; }
 
         /* Sticky header shrink on scroll */
         header { transition: box-shadow 0.3s ease; }
@@ -153,21 +158,21 @@
 
             <!-- English Navigation -->
             <nav id="nav-en" class="lang-nav items-center space-x-2 md:space-x-3">
-                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Home</span>
+                <span class="text-xs md:text-sm uppercase tracking-wider px-4 py-2 rounded nav-active">Home</span>
                 <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projects</a>
                 <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Guide</a>
             </nav>
 
             <!-- German Navigation -->
             <nav id="nav-de" class="lang-nav items-center space-x-2 md:space-x-3">
-                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Startseite</span>
+                <span class="text-xs md:text-sm uppercase tracking-wider px-4 py-2 rounded nav-active">Startseite</span>
                 <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projekte</a>
                 <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Ratgeber</a>
             </nav>
 
             <!-- Albanian Navigation -->
             <nav id="nav-sq" class="lang-nav items-center space-x-2 md:space-x-3">
-                <span class="text-xs md:text-sm uppercase tracking-wider text-white bg-white/10 px-4 py-2 rounded">Ballina</span>
+                <span class="text-xs md:text-sm uppercase tracking-wider px-4 py-2 rounded nav-active">Ballina</span>
                 <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projekte</a>
                 <a href="guide.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Udhëzues</a>
             </nav>
@@ -187,7 +192,7 @@
                 <div class="md:col-span-7 flex flex-col justify-center order-2 md:order-1 z-10 mt-10 md:mt-0">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-6 reveal delay-300">
                         Bridging Markets. <br />
-                        <span class="text-gray-500 italic">Building Legacies.</span>
+                        <span class="text-[#D4AF37] italic">Building Legacies.</span>
                     </h1>
                     <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-8 reveal delay-500">
                         Raised with German discipline and an Albanian heart. With a transaction volume exceeding 9 figures, Dren Sefa offers sustainable investment strategies and long-term partnership within the Dubai real estate market.
@@ -239,8 +244,8 @@
         <section class="py-16 relative">
             <div class="container mx-auto px-6">
                 <div class="mb-12 reveal">
-                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">The Journey</h2>
-                    <div class="text-3xl font-serif leading-tight">Driven by <br /> <span class="italic text-gray-400">global ambition.</span></div>
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-4">The Journey</h2>
+                    <div class="text-3xl font-serif leading-tight">Driven by <br /> <span class="italic text-[#D4AF37]">global ambition.</span></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="reveal delay-100">
@@ -277,9 +282,9 @@
                     <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
 
                     <div class="relative z-10 reveal">
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-4">Exclusive Opportunities</p>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-[#D4AF37] mb-4">Exclusive Opportunities</p>
                         <h2 class="text-4xl md:text-5xl font-serif mb-6">
-                            Discover Our <span class="italic text-gray-400">Premium Projects</span>
+                            Discover Our <span class="italic text-[#D4AF37]">Premium Projects</span>
                         </h2>
                         <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
                             Explore handpicked luxury real estate investments in Dubai's most prestigious locations. From off-plan gems to ready-to-move properties.
@@ -310,7 +315,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
                     <!-- 1. HIGHLIGHT: Real Estate Advisory -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500 md:col-span-2 border-b border-white/10">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 ecosystem-icon"></i></div>
                         <!-- CENTERED CONTENT -->
                         <div class="h-full flex flex-col justify-center items-center text-center">
                             <div>
@@ -323,7 +328,7 @@
 
                     <!-- 2. Sefa Real Estate Holding -->
                     <div class="bg-[#050505] p-8 relative group reveal delay-100 hover:bg-[#080808] transition-colors duration-500">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="building-2" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="building-2" class="w-6 h-6 ecosystem-icon"></i></div>
                         <div class="h-full flex flex-col justify-between">
                             <div>
                                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">Dubai • Germany • Kosovo</div>
@@ -335,7 +340,7 @@
 
                     <!-- 3. Social Media -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="smartphone" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="smartphone" class="w-6 h-6 ecosystem-icon"></i></div>
                         <div class="h-full flex flex-col justify-between">
                             <div>
                                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">Social Media & Education</div>
@@ -400,7 +405,7 @@
                 <div class="md:col-span-7 flex flex-col justify-center order-2 md:order-1 z-10 mt-10 md:mt-0">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-6 reveal delay-300">
                         Märkte verbinden. <br />
-                        <span class="text-gray-500 italic">Werte schaffen.</span>
+                        <span class="text-[#D4AF37] italic">Werte schaffen.</span>
                     </h1>
                     <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-8 reveal delay-500">
                         Aufgewachsen mit deutscher Disziplin, im Herzen Albaner. Mit einem Transaktionsvolumen im 9-stelligen Bereich bietet Dren Sefa nicht nur Immobilienzugang, sondern nachhaltige Investment-Strategien und langfristige Partnerschaft im Markt von Dubai.
@@ -452,8 +457,8 @@
         <section class="py-16 relative">
             <div class="container mx-auto px-6">
                 <div class="mb-12 reveal">
-                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Der Weg</h2>
-                    <div class="text-3xl font-serif leading-tight">Angetrieben von <br /><span class="italic text-gray-400">globalem Ehrgeiz.</span></div>
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-4">Der Weg</h2>
+                    <div class="text-3xl font-serif leading-tight">Angetrieben von <br /><span class="italic text-[#D4AF37]">globalem Ehrgeiz.</span></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="reveal delay-100">
@@ -490,9 +495,9 @@
                     <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
 
                     <div class="relative z-10 reveal">
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-4">Exklusive Möglichkeiten</p>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-[#D4AF37] mb-4">Exklusive Möglichkeiten</p>
                         <h2 class="text-4xl md:text-5xl font-serif mb-6">
-                            Entdecken Sie unsere <span class="italic text-gray-400">Premium Projekte</span>
+                            Entdecken Sie unsere <span class="italic text-[#D4AF37]">Premium Projekte</span>
                         </h2>
                         <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
                             Erkunden Sie handverlesene Luxusimmobilien-Investitionen in Dubais prestigeträchtigsten Lagen. Von Off-Plan Perlen bis zu bezugsfertigen Objekten.
@@ -523,7 +528,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
                     <!-- 1. HIGHLIGHT -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500 md:col-span-2 border-b border-white/10">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 ecosystem-icon"></i></div>
                         <!-- CENTERED CONTENT -->
                         <div class="h-full flex flex-col justify-center items-center text-center">
                             <div>
@@ -536,7 +541,7 @@
 
                     <!-- 2. Sefa Real Estate Holding -->
                     <div class="bg-[#050505] p-8 relative group reveal delay-100 hover:bg-[#080808] transition-colors duration-500">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="building-2" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="building-2" class="w-6 h-6 ecosystem-icon"></i></div>
                         <div class="h-full flex flex-col justify-between">
                             <div>
                                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">Dubai • Deutschland • Kosovo</div>
@@ -548,7 +553,7 @@
 
                     <!-- 3. Social Media -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="smartphone" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="smartphone" class="w-6 h-6 ecosystem-icon"></i></div>
                         <div class="h-full flex flex-col justify-between">
                             <div>
                                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">Social Media & Bildung</div>
@@ -615,7 +620,7 @@
                 <div class="md:col-span-7 flex flex-col justify-center order-2 md:order-1 z-10 pl-0 md:pl-0">
                     <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif leading-[1.1] mb-6 reveal delay-300">
                         Duke bashkuar tregjet. <br />
-                        <span class="text-gray-500 italic">Duke ndërtuar trashëgimi.</span>
+                        <span class="text-[#D4AF37] italic">Duke ndërtuar trashëgimi.</span>
                     </h1>
                     <p class="text-gray-400 max-w-lg text-sm md:text-base leading-relaxed mb-8 reveal delay-500">
                         I rritur me disiplinën gjermane dhe zemrën shqiptare. Me një volum transaksionesh që tejkalon 9 shifra, Dren Sefa ofron strategji investimi të qëndrueshme dhe partneritet afatgjatë për investitorët në tregun e Dubait.
@@ -667,8 +672,8 @@
         <section class="py-16 relative">
             <div class="container mx-auto px-6">
                 <div class="mb-12 reveal">
-                    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-500 mb-4">Rrugëtimi</h2>
-                    <div class="text-3xl font-serif leading-tight">I udhëhequr nga <br /><span class="italic text-gray-400">ambicia globale.</span></div>
+                    <h2 class="text-xs uppercase tracking-[0.3em] text-[#D4AF37] mb-4">Rrugëtimi</h2>
+                    <div class="text-3xl font-serif leading-tight">I udhëhequr nga <br /><span class="italic text-[#D4AF37]">ambicia globale.</span></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div class="reveal delay-100">
@@ -705,9 +710,9 @@
                     <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-white/5 rounded-full blur-[100px] animate-pulse" style="animation-delay: 1s;"></div>
 
                     <div class="relative z-10 reveal">
-                        <p class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-4">Mundësi Ekskluzive</p>
+                        <p class="text-[10px] uppercase tracking-[0.4em] text-[#D4AF37] mb-4">Mundësi Ekskluzive</p>
                         <h2 class="text-4xl md:text-5xl font-serif mb-6">
-                            Zbuloni Projektet tona <span class="italic text-gray-400">Premium</span>
+                            Zbuloni Projektet tona <span class="italic text-[#D4AF37]">Premium</span>
                         </h2>
                         <p class="text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
                             Eksploroni investime të zgjedhura në pasuri të paluajtshme luksoze në lokacionet më prestigjioze të Dubait. Nga projekte off-plan deri te prona të gatshme.
@@ -739,7 +744,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-white/10 border border-white/10">
                     <!-- 1. HIGHLIGHT: Real Estate Advisory (Full Width) -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500 md:col-span-2 border-b border-white/10">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="trending-up" class="w-6 h-6 ecosystem-icon"></i></div>
                         <!-- CENTERED CONTENT -->
                         <div class="h-full flex flex-col justify-center items-center text-center">
                             <div>
@@ -752,7 +757,7 @@
 
                     <!-- 2. Sefa Real Estate Holding -->
                     <div class="bg-[#050505] p-8 relative group reveal delay-100 hover:bg-[#080808] transition-colors duration-500">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="building-2" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="building-2" class="w-6 h-6 ecosystem-icon"></i></div>
                         <div class="h-full flex flex-col justify-between">
                             <div>
                                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">Dubai • Gjermani • Kosovë</div>
@@ -764,7 +769,7 @@
 
                     <!-- 3. Social Media -->
                     <div class="bg-[#050505] p-8 relative group reveal hover:bg-[#080808] transition-colors duration-500">
-                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="smartphone" class="w-6 h-6 text-white"></i></div>
+                        <div class="absolute top-8 right-8 opacity-20"><i data-lucide="smartphone" class="w-6 h-6 ecosystem-icon"></i></div>
                         <div class="h-full flex flex-col justify-between">
                             <div>
                                 <div class="text-xs text-gray-500 uppercase tracking-widest mb-3">Media Sociale & Edukim</div>
