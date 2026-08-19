@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guide | Sefa Capital</title>
-    <meta name="description" content="Your guide to investing in Dubai real estate, by Dren Sefa.">
+    <title>Udhëzues: Si të Investoni në Prona në Dubai | Dren Sefa</title>
+    <meta name="description" content="Gjithçka që duhet të dini për të investuar në patundshmëri dhe prona në Dubai – taksat, procesi i blerjes dhe këshilla nga Dren Sefa.">
+    <link rel="canonical" href="https://www.sefa.capital/guide.html">
 
     <!-- Open Graph / Social Preview -->
-    <meta property="og:title" content="Guide | Sefa Capital">
-    <meta property="og:description" content="Your guide to investing in Dubai real estate, by Dren Sefa.">
+    <meta property="og:title" content="Udhëzues: Si të Investoni në Prona në Dubai | Dren Sefa">
+    <meta property="og:description" content="Gjithçka që duhet të dini për të investuar në patundshmëri dhe prona në Dubai – taksat, procesi i blerjes dhe këshilla nga Dren Sefa.">
     <meta property="og:image" content="https://www.sefa.capital/images/og-image.jpg">
     <meta property="og:url" content="https://www.sefa.capital/guide.html">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="sq_AL">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Guide | Sefa Capital">
-    <meta name="twitter:description" content="Your guide to investing in Dubai real estate, by Dren Sefa.">
+    <meta name="twitter:title" content="Udhëzues: Si të Investoni në Prona në Dubai | Dren Sefa">
+    <meta name="twitter:description" content="Gjithçka që duhet të dini për të investuar në patundshmëri dhe prona në Dubai – taksat, procesi i blerjes dhe këshilla nga Dren Sefa.">
     <meta name="twitter:image" content="https://www.sefa.capital/images/og-image.jpg">
 
     <link rel="icon" href="favicon.png">
@@ -206,7 +208,7 @@
             <a href="index.html" class="text-2xl md:text-3xl font-serif font-bold tracking-[0.15em] uppercase text-white hover:text-gray-300 transition-colors">SEFA.</a>
 
             <!-- Albanian Navigation -->
-            <nav id="nav-sq" class="lang-nav items-center space-x-2 md:space-x-3">
+            <nav id="nav-sq" class="lang-nav active items-center space-x-2 md:space-x-3">
                 <a href="index.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Ballina</a>
                 <a href="projects.html" class="text-xs md:text-sm uppercase tracking-wider text-gray-400 hover:text-white hover:bg-white/10 px-4 py-2 rounded transition-all">Projekte</a>
                 <span class="text-xs md:text-sm uppercase tracking-wider px-4 py-2 rounded nav-active">Udhëzues</span>
@@ -229,7 +231,7 @@
     </header>
 
     <!-- ALBANISCH -->
-    <div id="content-sq" class="content-section">
+    <div id="content-sq" class="content-section active">
         <div class="hero-gradient pt-20">
             <div class="container mx-auto px-6 py-16 max-w-4xl text-center">
                 <p class="text-[10px] uppercase tracking-[0.3em] text-[#D4AF37] mb-4">Udhëzues Investimi</p>
@@ -1858,9 +1860,11 @@
         })();
 
         // Language from localStorage (index.html uses 'language_selected')
-        const lang = localStorage.getItem('language_selected') || localStorage.getItem('sefaLanguage') || 'en';
+        const lang = localStorage.getItem('language_selected') || localStorage.getItem('sefaLanguage') || 'sq';
 
-        // Show matching content section
+        // Show matching content section (remove default-active state from all first)
+        document.querySelectorAll('.content-section').forEach(function (el) { el.classList.remove('active'); });
+        document.querySelectorAll('.lang-nav').forEach(function (el) { el.classList.remove('active'); });
         document.getElementById('content-' + lang).classList.add('active');
 
         // Show matching navigation
