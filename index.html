@@ -1076,7 +1076,7 @@
                     body: JSON.stringify({
                         Name: formData.get('Name'),
                         Email: formData.get('Email'),
-                        Telefon: formData.get('Telefon'),
+                        Telefon: formData.get('Vorwahl') + ' ' + formData.get('Telefon'),
                         Immobilientyp: formData.get('Immobilientyp'),
                         Kaufzeitpunkt: formData.get('Kaufzeitpunkt'),
                         Budget: formData.get('Budget'),
@@ -1252,8 +1252,60 @@
                     <!-- Phone -->
                     <div>
                         <label class="block text-sm font-medium mb-2 text-white" id="label-phone"></label>
-                        <input type="tel" name="Telefon" required
-                               class="w-full bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                        <div class="flex gap-2">
+                            <select name="Vorwahl" required
+                                    class="w-[38%] bg-white/5 border border-white/10 rounded px-2 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                                <option value="" disabled selected class="bg-[#0a0a0a]">Code</option>
+                                <option value="+355" class="bg-[#0a0a0a]">🇦🇱 +355</option>
+                                <option value="+383" class="bg-[#0a0a0a]">🇽🇰 +383</option>
+                                <option value="+389" class="bg-[#0a0a0a]">🇲🇰 +389</option>
+                                <option value="+382" class="bg-[#0a0a0a]">🇲🇪 +382</option>
+                                <option value="+49" class="bg-[#0a0a0a]">🇩🇪 +49</option>
+                                <option value="+43" class="bg-[#0a0a0a]">🇦🇹 +43</option>
+                                <option value="+41" class="bg-[#0a0a0a]">🇨🇭 +41</option>
+                                <option value="+971" class="bg-[#0a0a0a]">🇦🇪 +971</option>
+                                <option value="+1" class="bg-[#0a0a0a]">🇺🇸 +1 (USA)</option>
+                                <option value="+1" class="bg-[#0a0a0a]">🇨🇦 +1 (Kanada)</option>
+                                <option value="+385" class="bg-[#0a0a0a]">🇭🇷 +385</option>
+                                <option value="+386" class="bg-[#0a0a0a]">🇸🇮 +386</option>
+                                <option value="+387" class="bg-[#0a0a0a]">🇧🇦 +387</option>
+                                <option value="+381" class="bg-[#0a0a0a]">🇷🇸 +381</option>
+                                <option value="+33" class="bg-[#0a0a0a]">🇫🇷 +33</option>
+                                <option value="+32" class="bg-[#0a0a0a]">🇧🇪 +32</option>
+                                <option value="+31" class="bg-[#0a0a0a]">🇳🇱 +31</option>
+                                <option value="+352" class="bg-[#0a0a0a]">🇱🇺 +352</option>
+                                <option value="+423" class="bg-[#0a0a0a]">🇱🇮 +423</option>
+                                <option value="+377" class="bg-[#0a0a0a]">🇲🇨 +377</option>
+                                <option value="+39" class="bg-[#0a0a0a]">🇮🇹 +39</option>
+                                <option value="+34" class="bg-[#0a0a0a]">🇪🇸 +34</option>
+                                <option value="+351" class="bg-[#0a0a0a]">🇵🇹 +351</option>
+                                <option value="+30" class="bg-[#0a0a0a]">🇬🇷 +30</option>
+                                <option value="+356" class="bg-[#0a0a0a]">🇲🇹 +356</option>
+                                <option value="+378" class="bg-[#0a0a0a]">🇸🇲 +378</option>
+                                <option value="+376" class="bg-[#0a0a0a]">🇦🇩 +376</option>
+                                <option value="+45" class="bg-[#0a0a0a]">🇩🇰 +45</option>
+                                <option value="+46" class="bg-[#0a0a0a]">🇸🇪 +46</option>
+                                <option value="+47" class="bg-[#0a0a0a]">🇳🇴 +47</option>
+                                <option value="+358" class="bg-[#0a0a0a]">🇫🇮 +358</option>
+                                <option value="+354" class="bg-[#0a0a0a]">🇮🇸 +354</option>
+                                <option value="+44" class="bg-[#0a0a0a]">🇬🇧 +44</option>
+                                <option value="+353" class="bg-[#0a0a0a]">🇮🇪 +353</option>
+                                <option value="+48" class="bg-[#0a0a0a]">🇵🇱 +48</option>
+                                <option value="+420" class="bg-[#0a0a0a]">🇨🇿 +420</option>
+                                <option value="+421" class="bg-[#0a0a0a]">🇸🇰 +421</option>
+                                <option value="+36" class="bg-[#0a0a0a]">🇭🇺 +36</option>
+                                <option value="+40" class="bg-[#0a0a0a]">🇷🇴 +40</option>
+                                <option value="+359" class="bg-[#0a0a0a]">🇧🇬 +359</option>
+                                <option value="+373" class="bg-[#0a0a0a]">🇲🇩 +373</option>
+                                <option value="+380" class="bg-[#0a0a0a]">🇺🇦 +380</option>
+                                <option value="+372" class="bg-[#0a0a0a]">🇪🇪 +372</option>
+                                <option value="+371" class="bg-[#0a0a0a]">🇱🇻 +371</option>
+                                <option value="+370" class="bg-[#0a0a0a]">🇱🇹 +370</option>
+                                <option value="+90" class="bg-[#0a0a0a]">🇹🇷 +90</option>
+                            </select>
+                            <input type="tel" name="Telefon" required placeholder="69 123 4567"
+                                   class="w-[62%] bg-white/5 border border-white/10 rounded px-4 py-3 text-white focus:outline-none focus:border-white transition-colors">
+                        </div>
                     </div>
 
                     <!-- Property Type -->
